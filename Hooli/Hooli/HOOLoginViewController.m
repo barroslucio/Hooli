@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Hooli. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HOOLoginViewController.h"
 
-@interface ViewController ()
+@interface HOOLoginViewController ()
 
 @end
 
-@implementation ViewController
+@implementation HOOLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
