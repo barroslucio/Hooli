@@ -29,6 +29,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFieldCidade;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldUF;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldTelefone;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldRG;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldCPF;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldDDD;
 
 //PIKER VIEW
 @property (retain, nonatomic)  UIPickerView *pickerView;
@@ -75,6 +78,10 @@ static HOOUsuarioProfissional *profissional;
     [self.textFieldCidade resignFirstResponder];
     [self.textFieldUF resignFirstResponder];
     [self.textFieldTelefone resignFirstResponder];
+    [self.textFieldRG resignFirstResponder];
+    [self.textFieldCPF resignFirstResponder];
+    [self.textFieldDDD resignFirstResponder];
+
 
 }
 
@@ -101,7 +108,7 @@ static HOOUsuarioProfissional *profissional;
     self.pickerView.showsSelectionIndicator = YES;
     self.textFieldUF.inputView = self.pickerView;
     
-    self.arrayUF = @[@"Acre", @"Alagoas", @"Amazonas", @"Amapá", @"Bahia", @"Ceará", @"Espírito Santo", @"Goiás", @"Maranhão", @"Minas Gerais", @"Mato Grosso do Sul", @"Mato Grosso", @"Pará", @"Paraíba", @"Pernambuco", @"Piauí", @"Paraná", @"Rio de Janeiro", @"Rio Grande do Norte", @"Rondônia", @"Roraima", @"Rio Grande do Sul", @"Santa Catarina", @"Sergipe", @"São Paulo", @"Tocantins"];
+    self.arrayUF = @[@"Acre", @"Alagoas", @"Amazonas", @"Amapá", @"Bahia", @"Ceará", @"Distrito Federal", @"Espírito Santo", @"Goiás", @"Maranhão", @"Minas Gerais", @"Mato Grosso do Sul", @"Mato Grosso", @"Pará", @"Paraíba", @"Pernambuco", @"Piauí", @"Paraná", @"Rio de Janeiro", @"Rio Grande do Norte", @"Rondônia", @"Roraima", @"Rio Grande do Sul", @"Santa Catarina", @"Sergipe", @"São Paulo", @"Tocantins"];
 
 }
 
@@ -143,13 +150,24 @@ static HOOUsuarioProfissional *profissional;
 //SALVA OS DADOS DA TELA NO OBJETO
 - (void)saveDados{
     
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+    NSNumber *telefone = [formatter numberFromString:self.textFieldTelefone.text];
+    NSNumber *ddd = [formatter numberFromString:self.textFieldDDD.text];
+    NSNumber *rg = [formatter numberFromString:self.textFieldRG.text];
+    NSNumber *cpf = [formatter numberFromString:self.textFieldCPF.text];
+
+    
     profissional.nome = self.textFieldNome.text;
     profissional.email = self.textFieldEmail.text;
     profissional.senha = self.textFieldSenha.text;
     profissional.endereco = self.textFieldEndereco.text;
     profissional.cidade = self.textFieldCidade.text;
     profissional.uf = self.textFieldUF.text;
-    profissional.telefone = self.textFieldTelefone.text;
+    
+    profissional.telefone = telefone;
+    profissional.ddd = ddd;
+    profissional.rg = rg;
+    profissional.cpf = cpf;
     
     if (self.switchAlvenaria.on == YES) {
         profissional.alvenaria = YES;
@@ -189,7 +207,7 @@ static HOOUsuarioProfissional *profissional;
     NSString *statusCadastro;
     
     //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
-    if (![self.textFieldNome.text isEqualToString:@""] && ![self.textFieldEmail.text isEqualToString:@""] && ![self.textFieldSenha.text isEqualToString:@""] && ![self.textFieldEndereco.text isEqualToString:@""] && ![self.textFieldCidade.text isEqualToString:@""] && ![self.textFieldUF.text isEqualToString:@""] && ![self.textFieldTelefone.text isEqualToString:@""]) {
+    if (![self.textFieldNome.text isEqualToString:@""] && ![self.textFieldEmail.text isEqualToString:@""] && ![self.textFieldSenha.text isEqualToString:@""] && ![self.textFieldEndereco.text isEqualToString:@""] && ![self.textFieldCidade.text isEqualToString:@""] && ![self.textFieldUF.text isEqualToString:@""] && ![self.textFieldTelefone.text isEqualToString:@""] && ![self.textFieldRG.text isEqualToString:@""] && ![self.textFieldCPF.text isEqualToString:@""] && ![self.textFieldDDD.text isEqualToString:@""]) {
         
         //VERIFICA SE ALGUMA PROFISSÃO FOI MARCADA
         if (self.switchAlvenaria.on == YES || self.switchChaveiro.on == YES || self.switchEletrica.on == YES || self.switchHidraulica.on == YES || self.switchLimpeza.on == YES || self.switchPintura.on == YES){
