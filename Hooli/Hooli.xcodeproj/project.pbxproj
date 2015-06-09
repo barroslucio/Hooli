@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		246A56751B263CB3007044A7 /* HOOCadastroProffisionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */; };
+		246A56781B264A9E007044A7 /* HOOUsuarioProfissional.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56771B264A9E007044A7 /* HOOUsuarioProfissional.m */; };
 		77A88AD11B25E38C002BD992 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A88AD01B25E38C002BD992 /* main.m */; };
 		77A88AD41B25E38C002BD992 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A88AD31B25E38C002BD992 /* AppDelegate.m */; };
 		77A88AD71B25E38C002BD992 /* HOOLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A88AD61B25E38C002BD992 /* HOOLoginViewController.m */; };
@@ -40,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		246A56731B263CB3007044A7 /* HOOCadastroProffisionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOCadastroProffisionalViewController.h; sourceTree = "<group>"; };
+		246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOCadastroProffisionalViewController.m; sourceTree = "<group>"; };
+		246A56761B264A9E007044A7 /* HOOUsuarioProfissional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOUsuarioProfissional.h; sourceTree = "<group>"; };
+		246A56771B264A9E007044A7 /* HOOUsuarioProfissional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOUsuarioProfissional.m; sourceTree = "<group>"; };
 		77A88ACB1B25E38C002BD992 /* Hooli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hooli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A88ACF1B25E38C002BD992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77A88AD01B25E38C002BD992 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -125,7 +131,11 @@
 				77A88AD51B25E38C002BD992 /* HOOLoginViewController.h */,
 				77A88AD61B25E38C002BD992 /* HOOLoginViewController.m */,
 				77A88AD81B25E38C002BD992 /* Main.storyboard */,
+				246A56761B264A9E007044A7 /* HOOUsuarioProfissional.h */,
+				246A56771B264A9E007044A7 /* HOOUsuarioProfissional.m */,
 				77A88ADB1B25E38C002BD992 /* Images.xcassets */,
+				246A56731B263CB3007044A7 /* HOOCadastroProffisionalViewController.h */,
+				246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */,
 				77A88ADD1B25E38C002BD992 /* LaunchScreen.xib */,
 				77A88ACE1B25E38C002BD992 /* Supporting Files */,
 			);
@@ -271,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				246A56751B263CB3007044A7 /* HOOCadastroProffisionalViewController.m in Sources */,
+				246A56781B264A9E007044A7 /* HOOUsuarioProfissional.m in Sources */,
 				77A88AD71B25E38C002BD992 /* HOOLoginViewController.m in Sources */,
 				77A88AD41B25E38C002BD992 /* AppDelegate.m in Sources */,
 				77A88AD11B25E38C002BD992 /* main.m in Sources */,
@@ -476,6 +488,7 @@
 				77A88AF01B25E38C002BD992 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77A88AF11B25E38C002BD992 /* Build configuration list for PBXNativeTarget "HooliTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +497,7 @@
 				77A88AF31B25E38C002BD992 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
