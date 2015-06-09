@@ -21,6 +21,9 @@
 //ARRAY DE ESTADOS
 @property (nonatomic) NSArray* arrayUF;
 
+//PIKER VIEW
+@property (retain, nonatomic)  UIPickerView *pickerView;
+
 - (IBAction)saveButton:(id)sender;
 
 @end
