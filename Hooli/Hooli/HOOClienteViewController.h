@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HOOCliente.h"
 
 @interface HOOClienteViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *nomeField;
@@ -16,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *cpfField;
 @property (weak, nonatomic) IBOutlet UITextField *cidadeField;
 @property (weak, nonatomic) IBOutlet UITextField *estadoField;
+
+//ARRAY DE ESTADOS
+@property (nonatomic) NSArray* arrayUF;
 
 - (IBAction)saveButton:(id)sender;
 

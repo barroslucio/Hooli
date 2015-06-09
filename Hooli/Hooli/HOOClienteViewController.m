@@ -18,6 +18,9 @@
 {
     [super viewDidLoad];
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
+    [tapGesture setNumberOfTouchesRequired:1];
+    [[self view] addGestureRecognizer:tapGesture];
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,7 +29,36 @@
     
 }
 
-
-- (IBAction)saveButton:(id)sender {
+// procedimento para o teclado ser ocultado
+- (void)ocultaTeclado:(UITapGestureRecognizer *)sender
+{
+    [self.nomeField resignFirstResponder];
+    [self.cpfField resignFirstResponder];
+    [self.emailField resignFirstResponder];
+    [self.senhaField resignFirstResponder];
+    [self.telefoneField resignFirstResponder];
+    [self.cidadeField resignFirstResponder];
+    [self.estadoField resignFirstResponder];
 }
+
+- (void)salvaDadosCliente
+{
+    HOOCliente *cliente;
+    
+    cliente.nome = self.nomeField.text;
+    cliente.cpf = self.cpfField.text;
+    cliente.telefone = self.telefoneField.text;
+    cliente.email = self.emailField.text;
+    cliente.senha = self.senhaField.text;
+    cliente.cidade = self.cidadeField.text;
+    cliente.estado = self.estadoField.text;
+}
+
+// salvando os dados dos clientes
+- (IBAction)saveButton:(id)sender
+{
+    [self salvaDadosCliente];
+    
+}
+
 @end
