@@ -17,5 +17,7 @@
 @property(nonatomic, retain) NSNumber *cpf;
 @property(nonatomic, retain) NSString *cidade;
 @property(nonatomic, retain) NSString *estado;
+@property(nonatomic, retain) NSString *endereco;
+@property(nonatomic, retain) NSNumber *rg;
 
 @end

@@ -76,37 +76,47 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qaL-T8-A00">
-                                <rect key="frame" x="81" y="172" width="213" height="30"/>
+                                <rect key="frame" x="81" y="145" width="213" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xb1-iI-bkh">
-                                <rect key="frame" x="81" y="227" width="213" height="30"/>
+                                <rect key="frame" x="81" y="193" width="213" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vnH-1y-aV3">
-                                <rect key="frame" x="81" y="284" width="213" height="30"/>
+                                <rect key="frame" x="81" y="241" width="213" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CPF" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPU-QX-l43">
-                                <rect key="frame" x="81" y="337" width="213" height="30"/>
+                                <rect key="frame" x="81" y="288" width="213" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cidade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a1f-yk-Pee">
-                                <rect key="frame" x="81" y="388" width="213" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Estado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OR5-TC-VjV">
-                                <rect key="frame" x="81" y="436" width="213" height="30"/>
+                                <rect key="frame" x="81" y="332" width="213" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uBx-DL-uD7">
-                                <rect key="frame" x="81" y="120" width="213" height="30"/>
+                                <rect key="frame" x="81" y="102" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RG" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RqB-s6-Wrz">
+                                <rect key="frame" x="81" y="425" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Endereço" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JcT-ne-Ole">
+                                <rect key="frame" x="81" y="474" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Estado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OR5-TC-VjV">
+                                <rect key="frame" x="81" y="376" width="213" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -118,8 +128,10 @@
                         <outlet property="cidadeField" destination="a1f-yk-Pee" id="BDH-vf-bC3"/>
                         <outlet property="cpfField" destination="qPU-QX-l43" id="BKZ-iY-TO3"/>
                         <outlet property="emailField" destination="qaL-T8-A00" id="9n3-0K-vQG"/>
+                        <outlet property="enderecoField" destination="JcT-ne-Ole" id="WI7-IV-2VK"/>
                         <outlet property="estadoField" destination="OR5-TC-VjV" id="APR-jf-0l5"/>
                         <outlet property="nomeField" destination="uBx-DL-uD7" id="qe9-oJ-e0u"/>
+                        <outlet property="rgField" destination="RqB-s6-Wrz" id="vyQ-9F-XSG"/>
                         <outlet property="senhaField" destination="Xb1-iI-bkh" id="nMb-YY-Sah"/>
                         <outlet property="telefoneField" destination="vnH-1y-aV3" id="gmL-iP-KkP"/>
                     </connections>

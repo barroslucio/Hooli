@@ -82,6 +82,8 @@
     [self.telefoneField resignFirstResponder];
     [self.cidadeField resignFirstResponder];
     [self.estadoField resignFirstResponder];
+    [self.enderecoField resignFirstResponder];
+    [self.rgField resignFirstResponder];
 }
 
 - (void)salvaDadosCliente
@@ -90,6 +92,7 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
     NSNumber *telefone = [formatter numberFromString:self.telefoneField.text];
     NSNumber *cpf = [formatter numberFromString:self.cpfField.text];
+    NSNumber *rg = [formatter numberFromString:self.rgField.text];
     
     HOOCliente *cliente;
     
@@ -100,6 +103,8 @@
     cliente.senha = self.senhaField.text;
     cliente.cidade = self.cidadeField.text;
     cliente.estado = self.estadoField.text;
+    cliente.endereco = self.enderecoField.text;
+    cliente.rg = rg;
 }
 
 // salvando os dados dos clientes
@@ -108,7 +113,7 @@
     NSString *statusCadastro;
     
     //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
-    if (![self.nomeField.text isEqualToString:@""] && ![self.emailField.text isEqualToString:@""] && ![self.senhaField.text isEqualToString:@""] && ![self.cpfField.text isEqualToString:@""] && ![self.cidadeField.text isEqualToString:@""] && ![self.estadoField.text isEqualToString:@""] && ![self.telefoneField.text isEqualToString:@""])
+    if (![self.nomeField.text isEqualToString:@""] && ![self.emailField.text isEqualToString:@""] && ![self.senhaField.text isEqualToString:@""] && ![self.cpfField.text isEqualToString:@""] && ![self.cidadeField.text isEqualToString:@""] && ![self.estadoField.text isEqualToString:@""] && ![self.telefoneField.text isEqualToString:@""] && ![self.enderecoField.text isEqualToString:@""] && ![self.rgField.text isEqualToString:@""])
     {
         statusCadastro = @"Cadastro bem sucedido";
             
