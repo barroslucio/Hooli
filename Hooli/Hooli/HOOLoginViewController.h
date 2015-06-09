@@ -11,6 +11,10 @@
 
 @interface HOOLoginViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *emailField;
+@property (strong, nonatomic) IBOutlet UITextField *senhaField;
+
+- (IBAction)login:(id)sender;
 
 @end
 
