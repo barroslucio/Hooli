@@ -86,11 +86,16 @@
 
 - (void)salvaDadosCliente
 {
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+    NSNumber *telefone = [formatter numberFromString:self.telefoneField.text];
+    NSNumber *cpf = [formatter numberFromString:self.cpfField.text];
+    
     HOOCliente *cliente;
     
     cliente.nome = self.nomeField.text;
-    cliente.cpf = self.cpfField.text;
-    cliente.telefone = self.telefoneField.text;
+    cliente.cpf = cpf;
+    cliente.telefone = telefone;
     cliente.email = self.emailField.text;
     cliente.senha = self.senhaField.text;
     cliente.cidade = self.cidadeField.text;

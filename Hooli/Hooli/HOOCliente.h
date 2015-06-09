@@ -13,8 +13,8 @@
 @property(nonatomic, retain) NSString *nome;
 @property(nonatomic, retain) NSString *email;
 @property(nonatomic, retain) NSString *senha;
-@property(nonatomic, retain) NSString *telefone;
-@property(nonatomic, retain) NSString *cpf;
+@property(nonatomic, retain) NSNumber *telefone;
+@property(nonatomic, retain) NSNumber *cpf;
 @property(nonatomic, retain) NSString *cidade;
 @property(nonatomic, retain) NSString *estado;
 
