@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *cpfField;
 @property (weak, nonatomic) IBOutlet UITextField *cidadeField;
 @property (weak, nonatomic) IBOutlet UITextField *estadoField;
+@property (weak, nonatomic) IBOutlet UITextField *rgField;
+@property (weak, nonatomic) IBOutlet UITextField *enderecoField;
 
 //ARRAY DE ESTADOS
 @property (nonatomic) NSArray* arrayUF;
