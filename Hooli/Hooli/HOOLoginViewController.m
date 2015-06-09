@@ -44,7 +44,7 @@
                 [alertView show];
             }
             else {
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                
             }
         }];
     }
