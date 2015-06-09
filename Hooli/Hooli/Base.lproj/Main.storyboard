@@ -58,6 +58,83 @@
             </objects>
             <point key="canvasLocation" x="283.5" y="204.5"/>
         </scene>
+        <!--Cliente View Controller-->
+        <scene sceneID="irC-qM-dVy">
+            <objects>
+                <viewController id="3mm-qj-OBp" customClass="HOOClienteViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ulJ-JX-aJt"/>
+                        <viewControllerLayoutGuide type="bottom" id="6ub-DJ-g9x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BT3-ti-as8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZsR-5C-27B">
+                                <rect key="frame" x="-10" y="28" width="385" height="44"/>
+                                <items>
+                                    <navigationItem title="Cliente" id="m42-Zt-s1i">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bvC-Cx-O1o">
+                                            <connections>
+                                                <action selector="saveButton:" destination="3mm-qj-OBp" id="z2B-dq-HBP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qaL-T8-A00">
+                                <rect key="frame" x="81" y="172" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xb1-iI-bkh">
+                                <rect key="frame" x="81" y="227" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vnH-1y-aV3">
+                                <rect key="frame" x="81" y="284" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CPF" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPU-QX-l43">
+                                <rect key="frame" x="81" y="337" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cidade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a1f-yk-Pee">
+                                <rect key="frame" x="81" y="388" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Estado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OR5-TC-VjV">
+                                <rect key="frame" x="81" y="436" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uBx-DL-uD7">
+                                <rect key="frame" x="81" y="120" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="cidadeField" destination="a1f-yk-Pee" id="BDH-vf-bC3"/>
+                        <outlet property="cpfField" destination="qPU-QX-l43" id="BKZ-iY-TO3"/>
+                        <outlet property="emailField" destination="qaL-T8-A00" id="9n3-0K-vQG"/>
+                        <outlet property="estadoField" destination="OR5-TC-VjV" id="APR-jf-0l5"/>
+                        <outlet property="nomeField" destination="uBx-DL-uD7" id="qe9-oJ-e0u"/>
+                        <outlet property="senhaField" destination="Xb1-iI-bkh" id="nMb-YY-Sah"/>
+                        <outlet property="telefoneField" destination="vnH-1y-aV3" id="gmL-iP-KkP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vUn-1e-pcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893.5" y="803.5"/>
+        </scene>
         <!--Cadastro Proffisional View Controller-->
         <scene sceneID="IHP-dy-CKp">
             <objects>
@@ -74,7 +151,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EfR-b3-MF6">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="652"/>
+                                        <rect key="frame" x="0.0" y="-8" width="375" height="738"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RmL-bQ-Ehe">
                                                 <rect key="frame" x="8" y="48" width="359" height="30"/>
@@ -92,85 +169,100 @@
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Endereço" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C57-Gc-6iF">
-                                                <rect key="frame" x="8" y="165" width="359" height="30"/>
+                                                <rect key="frame" x="8" y="242" width="359" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cidade" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mCd-Rt-kbo">
-                                                <rect key="frame" x="8" y="204" width="359" height="30"/>
+                                                <rect key="frame" x="8" y="281" width="359" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Estado" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4EZ-i1-6cI">
-                                                <rect key="frame" x="8" y="243" width="359" height="30"/>
+                                                <rect key="frame" x="8" y="320" width="359" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefone" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jK7-lu-woT">
-                                                <rect key="frame" x="8" y="282" width="359" height="30"/>
+                                                <rect key="frame" x="84" y="359" width="283" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Serviço:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9I-8X-Ki5">
-                                                <rect key="frame" x="8" y="348" width="83" height="21"/>
+                                                <rect key="frame" x="8" y="434" width="83" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alvenaria" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dt3-rL-fhs">
-                                                <rect key="frame" x="8" y="386" width="71" height="21"/>
+                                                <rect key="frame" x="8" y="472" width="71" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGJ-3F-FRA">
-                                                <rect key="frame" x="318" y="381" width="51" height="31"/>
+                                                <rect key="frame" x="318" y="467" width="51" height="31"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chaveiro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEe-M4-zsk">
-                                                <rect key="frame" x="8" y="430" width="68" height="21"/>
+                                                <rect key="frame" x="8" y="516" width="68" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMu-qC-irx">
-                                                <rect key="frame" x="318" y="425" width="51" height="31"/>
+                                                <rect key="frame" x="318" y="511" width="51" height="31"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Elétrica" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3b-QM-GTS">
-                                                <rect key="frame" x="8" y="474" width="57" height="21"/>
+                                                <rect key="frame" x="8" y="560" width="57" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3L-x6-g5f">
-                                                <rect key="frame" x="318" y="469" width="51" height="31"/>
+                                                <rect key="frame" x="318" y="555" width="51" height="31"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hidráulica" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50s-Uo-aoa">
-                                                <rect key="frame" x="8" y="518" width="77" height="21"/>
+                                                <rect key="frame" x="8" y="604" width="77" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8F-MU-fpC">
-                                                <rect key="frame" x="318" y="513" width="51" height="31"/>
+                                                <rect key="frame" x="318" y="599" width="51" height="31"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Limpeza" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrF-Dm-TSS">
-                                                <rect key="frame" x="8" y="562" width="65" height="21"/>
+                                                <rect key="frame" x="8" y="648" width="65" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="93j-aS-ckU">
-                                                <rect key="frame" x="318" y="557" width="51" height="31"/>
+                                                <rect key="frame" x="318" y="643" width="51" height="31"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pintura" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYK-WP-fbT">
-                                                <rect key="frame" x="8" y="606" width="55" height="21"/>
+                                                <rect key="frame" x="8" y="692" width="55" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qXG-SX-9iJ">
-                                                <rect key="frame" x="318" y="601" width="51" height="31"/>
+                                                <rect key="frame" x="318" y="687" width="51" height="31"/>
                                             </switch>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RG" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="So5-Zd-akG">
+                                                <rect key="frame" x="8" y="165" width="359" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CPF" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Exw-Lj-LFl">
+                                                <rect key="frame" x="8" y="204" width="359" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DDD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3um-qw-ZIW">
+                                                <rect key="frame" x="8" y="359" width="68" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.76610321039999996" green="0.81725030369999996" blue="0.89411695079999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -218,10 +310,13 @@
                         <outlet property="switchHidraulica" destination="x8F-MU-fpC" id="T7F-CJ-O95"/>
                         <outlet property="switchLimpeza" destination="93j-aS-ckU" id="id4-y0-dmy"/>
                         <outlet property="switchPintura" destination="qXG-SX-9iJ" id="h5j-IW-bAl"/>
+                        <outlet property="textFieldCPF" destination="Exw-Lj-LFl" id="PWW-Gv-D9e"/>
                         <outlet property="textFieldCidade" destination="mCd-Rt-kbo" id="cxL-qT-Xh0"/>
+                        <outlet property="textFieldDDD" destination="3um-qw-ZIW" id="r43-XH-E8A"/>
                         <outlet property="textFieldEmail" destination="IAZ-ep-gDS" id="vbh-ic-BQ9"/>
                         <outlet property="textFieldEndereco" destination="C57-Gc-6iF" id="yaf-2v-0XQ"/>
                         <outlet property="textFieldNome" destination="RmL-bQ-Ehe" id="tDq-Ef-E9r"/>
+                        <outlet property="textFieldRG" destination="So5-Zd-akG" id="ZD2-tq-AuP"/>
                         <outlet property="textFieldSenha" destination="Ok1-XO-gwR" id="gH4-u0-iy9"/>
                         <outlet property="textFieldTelefone" destination="jK7-lu-woT" id="gKH-bv-TaX"/>
                         <outlet property="textFieldUF" destination="4EZ-i1-6cI" id="cHH-Yp-OYj"/>

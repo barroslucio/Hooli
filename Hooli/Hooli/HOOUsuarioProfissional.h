@@ -16,7 +16,11 @@
 @property (nonatomic, copy) NSString* endereco;
 @property (nonatomic, copy) NSString* cidade;
 @property (nonatomic, copy) NSString* uf;
-@property (nonatomic, copy) NSString* telefone;
+
+@property (nonatomic, copy) NSNumber* telefone;
+@property (nonatomic, copy) NSNumber* rg;
+@property (nonatomic, copy) NSNumber* cpf;
+@property (nonatomic, copy) NSNumber* ddd;
 
 @property (nonatomic) BOOL alvenaria;
 @property (nonatomic) BOOL chaveiro;
@@ -25,6 +29,5 @@
 @property (nonatomic) BOOL limpeza;
 @property (nonatomic) BOOL pintura;
 
--(id)initWith : (NSDictionary*) dic;
 
 @end
