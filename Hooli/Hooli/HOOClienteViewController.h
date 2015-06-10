@@ -7,18 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HOOCliente.h"
+#import <Parse/Parse.h>
 
 @interface HOOClienteViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *nomeField;
+
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *senhaField;
 @property (weak, nonatomic) IBOutlet UITextField *telefoneField;
-@property (weak, nonatomic) IBOutlet UITextField *cpfField;
 @property (weak, nonatomic) IBOutlet UITextField *cidadeField;
 @property (weak, nonatomic) IBOutlet UITextField *estadoField;
-@property (weak, nonatomic) IBOutlet UITextField *rgField;
 @property (weak, nonatomic) IBOutlet UITextField *enderecoField;
+@property (strong, nonatomic) IBOutlet UITextField *dddField;
 
 //ARRAY DE ESTADOS
 @property (nonatomic) NSArray* arrayUF;

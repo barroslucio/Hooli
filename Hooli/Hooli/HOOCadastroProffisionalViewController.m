@@ -52,11 +52,8 @@
 @implementation HOOCadastroProffisionalViewController
 
 //OBJETO DE USUÁRIO PROFISSIONAL
-static HOOUsuarioProfissional *profissional;
 
-+ (HOOUsuarioProfissional*) profissional{
-    return profissional;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -95,7 +92,6 @@ static HOOUsuarioProfissional *profissional;
     self.switchLimpeza.on = NO;
     self.switchPintura.on = NO;
     
-    profissional = [[HOOUsuarioProfissional alloc] init];
     
     [self.scrollView setContentSize:CGSizeMake(self.viewScroll.frame.size.width, self.viewScroll.frame.size.height)];
     [self.scrollView setScrollEnabled:TRUE];
@@ -147,59 +143,53 @@ static HOOUsuarioProfissional *profissional;
 
 }
 
-//SALVA OS DADOS DA TELA NO OBJETO
-- (void)saveDados{
-    
+- (void)cadastraProfissionalParse{
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
     NSNumber *telefone = [formatter numberFromString:self.textFieldTelefone.text];
     NSNumber *ddd = [formatter numberFromString:self.textFieldDDD.text];
-    NSNumber *rg = [formatter numberFromString:self.textFieldRG.text];
     NSNumber *cpf = [formatter numberFromString:self.textFieldCPF.text];
+    NSNumber *rg = [formatter numberFromString:self.textFieldRG.text];
 
+    NSNumber *tipo = [NSNumber numberWithInt:1];;
     
-    profissional.nome = self.textFieldNome.text;
-    profissional.email = self.textFieldEmail.text;
-    profissional.senha = self.textFieldSenha.text;
-    profissional.endereco = self.textFieldEndereco.text;
-    profissional.cidade = self.textFieldCidade.text;
-    profissional.uf = self.textFieldUF.text;
     
-    profissional.telefone = telefone;
-    profissional.ddd = ddd;
-    profissional.rg = rg;
-    profissional.cpf = cpf;
+    PFUser *user = [PFUser user];
+    user.username =self.textFieldEmail.text;
+    user.password = self.textFieldSenha.text;
     
-    if (self.switchAlvenaria.on == YES) {
-        profissional.alvenaria = YES;
-    } else {
-        profissional.alvenaria = NO;
-    }
-    if (self.switchChaveiro.on == YES) {
-        profissional.chaveiro = YES;
-    } else {
-        profissional.chaveiro = NO;
-    }
-    if (self.switchEletrica.on == YES) {
-        profissional.eletrica = YES;
-    } else {
-        profissional.eletrica = NO;
-    }
-    if (self.switchHidraulica.on == YES) {
-        profissional.hidraulica = YES;
-    } else {
-        profissional.hidraulica = NO;
-    }
-    if (self.switchLimpeza.on == YES) {
-        profissional.limpeza = YES;
-    } else {
-        profissional.limpeza = NO;
-    }
-    if (self.switchPintura.on == YES) {
-        profissional.pintura = YES;
-    } else {
-        profissional.pintura = NO;
-    }
+    user[@"endereco"] = self.textFieldEndereco.text;
+    user[@"email"]=self.textFieldEmail.text;
+    user[@"estado"] = self.textFieldUF.text;
+    user[@"cidade"] = self.textFieldCidade.text;
+    user[@"ddd"] = ddd;
+    user[@"telefone"] = telefone;
+    user[@"cpf"] = cpf;
+    user[@"rg"] = rg;
+    user[@"nome"] = self.textFieldNome.text;
+    user[@"tipo"] =  tipo;
+    user[@"hidraulica"] =  [NSNumber numberWithBool:self.switchHidraulica.on];
+    user[@"pintura"] =  [NSNumber numberWithBool:self.switchPintura.on];
+    user[@"limpeza"] =  [NSNumber numberWithBool:self.switchLimpeza.on];
+    user[@"eletrica"] =  [NSNumber numberWithBool:self.switchEletrica.on];
+    user[@"alvenaria"] =  [NSNumber numberWithBool:self.switchAlvenaria.on];
+    user[@"chaveiro"] =  [NSNumber numberWithBool:self.switchChaveiro.on];
+
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error)
+        {   // Hooray! Let them use the app now.
+            
+        }
+        else
+        {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                                message:[error.userInfo objectForKey:@"error"]
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            
+        }
+    }];
 }
+
 
 //ACTION - SALVAR DADOS
 - (IBAction)actionSave:(id)sender {
@@ -211,19 +201,15 @@ static HOOUsuarioProfissional *profissional;
         
         //VERIFICA SE ALGUMA PROFISSÃO FOI MARCADA
         if (self.switchAlvenaria.on == YES || self.switchChaveiro.on == YES || self.switchEletrica.on == YES || self.switchHidraulica.on == YES || self.switchLimpeza.on == YES || self.switchPintura.on == YES){
-            NSLog(@"Cadastro do Profissional relaizado com sucesso");
         
-            statusCadastro = @"Cadastro bem sucedido";
+            [self cadastraProfissionalParse];
         
         } else{
             statusCadastro = @"Selecione pelo menos um serviço";
+            [self alertStatusCadastro:statusCadastro];
+
         }
-        [self saveDados];
-        
-        //MÉTODO - SALVAR DADOS
-        [self alertStatusCadastro:statusCadastro];
-        
-        NSLog(@"\n%@\n%@\n%@\n%@\n%@\n%@\n%@\n", profissional.nome, profissional.email, profissional.senha, profissional.endereco, profissional.cidade, profissional.uf, profissional.telefone);
+    
         
     } else {
         statusCadastro = @"Preencha todos os campos";

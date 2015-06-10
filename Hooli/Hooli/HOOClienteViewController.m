@@ -75,36 +75,48 @@
 // procedimento para o teclado ser ocultado
 - (void)ocultaTeclado:(UITapGestureRecognizer *)sender
 {
-    [self.nomeField resignFirstResponder];
-    [self.cpfField resignFirstResponder];
     [self.emailField resignFirstResponder];
     [self.senhaField resignFirstResponder];
     [self.telefoneField resignFirstResponder];
     [self.cidadeField resignFirstResponder];
     [self.estadoField resignFirstResponder];
     [self.enderecoField resignFirstResponder];
-    [self.rgField resignFirstResponder];
+    [self.dddField resignFirstResponder];
+
 }
 
-- (void)salvaDadosCliente
-{
-    
+- (void)cadastraClienteParse{
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
     NSNumber *telefone = [formatter numberFromString:self.telefoneField.text];
-    NSNumber *cpf = [formatter numberFromString:self.cpfField.text];
-    NSNumber *rg = [formatter numberFromString:self.rgField.text];
+    NSNumber *ddd = [formatter numberFromString:self.dddField.text];
+    NSNumber *tipo = 0;
     
-    HOOCliente *cliente;
+    PFUser *user = [PFUser user];
+    user.username =self.emailField.text;
+    user.password = self.senhaField.text;
+
+
+    user[@"endereco"] = self.enderecoField.text;
+    user[@"email"]=self.emailField.text;
+    user[@"estado"] = self.estadoField.text;
+    user[@"cidade"] = self.cidadeField.text;
+    user[@"ddd"] = ddd;
+    user[@"telefone"] = telefone;
+    user[@"tipo"] = tipo;
     
-    cliente.nome = self.nomeField.text;
-    cliente.cpf = cpf;
-    cliente.telefone = telefone;
-    cliente.email = self.emailField.text;
-    cliente.senha = self.senhaField.text;
-    cliente.cidade = self.cidadeField.text;
-    cliente.estado = self.estadoField.text;
-    cliente.endereco = self.enderecoField.text;
-    cliente.rg = rg;
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error)
+        {   // Hooray! Let them use the app now.
+            
+        } else
+        {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                                message:[error.userInfo objectForKey:@"error"]
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+
+        }
+    }];
 }
 
 // salvando os dados dos clientes
@@ -113,15 +125,10 @@
     NSString *statusCadastro;
     
     //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
-    if (![self.nomeField.text isEqualToString:@""] && ![self.emailField.text isEqualToString:@""] && ![self.senhaField.text isEqualToString:@""] && ![self.cpfField.text isEqualToString:@""] && ![self.cidadeField.text isEqualToString:@""] && ![self.estadoField.text isEqualToString:@""] && ![self.telefoneField.text isEqualToString:@""] && ![self.enderecoField.text isEqualToString:@""] && ![self.rgField.text isEqualToString:@""])
+    if (![self.dddField.text isEqualToString:@""] && ![self.emailField.text isEqualToString:@""] && ![self.senhaField.text isEqualToString:@""]  && ![self.cidadeField.text isEqualToString:@""] && ![self.estadoField.text isEqualToString:@""] && ![self.telefoneField.text isEqualToString:@""] && ![self.enderecoField.text isEqualToString:@""])
     {
-        statusCadastro = @"Cadastro bem sucedido";
-            
-    
-    [self salvaDadosCliente];
-        
-    //MÉTODO - SALVAR DADOS
-    [self alertStatusCadastro:statusCadastro];
+        //Método para salvar no Parse.com
+        [self cadastraClienteParse];
     }
 
     else

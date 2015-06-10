@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HOOUsuarioProfissional.h"
+#import <Parse/Parse.h>
+
 @interface HOOCadastroProffisionalViewController : UIViewController
 
-+ (HOOUsuarioProfissional*) profissional;
 
 
 @end
