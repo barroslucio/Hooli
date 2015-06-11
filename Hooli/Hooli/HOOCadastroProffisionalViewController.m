@@ -62,6 +62,10 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
     [tapGesture setNumberOfTouchesRequired:1];
     [[self view] addGestureRecognizer:tapGesture];
+    
+    self.textFieldNome.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
+    self.textFieldNome.layer.borderWidth=1.0;
+
 
 }
 
@@ -93,10 +97,10 @@
     self.switchPintura.on = NO;
     
     
-    [self.scrollView setContentSize:CGSizeMake(self.viewScroll.frame.size.width, self.viewScroll.frame.size.height)];
-    [self.scrollView setScrollEnabled:TRUE];
-    [self.scrollView setShowsVerticalScrollIndicator:YES];
-    [self.scrollView setShowsHorizontalScrollIndicator:NO];
+    //[self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.viewScroll.frame.size.height)];
+    //[self.scrollView setScrollEnabled:TRUE];
+    //[self.scrollView setShowsVerticalScrollIndicator:YES];
+    //[self.scrollView setShowsHorizontalScrollIndicator:NO];
 
     self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(100, 100, 300, 300)];
     self.pickerView.dataSource = self;

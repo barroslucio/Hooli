@@ -18,6 +18,27 @@
 {
     [super viewDidLoad];
     
+    self.emailField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
+    self.emailField.layer.borderWidth=1.0;
+    
+    self.dddField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
+    self.dddField.layer.borderWidth=1.0;
+    
+    self.senhaField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
+    self.senhaField.layer.borderWidth=1.0;
+    
+    self.enderecoField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
+    self.enderecoField.layer.borderWidth=1.0;
+    
+    self.cidadeField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
+    self.cidadeField.layer.borderWidth=1.0;
+    
+    self.estadoField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
+    self.estadoField.layer.borderWidth=1.0;
+    
+    self.telefoneField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
+    self.telefoneField.layer.borderWidth=1.0;
+    
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
     [tapGesture setNumberOfTouchesRequired:1];
     [[self view] addGestureRecognizer:tapGesture];
