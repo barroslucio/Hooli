@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Hooli. All rights reserved.
 //
 
-#import "HOOHistóricoClienteViewController.h"
+#import "HOOHistoricoClienteViewController.h"
 
 @interface HOOHistoricoClienteViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
