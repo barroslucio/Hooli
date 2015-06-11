@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface HOOAgendarServicoViewController : UIViewController
+- (IBAction)logout:(id)sender;
 
 @end

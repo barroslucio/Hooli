@@ -7,6 +7,7 @@
 //
 
 #import "HOOAgendarServicoViewController.h"
+#import "HOOLoginViewController.h"
 
 @interface HOOAgendarServicoViewController ()
 
@@ -31,4 +32,13 @@
     }
 }
 */
+- (IBAction)logout:(id)sender {
+    [PFUser logOut];
+    PFUser *currentUser = [PFUser currentUser];
+    if (!currentUser){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HOOLoginViewController *viewController = (HOOLoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"login"];
+        [self presentViewController:viewController animated:YES completion:nil];
+    }
+}
 @end

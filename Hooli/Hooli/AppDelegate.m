@@ -27,6 +27,17 @@
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        NSNumber* number = [[PFUser currentUser] objectForKey:@"tipo"];
+        int tipo = [number intValue];
+        if (tipo == 0){
+            self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"User"];
+            
+        }
+    }
+        
     return YES;
 }
 

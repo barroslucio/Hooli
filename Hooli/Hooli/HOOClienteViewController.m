@@ -110,7 +110,7 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
     NSNumber *telefone = [formatter numberFromString:self.telefoneField.text];
     NSNumber *ddd = [formatter numberFromString:self.dddField.text];
-    NSNumber *tipo = 0;
+    NSNumber *tipo = [NSNumber numberWithInt:0];;
     
     PFUser *user = [PFUser user];
     user.username =self.emailField.text;

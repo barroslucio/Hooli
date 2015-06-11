@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 Hooli. All rights reserved.
 //
 
-#import "HOOHistóricoClienteViewController.h"
+#import "HOOHistoricoClienteViewController.h"
 
-@interface HOOHisto_ricoClienteViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface HOOHistoricoClienteViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation HOOHisto_ricoClienteViewController
+@implementation HOOHistoricoClienteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

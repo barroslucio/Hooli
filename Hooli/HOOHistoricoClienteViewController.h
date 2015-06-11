@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HOOHisto_ricoClienteViewController : UIViewController
+@interface HOOHistoricoClienteViewController : UIViewController
 
 @end

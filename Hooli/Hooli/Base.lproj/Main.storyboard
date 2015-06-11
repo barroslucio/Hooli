@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="HOOLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="vXZ-lx-hvc" customClass="HOOLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -783,12 +783,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPl-Yu-GPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2606.5" y="1729.5"/>
+            <point key="canvasLocation" x="2601.5" y="1796.5"/>
         </scene>
         <!--Histórico-->
         <scene sceneID="Fvp-c6-BkG">
             <objects>
-                <viewController id="N2A-yM-mT7" customClass="HOOHisto_ricoClienteViewController" sceneMemberID="viewController">
+                <viewController id="N2A-yM-mT7" customClass="HOOHistoricoClienteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tgq-2k-2yB"/>
                         <viewControllerLayoutGuide type="bottom" id="2YU-u9-Vkb"/>
@@ -800,10 +800,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hkg-jF-R7h">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="N2A-yM-mT7" id="swV-R4-LzB"/>
-                                    <outlet property="delegate" destination="N2A-yM-mT7" id="wMa-mZ-dhq"/>
-                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUx-WR-czl">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -816,9 +812,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Histórico" id="yMF-hN-ghY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="tableView" destination="Hkg-jF-R7h" id="I6l-rc-nIY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qI9-yP-mhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -884,6 +877,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jV8-KP-iXu">
+                                <rect key="frame" x="276" y="91" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="h4C-eR-oSt" eventType="touchUpInside" id="qjh-Xh-W3l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -897,7 +900,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="PzG-do-LNs">
             <objects>
-                <tabBarController id="caR-G4-CbS" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="User" id="caR-G4-CbS" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="WWC-Zt-i3u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
