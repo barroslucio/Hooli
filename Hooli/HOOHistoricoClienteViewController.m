@@ -8,7 +8,7 @@
 
 #import "HOOHistoricoClienteViewController.h"
 
-@interface HOOHistoricoClienteViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface HOOHistoricoClienteViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
