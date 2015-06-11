@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -713,6 +713,7 @@
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="editButton:" destination="nOS-4P-wca" id="nqf-1i-qKf"/>
+                                                <segue destination="xu7-ZQ-Bgd" kind="show" id="0g2-wU-s5r"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -784,6 +785,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPl-Yu-GPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2601.5" y="1796.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="99t-nU-5Pz">
+            <objects>
+                <viewController id="xu7-ZQ-Bgd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l2n-w9-hOX"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZYM-nV-JHG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rns-zi-HFg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K4m-tZ-QnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3091.5" y="1796.5"/>
         </scene>
         <!--Histórico-->
         <scene sceneID="Fvp-c6-BkG">
@@ -925,10 +945,52 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Agendar" id="jCh-p6-1Yd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="bhD-7x-8tV" kind="show" identifier="outroEndereco" id="HWa-Is-Hl8"/>
+                        <segue destination="boi-27-8xf" kind="show" identifier="mesmoEndereco" id="lAf-AD-AA0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AC-dL-S6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2745.5" y="297.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JhU-u3-pLg">
+            <objects>
+                <viewController id="bhD-7x-8tV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xWj-mu-751"/>
+                        <viewControllerLayoutGuide type="bottom" id="sPx-3D-Bfp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wXE-7j-MDe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UpO-bK-vaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3398" y="-5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Is-EL-6GJ">
+            <objects>
+                <viewController id="boi-27-8xf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M1j-Ec-kIg"/>
+                        <viewControllerLayoutGuide type="bottom" id="GVr-2P-22a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i8v-pX-5hQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XZY-sq-dOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3397.5" y="734.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PzG-do-LNs">
