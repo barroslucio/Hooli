@@ -36,8 +36,8 @@
     NSString *endereco = [user objectForKey:@"endereco"];
     NSString *email = [user objectForKey:@"email"];
     NSString *senha = [user objectForKey:@"senha"];
-    NSString *ddd = [user objectForKey:@"ddd"];
-    NSString *telefone = [user objectForKey:@"telefone"];
+    NSInteger ddd = [[user objectForKey:@"ddd"] intValue];
+    NSInteger telefone = [[user objectForKey:@"telefone"] intValue];
     NSString *cidade = [user objectForKey:@"cidade"];
     NSString *estado = [user objectForKey:@"estado"];
     
@@ -45,13 +45,12 @@
     [self.respEnderecoLabel setText:endereco];
     [self.respEmailLabel setText:email];
     [self.respSenhaLabel setText:senha];
-    [self.respDDDLabel setText:ddd];
-    [self.respTelefoneLabel setText:telefone];
+    [self.respDDDLabel setText:[NSString stringWithFormat: @"%ld", ddd]];
+    [self.respTelefoneLabel setText:[NSString stringWithFormat: @"%ld", telefone]];
     [self.respCidadeLabel setText:cidade];
     [self.respEstadoLabel setText:estado];
     
 }
-
 
 - (IBAction)editButton:(id)sender
 {
