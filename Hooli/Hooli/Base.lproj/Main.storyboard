@@ -660,7 +660,7 @@
         <!--Perfil-->
         <scene sceneID="cou-R9-fUZ">
             <objects>
-                <viewController id="nOS-4P-wca" sceneMemberID="viewController">
+                <viewController id="nOS-4P-wca" customClass="HOOPerfilUsuarioViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iCc-Zs-A0s"/>
                         <viewControllerLayoutGuide type="bottom" id="cug-7k-fAM"/>
@@ -682,7 +682,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Telefone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z02-RA-Lws">
-                                <rect key="frame" x="173" y="181" width="64" height="21"/>
+                                <rect key="frame" x="173" y="221" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -711,6 +711,9 @@
                                     <navigationItem title="Perfil" id="1W1-ac-be2">
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="RDN-fx-wJb">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="editButton:" destination="nOS-4P-wca" id="nqf-1i-qKf"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -729,12 +732,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvZ-Vp-Kfb">
                                 <rect key="frame" x="107" y="180" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpx-he-Kmx">
-                                <rect key="frame" x="259" y="181" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -763,15 +760,30 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpx-he-Kmx">
+                                <rect key="frame" x="259" y="221" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Perfil" id="FQ0-cl-X4P"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="respCidadeLabel" destination="88d-6c-Va8" id="kd3-Xm-Pk6"/>
+                        <outlet property="respDDDLabel" destination="2CJ-j4-f76" id="8c4-FT-s4O"/>
+                        <outlet property="respEmailLabel" destination="4KQ-ck-aDO" id="i2E-wO-nan"/>
+                        <outlet property="respEnderecoLabel" destination="idA-Tu-4so" id="opG-df-q7K"/>
+                        <outlet property="respEstadoLabel" destination="nbu-Cz-3nT" id="NAT-Xj-Hpk"/>
+                        <outlet property="respSenhaLabel" destination="BvZ-Vp-Kfb" id="L6C-rJ-8zo"/>
+                        <outlet property="respTelefoneLabel" destination="Bpx-he-Kmx" id="kCl-Pc-gnb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPl-Yu-GPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2745.5" y="1739.5"/>
+            <point key="canvasLocation" x="2606.5" y="1729.5"/>
         </scene>
         <!--Histórico-->
         <scene sceneID="Fvp-c6-BkG">
