@@ -788,7 +788,7 @@
         <!--Histórico-->
         <scene sceneID="Fvp-c6-BkG">
             <objects>
-                <viewController id="N2A-yM-mT7" customClass="HOOHisto_ricoClienteViewController" sceneMemberID="viewController">
+                <viewController id="N2A-yM-mT7" customClass="HOOHistoricoClienteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tgq-2k-2yB"/>
                         <viewControllerLayoutGuide type="bottom" id="2YU-u9-Vkb"/>

@@ -8,12 +8,12 @@
 
 #import "HOOHistóricoClienteViewController.h"
 
-@interface HOOHisto_ricoClienteViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface HOOHistoricoClienteViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation HOOHisto_ricoClienteViewController
+@implementation HOOHistoricoClienteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
