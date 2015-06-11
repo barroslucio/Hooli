@@ -28,6 +28,7 @@
 		77A88B091B25E7B6002BD992 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A88B001B25E7B6002BD992 /* SystemConfiguration.framework */; };
 		77A88B0B1B25E7BF002BD992 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A88B0A1B25E7BF002BD992 /* libz.dylib */; };
 		77A88B0D1B25E7C9002BD992 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A88B0C1B25E7C9002BD992 /* libsqlite3.dylib */; };
+		77C005DD1B29BB3300E2F27D /* HOOAgendarServicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C005DC1B29BB3300E2F27D /* HOOAgendarServicoViewController.m */; };
 		79A1977E1B2724CA009A3152 /* HOOClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,8 @@
 		77A88B001B25E7B6002BD992 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		77A88B0A1B25E7BF002BD992 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		77A88B0C1B25E7C9002BD992 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		77C005DB1B29BB3300E2F27D /* HOOAgendarServicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOAgendarServicoViewController.h; sourceTree = "<group>"; };
+		77C005DC1B29BB3300E2F27D /* HOOAgendarServicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOAgendarServicoViewController.m; sourceTree = "<group>"; };
 		79A1977C1B2724CA009A3152 /* HOOClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOClienteViewController.h; sourceTree = "<group>"; };
 		79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOClienteViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +134,8 @@
 				77A88AD51B25E38C002BD992 /* HOOLoginViewController.h */,
 				77A88AD61B25E38C002BD992 /* HOOLoginViewController.m */,
 				77A88AD81B25E38C002BD992 /* Main.storyboard */,
+				77C005DB1B29BB3300E2F27D /* HOOAgendarServicoViewController.h */,
+				77C005DC1B29BB3300E2F27D /* HOOAgendarServicoViewController.m */,
 				79A1977C1B2724CA009A3152 /* HOOClienteViewController.h */,
 				79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */,
 				77A88ADB1B25E38C002BD992 /* Images.xcassets */,
@@ -282,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77C005DD1B29BB3300E2F27D /* HOOAgendarServicoViewController.m in Sources */,
 				246A56751B263CB3007044A7 /* HOOCadastroProffisionalViewController.m in Sources */,
 				77A88AD71B25E38C002BD992 /* HOOLoginViewController.m in Sources */,
 				79A1977E1B2724CA009A3152 /* HOOClienteViewController.m in Sources */,
