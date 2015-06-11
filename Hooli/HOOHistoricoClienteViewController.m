@@ -7,22 +7,33 @@
 //
 
 #import "HOOHistoricoClienteViewController.h"
-
-@interface HOOHistoricoClienteViewController ()
+@interface HOOHistoricoClienteViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic) NSArray *arrayServicos;
 @end
 
 @implementation HOOHistoricoClienteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self initProperties];
 }
 
+- (void)initProperties{
+    self.arrayServicos = [[NSArray alloc] init];
+}
 
+//TABLE VIEW
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    cell.textLabel.text = @"teste";
+    return cell;
+    
+}
 
-
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
