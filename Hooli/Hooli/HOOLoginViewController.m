@@ -7,6 +7,7 @@
 //
 
 #import "HOOLoginViewController.h"
+#import "HOOAgendarServicoViewController.h"
 
 @interface HOOLoginViewController ()
 
@@ -44,7 +45,14 @@
                 [alertView show];
             }
             else {
+                NSNumber* number = [[PFUser currentUser] objectForKey:@"tipo"];
+                int tipo = [number intValue];
+                if (tipo == 0){
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    HOOAgendarServicoViewController *viewController = (HOOAgendarServicoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"User"];
+                    [self presentViewController:viewController animated:YES completion:nil];
                 
+                }
             }
         }];
     }
