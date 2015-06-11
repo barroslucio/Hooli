@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -841,6 +841,9 @@
                                     <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="limpeza:" destination="h4C-eR-oSt" eventType="touchUpInside" id="YXF-K2-M3H"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dls-Yp-jVb">
                                 <rect key="frame" x="-21" y="308" width="160" height="39"/>
@@ -848,6 +851,9 @@
                                     <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pintura:" destination="h4C-eR-oSt" eventType="touchUpInside" id="iqT-Ti-bfE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSM-dg-4zg">
                                 <rect key="frame" x="-14" y="355" width="160" height="39"/>
@@ -855,6 +861,9 @@
                                     <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="chaveiro:" destination="h4C-eR-oSt" eventType="touchUpInside" id="yjF-PC-3qF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4P-dy-1he">
                                 <rect key="frame" x="-21" y="415" width="160" height="39"/>
@@ -862,6 +871,9 @@
                                     <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="eletrica:" destination="h4C-eR-oSt" eventType="touchUpInside" id="cny-zt-XSt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iv4-Gu-XFZ">
                                 <rect key="frame" x="-14" y="205" width="160" height="39"/>
@@ -869,13 +881,9 @@
                                     <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpj-cI-F9x">
-                                <rect key="frame" x="32" y="462" width="320" height="59"/>
-                                <state key="normal" title="Alvenaria">
-                                    <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="hidraulica:" destination="h4C-eR-oSt" eventType="touchUpInside" id="ydL-6S-mzi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jV8-KP-iXu">
                                 <rect key="frame" x="276" y="91" width="49" height="30"/>
@@ -885,6 +893,16 @@
                                 </state>
                                 <connections>
                                     <action selector="logout:" destination="h4C-eR-oSt" eventType="touchUpInside" id="qjh-Xh-W3l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpj-cI-F9x">
+                                <rect key="frame" x="32" y="462" width="320" height="59"/>
+                                <state key="normal" title="Alvenaria">
+                                    <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="alvenaria:" destination="h4C-eR-oSt" eventType="touchUpInside" id="fsL-qk-O0c"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -45,8 +45,8 @@
     [self.respEnderecoLabel setText:endereco];
     [self.respEmailLabel setText:email];
     [self.respSenhaLabel setText:senha];
-    [self.respDDDLabel setText:[NSString stringWithFormat: @"%ld", ddd]];
-    [self.respTelefoneLabel setText:[NSString stringWithFormat: @"%ld", telefone]];
+    [self.respDDDLabel setText:[NSString stringWithFormat: @"%ld", (long)ddd]];
+    [self.respTelefoneLabel setText:[NSString stringWithFormat: @"%ld", (long)telefone]];
     [self.respCidadeLabel setText:cidade];
     [self.respEstadoLabel setText:estado];
     
