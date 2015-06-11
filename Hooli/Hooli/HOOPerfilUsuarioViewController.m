@@ -14,26 +14,46 @@
 
 @implementation HOOPerfilUsuarioViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self buscaDadosClienteParse];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+// procedimento para pegar as informações do cliente no parse
+- (void)buscaDadosClienteParse
+{
+    // variável para pegar as informações
+    PFUser *user = [PFUser currentUser];
+    
+    // criando as variáveis para usar o Parse
+    NSString *endereco = [user objectForKey:@"endereco"];
+    NSString *email = [user objectForKey:@"email"];
+    NSString *senha = [user objectForKey:@"senha"];
+    NSInteger ddd = [[user objectForKey:@"ddd"] intValue];
+    NSInteger telefone = [[user objectForKey:@"telefone"] intValue];
+    NSString *cidade = [user objectForKey:@"cidade"];
+    NSString *estado = [user objectForKey:@"estado"];
+    
+    // jogando para a tela
+    [self.respEnderecoLabel setText:endereco];
+    [self.respEmailLabel setText:email];
+    [self.respSenhaLabel setText:senha];
+    [self.respDDDLabel setText:[NSString stringWithFormat: @"%ld", ddd]];
+    [self.respTelefoneLabel setText:[NSString stringWithFormat: @"%ld", telefone]];
+    [self.respCidadeLabel setText:cidade];
+    [self.respEstadoLabel setText:estado];
+    
 }
-*/
 
-- (IBAction)editButton:(id)sender {
+- (IBAction)editButton:(id)sender
+{
+    
 }
 @end

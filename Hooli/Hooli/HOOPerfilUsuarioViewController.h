@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface HOOPerfilUsuarioViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *respEmailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *respSenhaLabel;
 @property (weak, nonatomic) IBOutlet UILabel *respDDDLabel;
