@@ -15,7 +15,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *selectedTime;
 @property (strong, nonatomic) IBOutlet UIDatePicker *myTimePicker;
 - (IBAction)agendaServico:(id)sender;
-
+@property (nonatomic) NSString *hora;
+@property (nonatomic) NSString *data;
 @property (strong, nonatomic) IBOutlet UILabel *servico;
 @property (strong, nonatomic) IBOutlet UITextField *enderecoField;
 @property (strong, nonatomic) IBOutlet UITextView *descricaoField;

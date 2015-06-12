@@ -63,40 +63,40 @@
 }
 
 - (IBAction)hidraulica:(id)sender {
-    tipoDeServico = 1;
+    tipoDeServico = 4;
     [self alerta];
 }
 
 - (IBAction)limpeza:(id)sender {
-    tipoDeServico = 2;
-
-    [self alerta];
-
-}
-
-- (IBAction)pintura:(id)sender {
-    tipoDeServico = 3;
-
-    [self alerta];
-
-}
-
-- (IBAction)chaveiro:(id)sender {
-    tipoDeServico = 4;
-
-    [self alerta];
-
-}
-
-- (IBAction)eletrica:(id)sender {
     tipoDeServico = 5;
 
     [self alerta];
 
 }
 
-- (IBAction)alvenaria:(id)sender {
+- (IBAction)pintura:(id)sender {
     tipoDeServico = 6;
+
+    [self alerta];
+
+}
+
+- (IBAction)chaveiro:(id)sender {
+    tipoDeServico = 2;
+
+    [self alerta];
+
+}
+
+- (IBAction)eletrica:(id)sender {
+    tipoDeServico = 3;
+
+    [self alerta];
+
+}
+
+- (IBAction)alvenaria:(id)sender {
+    tipoDeServico = 1;
 
     [self alerta];
 

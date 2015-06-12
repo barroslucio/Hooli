@@ -871,7 +871,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjp-Oy-y18">
-                                <rect key="frame" x="-21" y="252" width="160" height="39"/>
+                                <rect key="frame" x="-21" y="383" width="160" height="39"/>
                                 <state key="normal" title="Limpeza">
                                     <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -880,18 +880,8 @@
                                     <action selector="limpeza:" destination="h4C-eR-oSt" eventType="touchUpInside" id="YXF-K2-M3H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dls-Yp-jVb">
-                                <rect key="frame" x="-21" y="308" width="160" height="39"/>
-                                <state key="normal" title="Pintura">
-                                    <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pintura:" destination="h4C-eR-oSt" eventType="touchUpInside" id="iqT-Ti-bfE"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSM-dg-4zg">
-                                <rect key="frame" x="-14" y="355" width="160" height="39"/>
+                                <rect key="frame" x="-21" y="261" width="160" height="39"/>
                                 <state key="normal" title="Chaveiro">
                                     <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -901,7 +891,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4P-dy-1he">
-                                <rect key="frame" x="-21" y="415" width="160" height="39"/>
+                                <rect key="frame" x="-21" y="308" width="160" height="39"/>
                                 <state key="normal" title="Elétrica">
                                     <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -911,7 +901,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iv4-Gu-XFZ">
-                                <rect key="frame" x="-14" y="205" width="160" height="39"/>
+                                <rect key="frame" x="-21" y="350" width="160" height="39"/>
                                 <state key="normal" title="Hidraulica">
                                     <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -921,7 +911,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpj-cI-F9x">
-                                <rect key="frame" x="32" y="462" width="320" height="59"/>
+                                <rect key="frame" x="27" y="214" width="320" height="59"/>
                                 <state key="normal" title="Alvenaria">
                                     <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -938,6 +928,16 @@
                                 </state>
                                 <connections>
                                     <action selector="logout:" destination="h4C-eR-oSt" eventType="touchUpInside" id="qjh-Xh-W3l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dls-Yp-jVb">
+                                <rect key="frame" x="-26" y="423" width="160" height="39"/>
+                                <state key="normal" title="Pintura">
+                                    <color key="titleColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pintura:" destination="h4C-eR-oSt" eventType="touchUpInside" id="iqT-Ti-bfE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -977,6 +977,7 @@
                                                 <date key="date" timeIntervalSinceReferenceDate="455742485.15671498">
                                                     <!--2015-06-11 19:08:05 +0000-->
                                                 </date>
+                                                <locale key="locale" localeIdentifier="pt_BR"/>
                                             </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data do serviço: dd/mm/aaaa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs3-9A-bVw">
                                                 <rect key="frame" x="23" y="286" width="320" height="21"/>
@@ -1048,6 +1049,7 @@
                                                 <date key="date" timeIntervalSinceReferenceDate="455803462.45751297">
                                                     <!--2015-06-12 12:04:22 +0000-->
                                                 </date>
+                                                <locale key="locale" localeIdentifier="pt_BR"/>
                                             </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hora do serviço: hh/mm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBh-C5-qRD">
                                                 <rect key="frame" x="95" y="506" width="320" height="21"/>
