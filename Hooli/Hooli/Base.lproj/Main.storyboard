@@ -806,6 +806,7 @@
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="saveChangesButton:" destination="xu7-ZQ-Bgd" id="Hfv-Yn-gIE"/>
+                                                <segue destination="nOS-4P-wca" kind="show" id="8E8-oz-0EL"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -904,7 +905,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4m-tZ-QnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3153.5" y="1796.5"/>
+            <point key="canvasLocation" x="3225.5" y="1812.5"/>
         </scene>
         <!--Histórico-->
         <scene sceneID="Fvp-c6-BkG">
@@ -1116,6 +1117,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="u3H-tV-7QW"/>
+        <segue reference="8E8-oz-0EL"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
