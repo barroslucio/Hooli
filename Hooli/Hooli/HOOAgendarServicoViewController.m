@@ -8,8 +8,12 @@
 
 #import "HOOAgendarServicoViewController.h"
 #import "HOOLoginViewController.h"
+#import "HOOAgendaOutroEnderecoViewController.h"
 
-@interface HOOAgendarServicoViewController ()
+
+@interface HOOAgendarServicoViewController (){
+    int tipoDeServico;
+}
 
 @end
 
@@ -24,14 +28,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-/*
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"showDetailSegue"]){
-        ViewControllerB *controller = (ViewControllerB *)segue.destinationViewController;
-        controller.isSomethingEnabled = YES;
+    if([segue.identifier isEqualToString:@"outroEndereco"]){
+        HOOAgendaOutroEnderecoViewController *controller = (HOOAgendaOutroEnderecoViewController *)segue.destinationViewController;
+        
+        controller.tipoDeServico = tipoDeServico;
     }
 }
-*/
+
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
     PFUser *currentUser = [PFUser currentUser];
@@ -42,21 +47,58 @@
     }
 }
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
+    if ([buttonTitle isEqualToString:@"Em outro lugar"]){
+        [self performSegueWithIdentifier:@"outroEndereco" sender:self];
+    }
+    else if ([buttonTitle isEqualToString:@"No mesmo endereço"]){
+        [self performSegueWithIdentifier:@"mesmoEndereco" sender:self];
+    }
+}
+
+-(void)alerta{
+    UIAlertView *myAlert = [[UIAlertView alloc] initWithTitle:@"Atenção!" message:@"O serviço vai ser feito no seu endereço cadastrado ou em outro lugar?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"No mesmo endereço",@"Em outro lugar", nil];
+    [myAlert show];
+}
+
 - (IBAction)hidraulica:(id)sender {
+    tipoDeServico = 1;
+    [self alerta];
 }
 
 - (IBAction)limpeza:(id)sender {
+    tipoDeServico = 2;
+
+    [self alerta];
+
 }
 
 - (IBAction)pintura:(id)sender {
+    tipoDeServico = 3;
+
+    [self alerta];
+
 }
 
 - (IBAction)chaveiro:(id)sender {
+    tipoDeServico = 4;
+
+    [self alerta];
+
 }
 
 - (IBAction)eletrica:(id)sender {
+    tipoDeServico = 5;
+
+    [self alerta];
+
 }
 
 - (IBAction)alvenaria:(id)sender {
+    tipoDeServico = 6;
+
+    [self alerta];
+
 }
 @end
