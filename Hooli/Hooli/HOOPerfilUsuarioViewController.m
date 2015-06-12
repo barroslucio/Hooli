@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
     [self buscaDadosClienteParse];
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,11 +50,16 @@
     [self.respTelefoneLabel setText:[NSString stringWithFormat: @"%ld", (long)telefone]];
     [self.respCidadeLabel setText:cidade];
     [self.respEstadoLabel setText:estado];
-    
 }
 
-- (IBAction)editButton:(id)sender
+- (void)toggleEdit
 {
     
 }
+
+// método para editar as informações do usuário
+- (IBAction)editButton:(id)sender
+{
+}
+
 @end
