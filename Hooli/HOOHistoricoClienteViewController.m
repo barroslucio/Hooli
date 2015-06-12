@@ -7,6 +7,7 @@
 //
 
 #import "HOOHistoricoClienteViewController.h"
+
 @interface HOOHistoricoClienteViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *arrayServicos;
@@ -17,23 +18,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initProperties];
+    
 }
 
 - (void)initProperties{
-    self.arrayServicos = [[NSArray alloc] init];
+    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
+    [query whereKey:@"User" equalTo:[PFUser currentUser]];
+    self.arrayServicos = [query findObjects];
+
+  // self.arrayServicos = [servicos[1] ob]
+
 }
+
 
 //TABLE VIEW
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.textLabel.text = @"teste";
+    
+    cell.textLabel.text = [self.arrayServicos[indexPath.row] objectForKey:@"endereco"];
+    
     return cell;
     
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return self.arrayServicos.count;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
