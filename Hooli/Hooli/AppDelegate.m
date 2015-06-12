@@ -34,7 +34,10 @@
         int tipo = [number intValue];
         if (tipo == 0){
             self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"User"];
-            
+        
+        }
+         else if (tipo == 1){
+            self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Pro"];
         }
     }
         
