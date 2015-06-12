@@ -49,14 +49,40 @@
     [self.tfRespDDD setText:[NSString stringWithFormat: @"%ld", (long)ddd]];
     [self.tfRespTelefone setText:[NSString stringWithFormat: @"%ld", (long)telefone]];
     [self.tfRespCidade setText:cidade];
-    [self.tfRespCidade setText:estado];
+    [self.tfRespEstado setText:estado];
     
 }
 
 
-
+// método para salvar as alterações do usuário
 - (IBAction)saveChangesButton:(id)sender
 {
+    PFUser *user = [PFUser currentUser];
     
+    user[@"endereco"] = self.tfRespEndereco.text;
+    user[@"email"] = self.tfRespEmail.text;
+    user[@"senha"] = self.tfRespSenha.text;
+    user[@"ddd"] = self.tfRespDDD.text;
+    user[@"telefone"] = self.tfRespTelefone.text;
+    user[@"cidade"] = self.tfRespCidade.text;
+    user[@"estado"] = self.tfRespEstado.text;
+    
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        if (succeeded)
+        {
+            
+//            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//            HOOPerfilUsuarioViewController *viewController = (HOOPerfilUsuarioViewController *)[storyboard instantiateViewControllerWithIdentifier:@"perfilID"];
+//            [self presentViewController:viewController animated:YES completion:nil];
+//            
+//            HOOPerfilUsuarioViewController *pu = [[HOOPerfilUsuarioViewController alloc] init];
+//            
+//            pu.respEnderecoLabel.text = self.tfRespEndereco.text;
+        }
+        else
+        {
+            
+        }
+    }];
 }
 @end

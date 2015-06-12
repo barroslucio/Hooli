@@ -660,7 +660,7 @@
         <!--Perfil-->
         <scene sceneID="cou-R9-fUZ">
             <objects>
-                <viewController id="nOS-4P-wca" customClass="HOOPerfilUsuarioViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="perfilID" id="nOS-4P-wca" customClass="HOOPerfilUsuarioViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iCc-Zs-A0s"/>
                         <viewControllerLayoutGuide type="bottom" id="cug-7k-fAM"/>
@@ -806,7 +806,6 @@
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="saveChangesButton:" destination="xu7-ZQ-Bgd" id="Hfv-Yn-gIE"/>
-                                                <segue destination="nOS-4P-wca" kind="show" id="8E8-oz-0EL"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1117,7 +1116,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="u3H-tV-7QW"/>
-        <segue reference="8E8-oz-0EL"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
