@@ -58,26 +58,26 @@
 - (IBAction)saveChangesButton:(id)sender
 {
     PFUser *user = [PFUser currentUser];
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    
+    f.numberStyle = NSNumberFormatterDecimalStyle;
     
     user[@"endereco"] = self.tfRespEndereco.text;
     user[@"email"] = self.tfRespEmail.text;
     user[@"senha"] = self.tfRespSenha.text;
-    user[@"ddd"] = self.tfRespDDD.text;
-    user[@"telefone"] = self.tfRespTelefone.text;
+    user[@"ddd"] = [f numberFromString:self.tfRespDDD.text];
+    user[@"telefone"] = [f numberFromString:self.tfRespTelefone.text];
     user[@"cidade"] = self.tfRespCidade.text;
     user[@"estado"] = self.tfRespEstado.text;
     
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if (succeeded)
         {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            HOOPerfilUsuarioViewController *viewController = (HOOPerfilUsuarioViewController *)[storyboard instantiateViewControllerWithIdentifier:@"perfilID"];
+            [self presentViewController:viewController animated:YES completion:nil];
             
-//            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//            HOOPerfilUsuarioViewController *viewController = (HOOPerfilUsuarioViewController *)[storyboard instantiateViewControllerWithIdentifier:@"perfilID"];
-//            [self presentViewController:viewController animated:YES completion:nil];
-//            
-//            HOOPerfilUsuarioViewController *pu = [[HOOPerfilUsuarioViewController alloc] init];
-//            
-//            pu.respEnderecoLabel.text = self.tfRespEndereco.text;
+            
         }
         else
         {
