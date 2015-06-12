@@ -22,7 +22,11 @@
 }
 
 - (void)initProperties{
-   
+    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
+    [query whereKey:@"User" equalTo:[PFUser currentUser]];
+    self.arrayServicos = [query findObjects];
+
+  // self.arrayServicos = [servicos[1] ob]
 
 }
 
@@ -31,19 +35,15 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
-    [query whereKey:@"User" equalTo:[PFUser currentUser]];
-    NSArray *servicos = [query findObjects];
-    cell.textLabel.text = [servicos[indexPath.row] objectForKey:@"endereco"];
+    
+    cell.textLabel.text = [self.arrayServicos[indexPath.row] objectForKey:@"endereco"];
+    
     return cell;
     
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
-    [query whereKey:@"User" equalTo:[PFUser currentUser]];
-    NSArray *servicos = [query findObjects];
-    return servicos.count;
+    return self.arrayServicos.count;
 }
 
 - (void)didReceiveMemoryWarning {
