@@ -44,12 +44,12 @@
     
     // jogando para a tela
     [self.tfRespEndereco setText:endereco];
-    [self.respEmailLabel setText:email];
-    [self.respSenhaLabel setText:senha];
-    [self.respDDDLabel setText:[NSString stringWithFormat: @"%ld", (long)ddd]];
-    [self.respTelefoneLabel setText:[NSString stringWithFormat: @"%ld", (long)telefone]];
-    [self.respCidadeLabel setText:cidade];
-    [self.respEstadoLabel setText:estado];
+    [self.tfRespEmail setText:email];
+    [self.tfRespSenha setText:senha];
+    [self.tfRespDDD setText:[NSString stringWithFormat: @"%ld", (long)ddd]];
+    [self.tfRespTelefone setText:[NSString stringWithFormat: @"%ld", (long)telefone]];
+    [self.tfRespCidade setText:cidade];
+    [self.tfRespCidade setText:estado];
     
 }
 
