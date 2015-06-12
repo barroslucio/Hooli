@@ -81,8 +81,25 @@
         }
         else
         {
-            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                                message:[error.userInfo objectForKey:@"error"]
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+
         }
     }];
+}
+
+-(void)ocultaTeclado:(UITapGestureRecognizer *)sender
+{
+    //Aquí hay que declarar todos los UITextField de nuestra escena
+    [self.tfRespTelefone resignFirstResponder];
+    [self.tfRespEmail resignFirstResponder];
+    [self.tfRespSenha resignFirstResponder];
+    [self.tfRespCidade resignFirstResponder];
+    [self.tfRespEstado resignFirstResponder];
+    [self.tfRespEndereco resignFirstResponder];
+    
+    
 }
 @end
