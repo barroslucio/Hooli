@@ -10,13 +10,7 @@
 #import <Parse/Parse.h>
 @interface HOOAgendaOutroEnderecoViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *selectedDate;
-@property (strong, nonatomic) IBOutlet UILabel *selectedTime;
 @property (strong, nonatomic) IBOutlet UILabel *servico;
-
-
-@property (strong, nonatomic) IBOutlet UIDatePicker *myDatePicker;
-@property (strong, nonatomic) IBOutlet UIDatePicker *myTimePicker;
 
 
 @property (retain, nonatomic)  UIDatePicker *pickerDate;

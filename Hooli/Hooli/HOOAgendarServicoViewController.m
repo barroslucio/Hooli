@@ -9,7 +9,7 @@
 #import "HOOAgendarServicoViewController.h"
 #import "HOOLoginViewController.h"
 #import "HOOAgendaOutroEnderecoViewController.h"
-
+#import "HOOAgendaMesmoEnderecoViewController.h"
 
 @interface HOOAgendarServicoViewController (){
     int tipoDeServico;
@@ -32,6 +32,11 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"outroEndereco"]){
         HOOAgendaOutroEnderecoViewController *controller = (HOOAgendaOutroEnderecoViewController *)segue.destinationViewController;
+        
+        controller.tipoDeServico = tipoDeServico;
+    }
+    else if([segue.identifier isEqualToString:@"mesmoEndereco"]){
+        HOOAgendaMesmoEnderecoViewController *controller = (HOOAgendaMesmoEnderecoViewController *)segue.destinationViewController;
         
         controller.tipoDeServico = tipoDeServico;
     }

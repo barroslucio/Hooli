@@ -8,7 +8,7 @@
 
 #import "HOOAgendaOutroEnderecoViewController.h"
 
-@interface HOOAgendaOutroEnderecoViewController ()<UITextFieldDelegate>
+@interface HOOAgendaOutroEnderecoViewController ()<UITextFieldDelegate, UITextViewDelegate>
 {
     NSString *strDate;
     NSString *strInvertedDate;
@@ -57,6 +57,8 @@
     self.textFieldDate.delegate = self;
     self.textFieldTime.delegate = self;
     self.enderecoField.delegate = self;
+    self.descricaoField.delegate = self;
+    
     
     //OCULTA TECLADO
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
@@ -125,6 +127,7 @@
     [self.textFieldDate resignFirstResponder];
     [self.textFieldTime resignFirstResponder];
     [self.enderecoField resignFirstResponder];
+    [self.descricaoField resignFirstResponder];
 
     
 }
@@ -158,17 +161,23 @@
     
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [self animateTextField: textField up: YES];
+- (void)textViewDidBeginEditing:(UITextView *)textView{
+    [self animate:YES];
 }
 
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    [self animate:NO];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self animate:YES];
+}
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    [self animateTextField: textField up: NO];
+    [self animate:NO];
 }
 
-
-- (void) animateTextField: (UITextField*) textField up: (BOOL) up {
+- (void) animate: (BOOL)up {
     const int movementDistance = 80; // tweak as needed
     const float movementDuration = 0.3f; // tweak as needed
     
