@@ -11,7 +11,8 @@
 #import "HOOAgendaOutroEnderecoViewController.h"
 #import "HOOAgendaMesmoEnderecoViewController.h"
 
-@interface HOOAgendarServicoViewController (){
+@interface HOOAgendarServicoViewController ()<UIActionSheetDelegate>
+{
     int tipoDeServico;
 }
 
@@ -52,20 +53,39 @@
     }
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
-    if ([buttonTitle isEqualToString:@"Em outro lugar"]){
-        [self performSegueWithIdentifier:@"outroEndereco" sender:self];
-    }
-    else if ([buttonTitle isEqualToString:@"No mesmo endereço"]){
-        [self performSegueWithIdentifier:@"mesmoEndereco" sender:self];
-    }
+-(void)alerta{
+
+    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"O serviço vai ser feito no seu endereço cadastrado ou em outro lugar?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
+                            @"No mesmo endereço",
+                            @"Em outro lugar",
+                            nil];
+    popup.tag = 1;
+    [popup showInView:[UIApplication sharedApplication].keyWindow];
 }
 
--(void)alerta{
-    UIAlertView *myAlert = [[UIAlertView alloc] initWithTitle:@"Atenção!" message:@"O serviço vai ser feito no seu endereço cadastrado ou em outro lugar?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"No mesmo endereço",@"Em outro lugar", nil];
-    [myAlert show];
+- (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    switch (popup.tag) {
+        case 1: {
+            switch (buttonIndex) {
+                case 0:
+                    [self performSegueWithIdentifier:@"mesmoEndereco" sender:self];
+                    break;
+                case 1:
+                    [self performSegueWithIdentifier:@"outroEndereco" sender:self];
+                    break;
+                default:
+                    break;
+            }
+            break;
+        }
+        default:
+            break;
+    }
+    
 }
+
+
 
 - (IBAction)hidraulica:(id)sender {
     tipoDeServico = 4;
