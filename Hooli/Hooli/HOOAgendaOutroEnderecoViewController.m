@@ -8,7 +8,7 @@
 
 #import "HOOAgendaOutroEnderecoViewController.h"
 
-@interface HOOAgendaOutroEnderecoViewController ()
+@interface HOOAgendaOutroEnderecoViewController ()<UITextFieldDelegate>
 {
     NSString *strDate;
     NSString *strInvertedDate;
@@ -23,11 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self.myDatePicker addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
-    [self.myTimePicker addTarget:self action:@selector(timePickerChanged:) forControlEvents:UIControlEventValueChanged];
-    
-    self.myDatePicker.minimumDate = [NSDate date];
     
     if (self.tipoDeServico == 1){
         [self.servico setText:@"Tipo de serviço: Alvenaria"];
@@ -59,52 +54,87 @@
     
     NSLog(@"%d",self.tipoDeServico);
     
+    self.textFieldDate.delegate = self;
+    self.textFieldTime.delegate = self;
+    self.enderecoField.delegate = self;
     
+    //OCULTA TECLADO
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
+    [tapGesture setNumberOfTouchesRequired:1];
+    [[self view] addGestureRecognizer:tapGesture];
+    
+    
+    
+    [self initPikers];
+
 
 
 }
 
+- (void)initPikers{
+
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"];
+    
+    self.pickerDate = [[UIDatePicker alloc] init];
+    self.pickerDate.minimumDate = [NSDate date];
+    self.pickerDate.datePickerMode = YES;
+    self.pickerDate.date = [NSDate date];
+    self.pickerDate.locale = locale;
+    self.pickerDate.minuteInterval = 1;
+    self.textFieldDate.inputView = self.pickerDate;
+    [self.pickerDate addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    
+    self.pickerTime = [[UIDatePicker alloc] init];
+    self.pickerTime.locale = locale;
+    self.pickerTime.datePickerMode = UIDatePickerModeTime;
+    self.textFieldTime.inputView = self.pickerTime;
+    [self.pickerTime addTarget:self action:@selector(timePickerChanged:) forControlEvents:UIControlEventValueChanged];
+
+}
+
 -(void) datePickerChanged: (UIDatePicker *)datePicker{
+   
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSDateFormatter *invertedDateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd-MM-yyyy"];
     [invertedDateFormatter setDateFormat:@"yyyy-MM-dd"];
 
-   strDate = [dateFormatter stringFromDate:datePicker.date];
+    strDate = [dateFormatter stringFromDate:datePicker.date];
     strInvertedDate = [invertedDateFormatter stringFromDate:datePicker.date];
+    self.textFieldDate.text = [NSString stringWithFormat:@"Data do serviço: %@",strDate];
 
-    self.selectedDate.text = [NSString stringWithFormat:@"Data do serviço: %@",strDate];
+    NSLog(@"---date");
 
 }
 
 -(void) timePickerChanged: (UIDatePicker *)datePicker{
+    
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
     [timeFormatter setDateFormat:@"HH:mm"];
     strTime = [timeFormatter stringFromDate:datePicker.date];
-    self.selectedTime.text = [NSString stringWithFormat:@"Hora do serviço: %@",strTime];
+    
+    self.textFieldTime.text = [NSString stringWithFormat:@"Hora do serviço: %@",strTime];
+
+    NSLog(@"---time %@", self.textFieldTime.text);
+
+    
+}
+
+-(void)ocultaTeclado:(UITapGestureRecognizer *)sender{
+    [self.textFieldDate resignFirstResponder];
+    [self.textFieldTime resignFirstResponder];
+    [self.enderecoField resignFirstResponder];
+
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-    
 -(void)combina{
     
-
     NSLog(@" \ndate : %@ \ntime : %@\n \ninverted date : %@\n",strDate,strTime, strInvertedDate);
 }
 
@@ -127,4 +157,28 @@
     }];
     
 }
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self animateTextField: textField up: YES];
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self animateTextField: textField up: NO];
+}
+
+
+- (void) animateTextField: (UITextField*) textField up: (BOOL) up {
+    const int movementDistance = 80; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? -movementDistance : movementDistance);
+    
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
+}
+
 @end
