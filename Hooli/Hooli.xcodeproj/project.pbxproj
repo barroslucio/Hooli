@@ -123,6 +123,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		243CC9071B2CD98500ACF9F3 /* Módulo usuário/cliente */ = {
+			isa = PBXGroup;
+			children = (
+				79A1977C1B2724CA009A3152 /* HOOClienteViewController.h */,
+				79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */,
+				79A1977F1B29BD90009A3152 /* HOOPerfilUsuarioViewController.h */,
+				79A197801B29BD90009A3152 /* HOOPerfilUsuarioViewController.m */,
+				79A197821B2B0428009A3152 /* HOOEditUsuarioViewController.h */,
+				79A197831B2B0428009A3152 /* HOOEditUsuarioViewController.m */,
+				77C005DB1B29BB3300E2F27D /* HOOAgendarServicoViewController.h */,
+				77C005DC1B29BB3300E2F27D /* HOOAgendarServicoViewController.m */,
+				77AE66881B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.h */,
+				77AE66891B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m */,
+				77AE668B1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.h */,
+				77AE668C1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.m */,
+				246A56821B29BBF2007044A7 /* HOOHistoricoClienteViewController.h */,
+				246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */,
+			);
+			name = "Módulo usuário/cliente";
+			sourceTree = "<group>";
+		};
+		243CC9081B2CD99800ACF9F3 /* Módulo profissional */ = {
+			isa = PBXGroup;
+			children = (
+				246A56731B263CB3007044A7 /* HOOCadastroProffisionalViewController.h */,
+				246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */,
+			);
+			name = "Módulo profissional";
+			sourceTree = "<group>";
+		};
 		77A88AC21B25E38C002BD992 = {
 			isa = PBXGroup;
 			children = (
@@ -149,23 +179,9 @@
 				77A88AD51B25E38C002BD992 /* HOOLoginViewController.h */,
 				77A88AD61B25E38C002BD992 /* HOOLoginViewController.m */,
 				77A88AD81B25E38C002BD992 /* Main.storyboard */,
-				79A197821B2B0428009A3152 /* HOOEditUsuarioViewController.h */,
-				79A197831B2B0428009A3152 /* HOOEditUsuarioViewController.m */,
-				77C005DB1B29BB3300E2F27D /* HOOAgendarServicoViewController.h */,
-				77C005DC1B29BB3300E2F27D /* HOOAgendarServicoViewController.m */,
-				77AE66881B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.h */,
-				77AE66891B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m */,
-				77AE668B1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.h */,
-				77AE668C1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.m */,
-				79A1977F1B29BD90009A3152 /* HOOPerfilUsuarioViewController.h */,
-				79A197801B29BD90009A3152 /* HOOPerfilUsuarioViewController.m */,
-				79A1977C1B2724CA009A3152 /* HOOClienteViewController.h */,
-				79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */,
+				243CC9071B2CD98500ACF9F3 /* Módulo usuário/cliente */,
+				243CC9081B2CD99800ACF9F3 /* Módulo profissional */,
 				77A88ADB1B25E38C002BD992 /* Images.xcassets */,
-				246A56731B263CB3007044A7 /* HOOCadastroProffisionalViewController.h */,
-				246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */,
-				246A56821B29BBF2007044A7 /* HOOHistoricoClienteViewController.h */,
-				246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */,
 				77A88ADD1B25E38C002BD992 /* LaunchScreen.xib */,
 				77A88ACE1B25E38C002BD992 /* Supporting Files */,
 			);

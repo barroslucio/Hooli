@@ -1346,8 +1346,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="xvx-Em-VUj"/>
         <segue reference="4WC-cH-dL7"/>
-        <segue reference="u3H-tV-7QW"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
