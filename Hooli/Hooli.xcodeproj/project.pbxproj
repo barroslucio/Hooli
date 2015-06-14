@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		243CC90E1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CC90D1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m */; };
 		246A56751B263CB3007044A7 /* HOOCadastroProffisionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */; };
 		246A56841B29BBF2007044A7 /* HOOHistoricoClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */; };
 		77A88AD11B25E38C002BD992 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A88AD01B25E38C002BD992 /* main.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		243CC90C1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOODetalhesServicoClienteViewController.h; sourceTree = "<group>"; };
+		243CC90D1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOODetalhesServicoClienteViewController.m; sourceTree = "<group>"; };
 		246A56731B263CB3007044A7 /* HOOCadastroProffisionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOCadastroProffisionalViewController.h; sourceTree = "<group>"; };
 		246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOCadastroProffisionalViewController.m; sourceTree = "<group>"; };
 		246A56821B29BBF2007044A7 /* HOOHistoricoClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HOOHistoricoClienteViewController.h; path = ../HOOHistoricoClienteViewController.h; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 				77AE668C1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.m */,
 				246A56821B29BBF2007044A7 /* HOOHistoricoClienteViewController.h */,
 				246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */,
+				243CC90C1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.h */,
+				243CC90D1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m */,
 			);
 			name = "Módulo usuário/cliente";
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				79A197841B2B0428009A3152 /* HOOEditUsuarioViewController.m in Sources */,
 				77A88AD71B25E38C002BD992 /* HOOLoginViewController.m in Sources */,
 				79A1977E1B2724CA009A3152 /* HOOClienteViewController.m in Sources */,
+				243CC90E1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m in Sources */,
 				77A88AD41B25E38C002BD992 /* AppDelegate.m in Sources */,
 				77AE668A1B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m in Sources */,
 				79A197811B29BD90009A3152 /* HOOPerfilUsuarioViewController.m in Sources */,
