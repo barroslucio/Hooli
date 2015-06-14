@@ -1325,7 +1325,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="h4C-eR-oSt" kind="show" id="hKN-NT-tjq"/>
+                                                    <segue destination="caR-G4-CbS" kind="show" id="bsg-IB-O7v"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -1427,7 +1427,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="kXN-h4-YML">
                                             <color key="tintColor" red="0.1294117719" green="0.73725491759999995" blue="0.96862751250000001" alpha="1" colorSpace="deviceRGB"/>
                                             <connections>
-                                                <segue destination="N2A-yM-mT7" kind="show" id="0A5-ZX-Kc1"/>
+                                                <segue destination="caR-G4-CbS" kind="show" id="pt2-De-aRe"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1482,9 +1482,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="bsg-IB-O7v"/>
+        <segue reference="4WC-cH-dL7"/>
         <segue reference="xvx-Em-VUj"/>
-        <segue reference="hKN-NT-tjq"/>
-        <segue reference="0A5-ZX-Kc1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

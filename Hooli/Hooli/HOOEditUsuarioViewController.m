@@ -8,7 +8,7 @@
 
 #import "HOOEditUsuarioViewController.h"
 
-@interface HOOEditUsuarioViewController ()
+@interface HOOEditUsuarioViewController ()<UITextFieldDelegate>
 
 @end
 
@@ -17,7 +17,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self buscaDadosClienteParse];
+    self.tfRespEndereco.delegate = self;
+    self.tfRespEmail.delegate = self;
+    self.tfRespSenha.delegate = self;
+    self.tfRespDDD.delegate = self;
+    self.tfRespTelefone.delegate = self;
+    self.tfRespCidade.delegate = self;
+    self.tfRespEstado.delegate = self;
+    
+    //OCULTA TECLADO
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
+    [tapGesture setNumberOfTouchesRequired:1];
+    [[self view] addGestureRecognizer:tapGesture];
     
 }
 
@@ -99,7 +112,29 @@
     [self.tfRespCidade resignFirstResponder];
     [self.tfRespEstado resignFirstResponder];
     [self.tfRespEndereco resignFirstResponder];
+    [self.tfRespDDD resignFirstResponder];
     
     
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self animate:YES];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self animate:NO];
+}
+
+- (void) animate: (BOOL)up {
+    const int movementDistance = 80; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? -movementDistance : movementDistance);
+    
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
 }
 @end
