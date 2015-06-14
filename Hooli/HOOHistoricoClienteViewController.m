@@ -25,9 +25,6 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
     [query whereKey:@"User" equalTo:[PFUser currentUser]];
     self.arrayServicos = [query findObjects];
-
-  // self.arrayServicos = [servicos[1] ob]
-
 }
 
 

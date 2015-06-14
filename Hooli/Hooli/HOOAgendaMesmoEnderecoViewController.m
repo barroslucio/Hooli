@@ -180,11 +180,16 @@
     
     [servico saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            // The object has been saved.
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Agendamento bem sucedido"
+                                                                message:@"Obrigado!"
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
             [self combina];
         } else {
-            // There was a problem, check error.description
-        }
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"
+                                                                message:@"Tente novamente"
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];        }
     }];
 
 }

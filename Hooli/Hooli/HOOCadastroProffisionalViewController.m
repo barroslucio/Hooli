@@ -181,7 +181,10 @@
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error)
         {   // Hooray! Let them use the app now.
-            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Cadastro bem sucedido"
+                                                                message:@"Obrigado!"
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
         }
         else
         {
