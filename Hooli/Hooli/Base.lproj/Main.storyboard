@@ -924,7 +924,7 @@
         <!--Histórico-->
         <scene sceneID="Fvp-c6-BkG">
             <objects>
-                <viewController id="N2A-yM-mT7" customClass="HOOHistoricoClienteViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoricoCliente" id="N2A-yM-mT7" customClass="HOOHistoricoClienteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tgq-2k-2yB"/>
                         <viewControllerLayoutGuide type="bottom" id="2YU-u9-Vkb"/>
@@ -1774,7 +1774,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="xvx-Em-VUj"/>
         <segue reference="CEr-0N-80L"/>
-        <segue reference="pt2-De-aRe"/>
+        <segue reference="bsg-IB-O7v"/>
         <segue reference="XgQ-QL-3Le"/>
         <segue reference="Ltu-zq-W6N"/>
     </inferredMetricsTieBreakers>

@@ -20,24 +20,31 @@
     
     self.emailField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
     self.emailField.layer.borderWidth=1.0;
+    self.emailField.delegate = self;
     
     self.dddField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
     self.dddField.layer.borderWidth=1.0;
+    self.dddField.delegate = self;
     
     self.senhaField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
     self.senhaField.layer.borderWidth=1.0;
+    self.senhaField.delegate = self;
     
     self.enderecoField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
     self.enderecoField.layer.borderWidth=1.0;
+    self.enderecoField.delegate = self;
     
     self.cidadeField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
     self.cidadeField.layer.borderWidth=1.0;
+    self.cidadeField.delegate = self;
     
     self.estadoField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
     self.estadoField.layer.borderWidth=1.0;
+    self.estadoField.delegate = self;
     
     self.telefoneField.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
     self.telefoneField.layer.borderWidth=1.0;
+    self.telefoneField.delegate = self;
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
     [tapGesture setNumberOfTouchesRequired:1];
@@ -170,5 +177,35 @@
     [self presentViewController:viewController animated:YES completion:nil];
     
 }
+
+- (void)textViewDidBeginEditing:(UITextView *)textView{
+    [self animate:YES];
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    [self animate:NO];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self animate:YES];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self animate:NO];
+}
+
+- (void) animate: (BOOL)up {
+    const int movementDistance = 80; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? -movementDistance : movementDistance);
+    
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
+}
+
 
 @end

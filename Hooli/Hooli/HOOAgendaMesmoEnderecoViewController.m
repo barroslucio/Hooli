@@ -7,7 +7,7 @@
 //
 
 #import "HOOAgendaMesmoEnderecoViewController.h"
-
+#import "HOOHistoricoClienteViewController.h"
 @interface HOOAgendaMesmoEnderecoViewController ()<UITextFieldDelegate, UITextViewDelegate>
 {
     NSString *strDate;
@@ -185,6 +185,7 @@
                                                                delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
             [self combina];
+            [self segueViewController];
         } else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"
                                                                 message:@"Tente novamente"
@@ -193,4 +194,12 @@
     }];
 
 }
+
+- (void)segueViewController{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HOOHistoricoClienteViewController *viewController = (HOOHistoricoClienteViewController *)[storyboard instantiateViewControllerWithIdentifier:@"HistoricoCliente"];
+    [self presentViewController:viewController animated:YES completion:nil];
+    
+}
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "HOOAgendaOutroEnderecoViewController.h"
-
+#import "HOOHistoricoClienteViewController.h"
 @interface HOOAgendaOutroEnderecoViewController ()<UITextFieldDelegate, UITextViewDelegate>
 {
     NSString *strDate;
@@ -152,7 +152,11 @@
     
     [servico saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            // The object has been saved.
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Agendamento bem sucedido"
+                                                                message:@"Obrigado!"
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            [self segueViewController];
             [self combina];
         } else {
             // There was a problem, check error.description
@@ -160,6 +164,14 @@
     }];
     
 }
+
+- (void)segueViewController{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HOOHistoricoClienteViewController *viewController = (HOOHistoricoClienteViewController *)[storyboard instantiateViewControllerWithIdentifier:@"HistoricoCliente"];
+    [self presentViewController:viewController animated:YES completion:nil];
+    
+}
+
 
 - (void)textViewDidBeginEditing:(UITextView *)textView{
     [self animate:YES];
