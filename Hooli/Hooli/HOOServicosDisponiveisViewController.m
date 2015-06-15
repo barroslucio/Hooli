@@ -33,8 +33,23 @@
 
 - (void)initProperties
 {
+    PFUser *user = [PFUser currentUser];
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
-    //[query whereKey:@"tipo" equalTo:@"Alvenaria"];
+
+    if (user[@"alvenaria"]){
+        [query whereKey:@"tipo" equalTo:@"Alvenaria"];
+    }
+    else if (user[@"pintura"]){
+        [query whereKey:@"tipo" equalTo:@"Pintura"];
+    }
+    else if (user[@"limpeza"]){
+        [query whereKey:@"tipo" equalTo:@"Limpeza"];
+    }
+    else if (user[@"chaveiro"]){
+        [query whereKey:@"tipo" equalTo:@"Chaveiro"];
+    }
+    
     self.arrayServicos = [query findObjects];
 }
 

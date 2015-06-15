@@ -15,5 +15,7 @@
     @property (strong, nonatomic) IBOutlet UILabel *tipoServico;
     @property (strong, nonatomic) IBOutlet UILabel *dataServico;
     @property (strong, nonatomic) IBOutlet UILabel *horaServico;
+@property (strong, nonatomic) IBOutlet UITextField *valorField;
+- (IBAction)enviarProposta:(id)sender;
 
 @end

@@ -45,4 +45,14 @@
 }
 */
 
+- (IBAction)enviarProposta:(id)sender {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+    NSNumber *valor = [formatter numberFromString:self.valorField.text];
+    
+    PFObject *proposta = [PFObject objectWithClassName:@"Proposta"];
+    [proposta setObject: [PFUser currentUser] forKey:@"profissional"];
+    [proposta setObject: self.servico forKey:@"servico"];
+    [proposta setObject: valor forKey:@"valor"];
+    [proposta saveInBackground];
+}
 @end
