@@ -41,6 +41,7 @@
     NSInteger telefone = [[user objectForKey:@"telefone"] intValue];
     NSString *cidade = [user objectForKey:@"cidade"];
     NSString *estado = [user objectForKey:@"estado"];
+    NSString *servicos = [user objectForKey:@"servicos"];
     
     // jogando para a tela
     [self.lbEndereco setText:endereco];
@@ -50,6 +51,7 @@
     [self.lbTelefone setText:[NSString stringWithFormat: @"%ld", (long)telefone]];
     [self.lbCidade setText:cidade];
     [self.lbEstado setText:estado];
+    [self.lbServicos setText:servicos];
 }
 
 @end
