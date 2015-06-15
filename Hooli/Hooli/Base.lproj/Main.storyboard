@@ -1123,7 +1123,7 @@
         <!--Perfil do profissional-->
         <scene sceneID="f6z-wq-3sg">
             <objects>
-                <viewController title="Perfil do profissional" id="fkI-fC-exb" customClass="HOOPerfilProfissionalViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="perfilPro" title="Perfil do profissional" id="fkI-fC-exb" customClass="HOOPerfilProfissionalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xSN-CJ-dRu"/>
                         <viewControllerLayoutGuide type="bottom" id="Ewy-Sk-I7J"/>
