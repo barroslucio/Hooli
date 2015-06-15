@@ -1123,7 +1123,7 @@
         <!--Perfil do profissional-->
         <scene sceneID="f6z-wq-3sg">
             <objects>
-                <viewController title="Perfil do profissional" id="fkI-fC-exb" sceneMemberID="viewController">
+                <viewController title="Perfil do profissional" id="fkI-fC-exb" customClass="HOOPerfilProfissionalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xSN-CJ-dRu"/>
                         <viewControllerLayoutGuide type="bottom" id="Ewy-Sk-I7J"/>
@@ -1231,10 +1231,19 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="jAA-a8-Z0f"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="lbCidade" destination="pVE-YM-DfF" id="JaO-ep-Pxg"/>
+                        <outlet property="lbDDD" destination="vBr-vL-GtZ" id="V0K-OP-1RO"/>
+                        <outlet property="lbEmail" destination="hmo-SV-pGy" id="BSX-cF-mA8"/>
+                        <outlet property="lbEndereco" destination="CGY-sZ-uwK" id="Wlv-Zv-kTv"/>
+                        <outlet property="lbEstado" destination="ahA-uV-4Dq" id="EB0-il-Orq"/>
+                        <outlet property="lbSenha" destination="huj-YZ-SIC" id="HGv-9v-Gae"/>
+                        <outlet property="lbTelefone" destination="ZZq-SN-WOm" id="9df-oV-xcl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UK6-5o-4bl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2231.5" y="-850.5"/>
+            <point key="canvasLocation" x="2148.5" y="-850.5"/>
         </scene>
         <!--Editar perfil do profissional-->
         <scene sceneID="RZp-c8-zCN">

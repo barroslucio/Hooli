@@ -37,6 +37,7 @@
 		79A1977E1B2724CA009A3152 /* HOOClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */; };
 		79A197811B29BD90009A3152 /* HOOPerfilUsuarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A197801B29BD90009A3152 /* HOOPerfilUsuarioViewController.m */; };
 		79A197841B2B0428009A3152 /* HOOEditUsuarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A197831B2B0428009A3152 /* HOOEditUsuarioViewController.m */; };
+		79BBC36B1B2F14E200445A87 /* HOOPerfilProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC36A1B2F14E200445A87 /* HOOPerfilProfissionalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		79A197801B29BD90009A3152 /* HOOPerfilUsuarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOPerfilUsuarioViewController.m; sourceTree = "<group>"; };
 		79A197821B2B0428009A3152 /* HOOEditUsuarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOEditUsuarioViewController.h; sourceTree = "<group>"; };
 		79A197831B2B0428009A3152 /* HOOEditUsuarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOEditUsuarioViewController.m; sourceTree = "<group>"; };
+		79BBC3691B2F14E200445A87 /* HOOPerfilProfissionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HOOPerfilProfissionalViewController.h; path = ../HOOPerfilProfissionalViewController.h; sourceTree = "<group>"; };
+		79BBC36A1B2F14E200445A87 /* HOOPerfilProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HOOPerfilProfissionalViewController.m; path = ../HOOPerfilProfissionalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 		243CC9081B2CD99800ACF9F3 /* Módulo profissional */ = {
 			isa = PBXGroup;
 			children = (
+				79BBC3691B2F14E200445A87 /* HOOPerfilProfissionalViewController.h */,
+				79BBC36A1B2F14E200445A87 /* HOOPerfilProfissionalViewController.m */,
 				246A56731B263CB3007044A7 /* HOOCadastroProffisionalViewController.h */,
 				246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */,
 				772FDAAC1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.h */,
@@ -346,6 +351,7 @@
 				79A1977E1B2724CA009A3152 /* HOOClienteViewController.m in Sources */,
 				243CC90E1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m in Sources */,
 				772FDAAE1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m in Sources */,
+				79BBC36B1B2F14E200445A87 /* HOOPerfilProfissionalViewController.m in Sources */,
 				77A88AD41B25E38C002BD992 /* AppDelegate.m in Sources */,
 				77AE668A1B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m in Sources */,
 				79A197811B29BD90009A3152 /* HOOPerfilUsuarioViewController.m in Sources */,
