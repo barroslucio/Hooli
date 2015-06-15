@@ -53,6 +53,12 @@
                     [self presentViewController:viewController animated:YES completion:nil];
                 
                 }
+                else if (tipo == 1){
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    HOOAgendarServicoViewController *viewController = (HOOAgendarServicoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Pro"];
+                    [self presentViewController:viewController animated:YES completion:nil];
+                    
+                }
             }
         }];
     }
