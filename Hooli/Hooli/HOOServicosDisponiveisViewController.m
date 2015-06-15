@@ -9,6 +9,8 @@
 #import "HOOServicosDisponiveisViewController.h"
 #import "HOOLoginViewController.h"
 #import <Parse/Parse.h>
+#import "HOOServicosDisponiveisTVCell.h"
+#import "HOODetalhesServicosDisponiveisViewController.h"
 
 @interface HOOServicosDisponiveisViewController ()
 
@@ -39,25 +41,25 @@
 //TABLE VIEW
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell   *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    HOOServicosDisponiveisTVCell   *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    cell.textLabel.text = [self.arrayServicos[indexPath.row] objectForKey:@"tipo"];
-    
+    cell.tipoServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"tipo"];
+    cell.dataServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"dataServico"];
+
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.arrayServicos.count;
 }
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    //pega o indice da linha que ofi clidade na tablea.
+    NSIndexPath *indexPath = [self.tableview indexPathForSelectedRow];
+    //envia essa informacao para EditViewController.
+    HOODetalhesServicosDisponiveisViewController *destination = segue.destinationViewController;
+    destination.servico = [self.arrayServicos objectAtIndex:indexPath.row];
+}
 
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
@@ -68,4 +70,5 @@
         [self presentViewController:viewController animated:YES completion:nil];
     }
 }
+
 @end

@@ -1100,10 +1100,10 @@
             </objects>
             <point key="canvasLocation" x="2093.5" y="653.5"/>
         </scene>
-        <!--Item-->
+        <!--Histórico de serviço-->
         <scene sceneID="g8P-xF-pxl">
             <objects>
-                <viewController id="Jlx-KJ-5Sm" sceneMemberID="viewController">
+                <viewController title="Histórico de serviço" id="Jlx-KJ-5Sm" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oCo-N5-9wE"/>
                         <viewControllerLayoutGuide type="bottom" id="L30-JO-tOt"/>
@@ -1118,7 +1118,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOu-bX-cjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1499.5" y="-432.5"/>
+            <point key="canvasLocation" x="1411.5" y="-308.5"/>
+        </scene>
+        <!--Detalhe de serviço (histórico)-->
+        <scene sceneID="sRs-Wi-1tX">
+            <objects>
+                <viewController title="Detalhe de serviço (histórico)" id="K4s-8M-QYV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CUt-P7-vmz"/>
+                        <viewControllerLayoutGuide type="bottom" id="jDr-Ck-C4V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9rQ-rG-7Z6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j0S-87-gU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839.5" y="-168.5"/>
         </scene>
         <!--Perfil do profissional-->
         <scene sceneID="f6z-wq-3sg">
@@ -1191,15 +1210,38 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FxH-fC-Jzs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FxH-fC-Jzs">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="MsF-6g-jB7">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="55" id="MsF-6g-jB7" customClass="HOOServicosDisponiveisTVCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MsF-6g-jB7" id="Rub-jX-UxC">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0d-wj-OaE">
+                                                    <rect key="frame" x="6" y="7" width="206" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QtB-qd-RY5">
+                                                    <rect key="frame" x="333" y="8" width="34" height="34"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40M-Ze-SqZ">
+                                                    <rect key="frame" x="8" y="32" width="189" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dataServico" destination="40M-Ze-SqZ" id="b4l-df-v6c"/>
+                                            <outlet property="status" destination="QtB-qd-RY5" id="p61-qH-RRX"/>
+                                            <outlet property="tipoServico" destination="o0d-wj-OaE" id="uCW-uf-4PL"/>
+                                            <segue destination="tI3-SF-3sh" kind="show" id="k4G-8u-h6Y"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1212,6 +1254,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="how-kv-AA9"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableview" destination="FxH-fC-Jzs" id="fgz-41-dyC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qY4-Fc-In2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1220,7 +1265,7 @@
         <!--Detalhes do serviço-->
         <scene sceneID="CxY-hl-PN4">
             <objects>
-                <viewController title="Detalhes do serviço" id="tI3-SF-3sh" sceneMemberID="viewController">
+                <viewController title="Detalhes do serviço" id="tI3-SF-3sh" customClass="HOODetalhesServicosDisponiveisViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eIL-oe-sAR"/>
                         <viewControllerLayoutGuide type="bottom" id="J3w-KD-qpx"/>
@@ -1228,13 +1273,38 @@
                     <view key="view" contentMode="scaleToFill" id="BBv-3X-cjW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tipo de serviço: --" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkh-vG-Fwy">
+                                <rect key="frame" x="41" y="76" width="141" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data: -----" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxd-Qs-XRg">
+                                <rect key="frame" x="41" y="120" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hora: ----" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sg-rH-ZIy">
+                                <rect key="frame" x="41" y="167" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="dataServico" destination="Sxd-Qs-XRg" id="cSl-Yw-b4a"/>
+                        <outlet property="horaServico" destination="6Sg-rH-ZIy" id="DZH-ie-NEg"/>
+                        <outlet property="tipoServico" destination="Tkh-vG-Fwy" id="0QO-In-EzS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLB-bG-ls3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2795.5" y="-1624.5"/>
+            <point key="canvasLocation" x="2777.5" y="-1592.5"/>
         </scene>
         <!--Módulo Profissional-->
         <scene sceneID="oc1-zc-2qD">

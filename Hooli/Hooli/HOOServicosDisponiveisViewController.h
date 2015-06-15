@@ -13,5 +13,6 @@
 @property (nonatomic) NSArray *arrayServicos;
 
 - (IBAction)logout:(id)sender;
+@property (strong, nonatomic) IBOutlet UITableView *tableview;
 
 @end
