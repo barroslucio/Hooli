@@ -26,6 +26,8 @@
     self.textViewDescricao.text = object[@"descricao"];
     
     self.arrayListaPro = [[NSArray alloc] initWithArray:object[@"proCandidatos"]];
+    
+    self.textViewDescricao.editable = NO;
 
 }
 
