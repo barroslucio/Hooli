@@ -10,4 +10,14 @@
 
 @interface HOOEditProfissionalViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *tfEmail;
+@property (weak, nonatomic) IBOutlet UITextField *tfSenha;
+@property (weak, nonatomic) IBOutlet UITextField *tfDDD;
+@property (weak, nonatomic) IBOutlet UITextField *tfTelefone;
+@property (weak, nonatomic) IBOutlet UITextField *tfCidade;
+@property (weak, nonatomic) IBOutlet UITextField *tfEstado;
+@property (weak, nonatomic) IBOutlet UITextField *tfEndereco;
+
+- (IBAction)saveButton:(id)sender;
+
 @end
