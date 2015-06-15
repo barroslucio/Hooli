@@ -7,7 +7,7 @@
 //
 
 #import "HOOClienteViewController.h"
-
+#import "HOOAgendarServicoViewController.h"
 @interface HOOClienteViewController () <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 
 @end
@@ -128,7 +128,11 @@
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error)
         {   // Hooray! Let them use the app now.
-            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Cadastro bem sucedido"
+                                                                message:@"Obrigado!"
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            [self segueViewController];
         } else
         {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"
@@ -158,6 +162,12 @@
         [self alertStatusCadastro:statusCadastro];
     }
 
+    
+}
+- (void)segueViewController{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HOOAgendarServicoViewController *viewController = (HOOAgendarServicoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"User"];
+    [self presentViewController:viewController animated:YES completion:nil];
     
 }
 

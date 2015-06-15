@@ -11,7 +11,7 @@
 
 
 #import "HOOCadastroProffisionalViewController.h"
-
+#import "HOOServicosDisponiveisViewController.h"
 @interface HOOCadastroProffisionalViewController ()<UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
 //SCROL VIEW AND VIEW
@@ -185,6 +185,7 @@
                                                                 message:@"Obrigado!"
                                                                delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
+            [self segueViewController];
         }
         else
         {
@@ -210,7 +211,6 @@
         if (self.switchAlvenaria.on == YES || self.switchChaveiro.on == YES || self.switchEletrica.on == YES || self.switchHidraulica.on == YES || self.switchLimpeza.on == YES || self.switchPintura.on == YES){
         
             [self cadastraProfissionalParse];
-        
         } else{
             statusCadastro = @"Selecione pelo menos um serviço";
             [self alertStatusCadastro:statusCadastro];
@@ -222,6 +222,13 @@
         statusCadastro = @"Preencha todos os campos";
         [self alertStatusCadastro:statusCadastro];
     }
+    
+}
+
+- (void)segueViewController{
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HOOServicosDisponiveisViewController *viewController = (HOOServicosDisponiveisViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Pro"];
+        [self presentViewController:viewController animated:YES completion:nil];
     
 }
 
