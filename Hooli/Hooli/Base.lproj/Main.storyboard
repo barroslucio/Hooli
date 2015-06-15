@@ -1138,6 +1138,9 @@
                                     <navigationItem title="Perfil" id="WeN-pu-C5s">
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="QBD-tc-BD5">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="T75-Ct-hxB" kind="show" id="UaE-v2-V3e"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
