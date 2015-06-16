@@ -17,8 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self buscaDadosClienteParse];
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self buscaDadosProfissionalParse];
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,7 +27,7 @@
 }
 
 // procedimento para pegar as informações do cliente no parse
-- (void)buscaDadosClienteParse
+- (void)buscaDadosProfissionalParse
 {
     // variável para pegar as informações
     PFUser *user = [PFUser currentUser];
@@ -43,13 +42,13 @@
     NSString *estado = [user objectForKey:@"estado"];
     
     // jogando para a tela
-    [self.respEnderecoLabel setText:endereco];
-    [self.respEmailLabel setText:email];
-    [self.respSenhaLabel setText:senha];
-    [self.respDDDLabel setText:[NSString stringWithFormat: @"%ld", (long)ddd]];
-    [self.respTelefoneLabel setText:[NSString stringWithFormat: @"%ld", (long)telefone]];
-    [self.respCidadeLabel setText:cidade];
-    [self.respEstadoLabel setText:estado];
+    [self.lbEndereco setText:endereco];
+    [self.lbEmail setText:email];
+    [self.lbSenha setText:senha];
+    [self.lbDDD setText:[NSString stringWithFormat: @"%ld", (long)ddd]];
+    [self.lbTelefone setText:[NSString stringWithFormat: @"%ld", (long)telefone]];
+    [self.lbCidade setText:cidade];
+    [self.lbEstado setText:estado];
 }
 
 
