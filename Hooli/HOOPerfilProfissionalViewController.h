@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HOOPerfilProfissionalViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *lbEmail;
 @property (weak, nonatomic) IBOutlet UILabel *lbSenha;
 @property (weak, nonatomic) IBOutlet UILabel *lbDDD;
