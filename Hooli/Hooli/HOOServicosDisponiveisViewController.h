@@ -11,6 +11,7 @@
 @interface HOOServicosDisponiveisViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) NSArray *arrayServicos;
+@property (nonatomic) NSArray *arrayPropostas;
 
 - (IBAction)logout:(id)sender;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
