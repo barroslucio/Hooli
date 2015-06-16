@@ -9,7 +9,7 @@
 #import "HOOLoginViewController.h"
 #import "HOOAgendarServicoViewController.h"
 
-@interface HOOLoginViewController ()
+@interface HOOLoginViewController ()<UITextFieldDelegate>
 
 @end
 
@@ -17,13 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //Oculta teclado
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
+    [tapGesture setNumberOfTouchesRequired:1];
+    [[self view] addGestureRecognizer:tapGesture];
+}
+
+- (void)ocultaTeclado:(UITapGestureRecognizer *)sender
+{
+    [self.emailField resignFirstResponder];
+    [self.senhaField resignFirstResponder];    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
 
 - (IBAction)login:(id)sender {
     NSString *username = [self.emailField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

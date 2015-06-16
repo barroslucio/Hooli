@@ -28,6 +28,9 @@
     self.labelDateAndHour.text = [NSString stringWithFormat: @"Date: %@", object[@"dataServico"]];
     self.textViewDescricao.text = object[@"descricao"];
     
+    self.arrayListaPro = [[NSArray alloc] initWithArray:object[@"proCandidatos"]];
+    
+    self.textViewDescricao.editable = NO;
 
     
     PFQuery *propostasFeitas = [PFQuery queryWithClassName:@"Proposta"];

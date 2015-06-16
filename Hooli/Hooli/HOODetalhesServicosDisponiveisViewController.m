@@ -7,6 +7,7 @@
 //
 
 #import "HOODetalhesServicosDisponiveisViewController.h"
+#import "HOOHistoricoServicosProfissionalViewController.h"
 
 @interface HOODetalhesServicosDisponiveisViewController ()
 
@@ -44,6 +45,12 @@
     [proposta setObject: [PFUser currentUser] forKey:@"profissional"];
     [proposta setObject: self.servico forKey:@"servico"];
     [proposta setObject: valor forKey:@"valor"];
-    [proposta saveInBackground];
+    [proposta saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        if(succeeded){
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            HOOHistoricoServicosProfissionalViewController *viewController = (HOOHistoricoServicosProfissionalViewController *)[storyboard instantiateViewControllerWithIdentifier:@"HistoricoServicosPro"];
+            [self presentViewController:viewController animated:YES completion:nil];
+        }
+    }];
 }
 @end

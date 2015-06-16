@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		243CC90E1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CC90D1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m */; };
+		243CC9141B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CC9131B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.m */; };
+		243CC9171B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CC9161B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m */; };
 		246A56751B263CB3007044A7 /* HOOCadastroProffisionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */; };
 		246A56841B29BBF2007044A7 /* HOOHistoricoClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */; };
 		772FDAAE1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772FDAAD1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m */; };
@@ -57,6 +59,10 @@
 /* Begin PBXFileReference section */
 		243CC90C1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOODetalhesServicoClienteViewController.h; sourceTree = "<group>"; };
 		243CC90D1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOODetalhesServicoClienteViewController.m; sourceTree = "<group>"; };
+		243CC9121B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOHistoricoServicosProfissionalViewController.h; sourceTree = "<group>"; };
+		243CC9131B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOHistoricoServicosProfissionalViewController.m; sourceTree = "<group>"; };
+		243CC9151B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOODetalhesHistoricoServicoProfissionalViewController.h; sourceTree = "<group>"; };
+		243CC9161B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOODetalhesHistoricoServicoProfissionalViewController.m; sourceTree = "<group>"; };
 		246A56731B263CB3007044A7 /* HOOCadastroProffisionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOCadastroProffisionalViewController.h; sourceTree = "<group>"; };
 		246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOCadastroProffisionalViewController.m; sourceTree = "<group>"; };
 		246A56821B29BBF2007044A7 /* HOOHistoricoClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HOOHistoricoClienteViewController.h; path = ../HOOHistoricoClienteViewController.h; sourceTree = "<group>"; };
@@ -183,6 +189,10 @@
 				772FDAB01B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m */,
 				772FDAB21B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.h */,
 				772FDAB31B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.m */,
+				243CC9121B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.h */,
+				243CC9131B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.m */,
+				243CC9151B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.h */,
+				243CC9161B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m */,
 			);
 			name = "Módulo profissional";
 			sourceTree = "<group>";
@@ -385,9 +395,11 @@
 				243CC90E1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m in Sources */,
 				772FDAAE1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m in Sources */,
 				77A88AD41B25E38C002BD992 /* AppDelegate.m in Sources */,
+				243CC9141B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.m in Sources */,
 				77AE668A1B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m in Sources */,
 				79A197811B29BD90009A3152 /* HOOPerfilUsuarioViewController.m in Sources */,
 				77A88AD11B25E38C002BD992 /* main.m in Sources */,
+				243CC9171B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m in Sources */,
 				246A56841B29BBF2007044A7 /* HOOHistoricoClienteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
