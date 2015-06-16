@@ -1938,7 +1938,7 @@
                                 <rect key="frame" x="0.0" y="289" width="384" height="378"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellPro" rowHeight="72" id="5sK-Nh-SNn" customClass="HOOListaPropostasCell">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="profissaID" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellPro" rowHeight="72" id="5sK-Nh-SNn" customClass="HOOListaPropostasCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5sK-Nh-SNn" id="n03-4K-54i">
                                             <autoresizingMask key="autoresizingMask"/>

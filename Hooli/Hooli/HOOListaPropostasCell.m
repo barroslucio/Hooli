@@ -10,14 +10,34 @@
 
 @implementation HOOListaPropostasCell
 
-- (void)awakeFromNib {
-    // Initialization code
+- (void)awakeFromNib
+{
+    
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+    
 }
+
+/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
+{
+    static NSString *CellIdentifier = @"Cell";
+    HOOListaPropostasCell *cell = (HOOListaPropostasCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (!cell)
+    {
+        cell = [[HOOListaPropostasCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                            reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.lbNome.text = [object objectForKey:@"nomeCompleto"];
+    cell.lbPreco.text = [object objectForKey:@"proposta"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Priority: %@", [object objectForKey:@"createdAt"]];
+    
+    return cell;
+}*/
 
 @end

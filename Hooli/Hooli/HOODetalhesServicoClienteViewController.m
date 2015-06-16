@@ -51,9 +51,11 @@
 //    return 5;
 }
 
+// função para listar o nome e o preço dos profissionais
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellPro"];
-    cell.textLabel.text = [[self.arrayListaPro[indexPath.row] objectForKey:@"valor"] stringValue];
+    HOOListaPropostasCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellPro"];
+    cell.lbPreco.text = [[self.arrayListaPro[indexPath.row] objectForKey:@"valor"] stringValue];
+    cell.lbNome.text = [self.arrayListaPro[indexPath.row] objectForKey:@"nomeCompleto"];
 //    cell.textLabel.text = @"--";
     return cell;
 }
