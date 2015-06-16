@@ -14,44 +14,24 @@
 
 @implementation HOOPerfilProfissionalViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    [self buscaDadosClienteParse];
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
+    // Dispose of any resources that can be recreated.
 }
 
-// procedimento para pegar as informações do profissional no parse
-- (void)buscaDadosClienteParse
-{
-    // variável para pegar as informações
-    PFUser *user = [PFUser currentUser];
-    
-    // criando as variáveis para usar o Parse
-    NSString *endereco = [user objectForKey:@"endereco"];
-    NSString *email = [user objectForKey:@"email"];
-    NSString *senha = [user objectForKey:@"senha"];
-    NSInteger ddd = [[user objectForKey:@"ddd"] intValue];
-    NSInteger telefone = [[user objectForKey:@"telefone"] intValue];
-    NSString *cidade = [user objectForKey:@"cidade"];
-    NSString *estado = [user objectForKey:@"estado"];
-    
-    
-    // jogando para a tela
-    [self.lbEndereco setText:endereco];
-    [self.lbEmail setText:email];
-    [self.lbSenha setText:senha];
-    [self.lbDDD setText:[NSString stringWithFormat: @"%ld", (long)ddd]];
-    [self.lbTelefone setText:[NSString stringWithFormat: @"%ld", (long)telefone]];
-    [self.lbCidade setText:cidade];
-    [self.lbEstado setText:estado];
-    
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
 @end
