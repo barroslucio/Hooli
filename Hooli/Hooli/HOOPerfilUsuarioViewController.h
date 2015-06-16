@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *respEstadoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *respEnderecoLabel;
 
-- (IBAction)editButton:(id)sender;
+
 
 
 @end

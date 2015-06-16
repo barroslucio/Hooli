@@ -16,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    NSArray *propostas;
+    
+    // query para o serviço
     PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
     [query whereKey:@"objectId" equalTo:self.idServico];
     PFObject *object =[query getFirstObject];
@@ -29,15 +32,32 @@
     
     self.textViewDescricao.editable = NO;
 
+    
+    PFQuery *propostasFeitas = [PFQuery queryWithClassName:@"Proposta"];
+    propostas = [propostasFeitas findObjects];
+    NSMutableArray *servicesToFilter = [@[] mutableCopy];
+    for (NSDictionary *object in propostas) {
+        
+    PFObject *servico = (PFObject *) object[@"servico"];
+        if([self.idServico isEqual:[servico objectId]])
+        {
+            [servicesToFilter addObject:object];
+        }
+    }
+    
+    self.arrayListaPro = servicesToFilter;
+    NSLog(@"%ld", self.arrayListaPro.count);
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
         return [self.arrayListaPro count];
+//    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellPro"];
-    cell.textLabel.text = [self.arrayListaPro objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[self.arrayListaPro[indexPath.row] objectForKey:@"valor"] stringValue];
+//    cell.textLabel.text = @"--";
     return cell;
 }
 
@@ -47,15 +67,5 @@
 }
 
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

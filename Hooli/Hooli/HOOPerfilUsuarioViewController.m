@@ -52,14 +52,4 @@
     [self.respEstadoLabel setText:estado];
 }
 
-- (void)toggleEdit
-{
-    
-}
-
-// método para editar as informações do usuário
-- (IBAction)editButton:(id)sender
-{
-}
-
 @end

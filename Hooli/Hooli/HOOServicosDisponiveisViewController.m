@@ -12,7 +12,11 @@
 #import "HOOServicosDisponiveisTVCell.h"
 #import "HOODetalhesServicosDisponiveisViewController.h"
 
-@interface HOOServicosDisponiveisViewController ()
+@interface HOOServicosDisponiveisViewController (){
+    NSString *strDate;
+    NSArray *trueDeepCopyArray;
+
+}
 
 @end
 
@@ -20,9 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view
     [self initProperties];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,24 +36,55 @@
 
 - (void)initProperties
 {
+    
+    NSDateFormatter *invertedDateFormatter = [[NSDateFormatter alloc] init];
+    invertedDateFormatter.dateFormat = @"yyyy-MM-dd";
+    strDate = [invertedDateFormatter stringFromDate:[NSDate date]];
+    
     PFUser *user = [PFUser currentUser];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
+   
+   
 
-    if (user[@"alvenaria"]){
-        [query whereKey:@"tipo" equalTo:@"Alvenaria"];
+    
+  
+    
+    PFQuery *propostasFeitas = [PFQuery queryWithClassName:@"Proposta"];
+    [propostasFeitas whereKey:@"profissional" equalTo:[PFUser currentUser]];
+    self.arrayPropostas = [propostasFeitas findObjects];
+    
+    PFQuery *servicosDisponiveis = [PFQuery queryWithClassName:@"Servico"];
+    NSMutableArray *servicesToFilter = [@[] mutableCopy];
+            for (NSDictionary *object in self.arrayPropostas) {
+                PFObject *servico = (PFObject *) object[@"servico"];
+                [servicesToFilter addObject:[servico objectId]];
+            }
+            //NSLog(@"%ld", servicesToFilter.count);
+            [servicosDisponiveis whereKey:@"objectId" notContainedIn:servicesToFilter];
+    
+    
+    if ([user[@"alvenaria"] isEqual:[NSNumber numberWithBool:YES]]){
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Alvenaria"];
     }
-    else if (user[@"pintura"]){
-        [query whereKey:@"tipo" equalTo:@"Pintura"];
+    else if ([user[@"pintura"] isEqual:[NSNumber numberWithBool:YES]]){
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Pintura"];
     }
-    else if (user[@"limpeza"]){
-        [query whereKey:@"tipo" equalTo:@"Limpeza"];
+    else if ([user[@"limpeza"] isEqual:[NSNumber numberWithBool:YES]]){
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Limpeza"];
     }
-    else if (user[@"chaveiro"]){
-        [query whereKey:@"tipo" equalTo:@"Chaveiro"];
+    else if ([user[@"chaveiro"] isEqual:[NSNumber numberWithBool:YES]]){
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Chaveiro"];
+    }
+    else if ([user[@"hidraulica"] isEqual:[NSNumber numberWithBool:YES]]){
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Hidráulica"];
+    }
+    else if ([user[@"eletrica"] isEqual:[NSNumber numberWithBool:YES]]){
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Elétrica"];
     }
     
-    self.arrayServicos = [query findObjects];
+    
+            self.arrayServicos = [servicosDisponiveis findObjects];
+            NSLog(@"%ld", self.arrayServicos.count);
 }
 
 //TABLE VIEW
@@ -58,13 +92,14 @@
     
     HOOServicosDisponiveisTVCell   *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    cell.tipoServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"tipo"];
+    //cell.tipoServico.text = [[self.arrayServicos[indexPath.row] objectForKey:@"valor"] stringValue];
     cell.dataServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"dataServico"];
 
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
     return self.arrayServicos.count;
 }
 
