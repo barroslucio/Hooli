@@ -39,6 +39,8 @@
 		79A1977E1B2724CA009A3152 /* HOOClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */; };
 		79A197811B29BD90009A3152 /* HOOPerfilUsuarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A197801B29BD90009A3152 /* HOOPerfilUsuarioViewController.m */; };
 		79A197841B2B0428009A3152 /* HOOEditUsuarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A197831B2B0428009A3152 /* HOOEditUsuarioViewController.m */; };
+		79BBC36E1B2F199400445A87 /* HOOEditProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC36D1B2F199400445A87 /* HOOEditProfissionalViewController.m */; };
+		79BBC3711B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC3701B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,10 @@
 		79A197801B29BD90009A3152 /* HOOPerfilUsuarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOPerfilUsuarioViewController.m; sourceTree = "<group>"; };
 		79A197821B2B0428009A3152 /* HOOEditUsuarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOEditUsuarioViewController.h; sourceTree = "<group>"; };
 		79A197831B2B0428009A3152 /* HOOEditUsuarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOEditUsuarioViewController.m; sourceTree = "<group>"; };
+		79BBC36C1B2F199400445A87 /* HOOEditProfissionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOEditProfissionalViewController.h; sourceTree = "<group>"; };
+		79BBC36D1B2F199400445A87 /* HOOEditProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOEditProfissionalViewController.m; sourceTree = "<group>"; };
+		79BBC36F1B2FABFC00445A87 /* HOOPerfilProfissionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HOOPerfilProfissionalViewController.h; path = ../HOOPerfilProfissionalViewController.h; sourceTree = "<group>"; };
+		79BBC3701B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HOOPerfilProfissionalViewController.m; path = ../HOOPerfilProfissionalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,10 @@
 		243CC9081B2CD99800ACF9F3 /* Módulo profissional */ = {
 			isa = PBXGroup;
 			children = (
+				79BBC36F1B2FABFC00445A87 /* HOOPerfilProfissionalViewController.h */,
+				79BBC3701B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m */,
+				79BBC36C1B2F199400445A87 /* HOOEditProfissionalViewController.h */,
+				79BBC36D1B2F199400445A87 /* HOOEditProfissionalViewController.m */,
 				246A56731B263CB3007044A7 /* HOOCadastroProffisionalViewController.h */,
 				246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */,
 				772FDAAC1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.h */,
@@ -349,10 +359,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				77AE668D1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.m in Sources */,
+				79BBC36E1B2F199400445A87 /* HOOEditProfissionalViewController.m in Sources */,
 				77C005DD1B29BB3300E2F27D /* HOOAgendarServicoViewController.m in Sources */,
 				772FDAB11B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m in Sources */,
 				246A56751B263CB3007044A7 /* HOOCadastroProffisionalViewController.m in Sources */,
 				79A197841B2B0428009A3152 /* HOOEditUsuarioViewController.m in Sources */,
+				79BBC3711B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m in Sources */,
 				77A88AD71B25E38C002BD992 /* HOOLoginViewController.m in Sources */,
 				772FDAB41B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.m in Sources */,
 				79A1977E1B2724CA009A3152 /* HOOClienteViewController.m in Sources */,
