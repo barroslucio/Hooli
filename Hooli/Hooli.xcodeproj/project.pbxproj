@@ -12,6 +12,7 @@
 		243CC9171B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CC9161B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m */; };
 		246A56751B263CB3007044A7 /* HOOCadastroProffisionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */; };
 		246A56841B29BBF2007044A7 /* HOOHistoricoClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */; };
+		772986711B30B568005DBBB5 /* UIFloatLabelTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 772986701B30B568005DBBB5 /* UIFloatLabelTextField.m */; };
 		772FDAAE1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772FDAAD1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m */; };
 		772FDAB11B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 772FDAB01B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m */; };
 		772FDAB41B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772FDAB31B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.m */; };
@@ -66,6 +67,8 @@
 		246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOCadastroProffisionalViewController.m; sourceTree = "<group>"; };
 		246A56821B29BBF2007044A7 /* HOOHistoricoClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HOOHistoricoClienteViewController.h; path = ../HOOHistoricoClienteViewController.h; sourceTree = "<group>"; };
 		246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HOOHistoricoClienteViewController.m; path = ../HOOHistoricoClienteViewController.m; sourceTree = "<group>"; };
+		7729866F1B30B568005DBBB5 /* UIFloatLabelTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFloatLabelTextField.h; sourceTree = "<group>"; };
+		772986701B30B568005DBBB5 /* UIFloatLabelTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFloatLabelTextField.m; sourceTree = "<group>"; };
 		772FDAAC1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOServicosDisponiveisViewController.h; sourceTree = "<group>"; };
 		772FDAAD1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOServicosDisponiveisViewController.m; sourceTree = "<group>"; };
 		772FDAAF1B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOServicosDisponiveisTVCell.h; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 		77A88AC21B25E38C002BD992 = {
 			isa = PBXGroup;
 			children = (
+				7729866F1B30B568005DBBB5 /* UIFloatLabelTextField.h */,
+				772986701B30B568005DBBB5 /* UIFloatLabelTextField.m */,
 				77A88ACD1B25E38C002BD992 /* Hooli */,
 				77A88AE71B25E38C002BD992 /* HooliTests */,
 				77A88ACC1B25E38C002BD992 /* Products */,
@@ -375,6 +380,7 @@
 				246A56751B263CB3007044A7 /* HOOCadastroProffisionalViewController.m in Sources */,
 				79A197841B2B0428009A3152 /* HOOEditUsuarioViewController.m in Sources */,
 				79BBC3711B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m in Sources */,
+				772986711B30B568005DBBB5 /* UIFloatLabelTextField.m in Sources */,
 				77A88AD71B25E38C002BD992 /* HOOLoginViewController.m in Sources */,
 				772FDAB41B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.m in Sources */,
 				79A1977E1B2724CA009A3152 /* HOOClienteViewController.m in Sources */,

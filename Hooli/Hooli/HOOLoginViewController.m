@@ -9,7 +9,11 @@
 #import "HOOLoginViewController.h"
 #import "HOOAgendarServicoViewController.h"
 
-@interface HOOLoginViewController ()<UITextFieldDelegate>
+@interface HOOLoginViewController ()<UITextFieldDelegate>{
+    UIFloatLabelTextField *firstNameTextField;
+    UIFloatLabelTextField *senhaTextField;
+
+}
 
 @end
 
@@ -22,11 +26,48 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
     [tapGesture setNumberOfTouchesRequired:1];
     [[self view] addGestureRecognizer:tapGesture];
+    
+    
+    
+    firstNameTextField = [UIFloatLabelTextField new];
+    [firstNameTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    firstNameTextField.floatLabelActiveColor = [UIColor orangeColor];
+    firstNameTextField.placeholder = @"Email";
+    firstNameTextField.delegate = self;
+    [self.subviewEmail addSubview:firstNameTextField];
+    
+   
+   [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[firstNameTextField]-10-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(firstNameTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[firstNameTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(firstNameTextField)]];
+    
+    senhaTextField = [UIFloatLabelTextField new];
+    [senhaTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    senhaTextField.floatLabelActiveColor = [UIColor orangeColor];
+    senhaTextField.placeholder = @"Senha";
+    senhaTextField.delegate = self;
+    [self.subviewSenha addSubview:senhaTextField];
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[senhaTextField]-10-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(senhaTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[senhaTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(senhaTextField)]];
 }
 
 - (void)ocultaTeclado:(UITapGestureRecognizer *)sender
 {
-    [self.emailField resignFirstResponder];
+    [firstNameTextField resignFirstResponder];
     [self.senhaField resignFirstResponder];    
 }
 
@@ -36,7 +77,7 @@
 
 
 - (IBAction)login:(id)sender {
-    NSString *username = [self.emailField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *username = [firstNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password = [self.senhaField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if ([username length] == 0 || [password length] == 0) {
