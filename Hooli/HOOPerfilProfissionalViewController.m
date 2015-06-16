@@ -52,10 +52,12 @@
     [self.lbEstado setText:estado];
 }
 
+// método para pegar os trabalhos do profissional, direto do Parse
 - (void)requisicaoServicos
 {
     PFUser *user = [PFUser currentUser];
     
+    // declarando variáveis booleanas conformo os atributos do Parse estão declarados
     Boolean alvenaria = [user objectForKey:@"alvenaria"];
     Boolean chaveiro = [user objectForKey:@"chaveiro"];
     Boolean eletrica = [user objectForKey:@"eletrico"];
@@ -63,9 +65,11 @@
     Boolean limpeza = [user objectForKey:@"limpeza"];
     Boolean pintura = [user objectForKey:@"pintura"];
     
+    // comparações para ver qual o trabalho desempenhado pelo profissional
     if (alvenaria)
     {
         self.swAlvenaria.on = YES;
+        self.swAlvenaria.enabled = NO; // comando para o botão fical inalterável
     }
     else if (!alvenaria)
     {
@@ -75,6 +79,8 @@
     if (chaveiro)
     {
         self.swChaveiro.on = YES;
+        self.swChaveiro.enabled = NO;
+        
     }
     else if (!chaveiro)
     {
@@ -84,6 +90,7 @@
     if (eletrica)
     {
         self.swEletrica.on = YES;
+        self.swEletrica.enabled = NO;
     }
     else if (!eletrica)
     {
@@ -93,6 +100,7 @@
     if (hidraulica)
     {
         self.swHidraulica.on = YES;
+        self.swHidraulica.enabled = NO;
     }
     else if (!hidraulica)
     {
@@ -102,6 +110,7 @@
     if (limpeza)
     {
         self.swLimpeza.on = YES;
+        self.swLimpeza.enabled = NO;
     }
     else if (!limpeza)
     {
@@ -111,6 +120,7 @@
     if (pintura)
     {
         self.swPintura.on = YES;
+        self.swPintura.enabled = NO;
     }
     else if (!pintura)
     {

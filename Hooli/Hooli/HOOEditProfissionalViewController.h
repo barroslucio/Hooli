@@ -20,6 +20,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *tfEstado;
 @property (weak, nonatomic) IBOutlet UITextField *tfEndereco;
 
+@property (weak, nonatomic) IBOutlet UISwitch *swAlvenariaEdit;
+@property (weak, nonatomic) IBOutlet UISwitch *swChaveiroEdit;
+@property (weak, nonatomic) IBOutlet UISwitch *swEletricaEdit;
+@property (weak, nonatomic) IBOutlet UISwitch *swHidraulicaEdit;
+@property (weak, nonatomic) IBOutlet UISwitch *swLimpezaEdit;
+@property (weak, nonatomic) IBOutlet UISwitch *swPinturaEdit;
+
 - (IBAction)saveButton:(id)sender;
 
 @end
