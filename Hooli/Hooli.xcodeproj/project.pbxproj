@@ -41,6 +41,7 @@
 		79A197841B2B0428009A3152 /* HOOEditUsuarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A197831B2B0428009A3152 /* HOOEditUsuarioViewController.m */; };
 		79BBC36E1B2F199400445A87 /* HOOEditProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC36D1B2F199400445A87 /* HOOEditProfissionalViewController.m */; };
 		79BBC3711B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC3701B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m */; };
+		79BBC3751B30724700445A87 /* HOOListaPropostasCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC3741B30724700445A87 /* HOOListaPropostasCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		79BBC36D1B2F199400445A87 /* HOOEditProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOEditProfissionalViewController.m; sourceTree = "<group>"; };
 		79BBC36F1B2FABFC00445A87 /* HOOPerfilProfissionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HOOPerfilProfissionalViewController.h; path = ../HOOPerfilProfissionalViewController.h; sourceTree = "<group>"; };
 		79BBC3701B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HOOPerfilProfissionalViewController.m; path = ../HOOPerfilProfissionalViewController.m; sourceTree = "<group>"; };
+		79BBC3731B30724700445A87 /* HOOListaPropostasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOListaPropostasCell.h; sourceTree = "<group>"; };
+		79BBC3741B30724700445A87 /* HOOListaPropostasCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOListaPropostasCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,7 @@
 		243CC9071B2CD98500ACF9F3 /* Módulo usuário/cliente */ = {
 			isa = PBXGroup;
 			children = (
+				79BBC3721B3071FF00445A87 /* CustonCell */,
 				79A1977C1B2724CA009A3152 /* HOOClienteViewController.h */,
 				79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */,
 				79A1977F1B29BD90009A3152 /* HOOPerfilUsuarioViewController.h */,
@@ -257,6 +261,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		79BBC3721B3071FF00445A87 /* CustonCell */ = {
+			isa = PBXGroup;
+			children = (
+				79BBC3731B30724700445A87 /* HOOListaPropostasCell.h */,
+				79BBC3741B30724700445A87 /* HOOListaPropostasCell.m */,
+			);
+			name = CustonCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,6 +375,7 @@
 				79BBC36E1B2F199400445A87 /* HOOEditProfissionalViewController.m in Sources */,
 				77C005DD1B29BB3300E2F27D /* HOOAgendarServicoViewController.m in Sources */,
 				772FDAB11B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m in Sources */,
+				79BBC3751B30724700445A87 /* HOOListaPropostasCell.m in Sources */,
 				246A56751B263CB3007044A7 /* HOOCadastroProffisionalViewController.m in Sources */,
 				79A197841B2B0428009A3152 /* HOOEditUsuarioViewController.m in Sources */,
 				79BBC3711B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m in Sources */,
