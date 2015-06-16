@@ -36,38 +36,16 @@
 
 - (void)initProperties
 {
-    /*
+    
     NSDateFormatter *invertedDateFormatter = [[NSDateFormatter alloc] init];
     invertedDateFormatter.dateFormat = @"yyyy-MM-dd";
     strDate = [invertedDateFormatter stringFromDate:[NSDate date]];
     
     PFUser *user = [PFUser currentUser];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
-    
-    if ([user[@"alvenaria"] isEqual:[NSNumber numberWithBool:YES]]){
-        [query whereKey:@"tipo" equalTo:@"Alvenaria"];
-    }
-    else if ([user[@"pintura"] isEqual:[NSNumber numberWithBool:YES]]){
-        [query whereKey:@"tipo" equalTo:@"Pintura"];
-    }
-    else if ([user[@"limpeza"] isEqual:[NSNumber numberWithBool:YES]]){
-        [query whereKey:@"tipo" equalTo:@"Limpeza"];
-    }
-    else if ([user[@"chaveiro"] isEqual:[NSNumber numberWithBool:YES]]){
-        [query whereKey:@"tipo" equalTo:@"Chaveiro"];
-    }
-    else if ([user[@"hidraulica"] isEqual:[NSNumber numberWithBool:YES]]){
-        [query whereKey:@"tipo" equalTo:@"Hidráulica"];
-    }
-    else if ([user[@"eletrica"] isEqual:[NSNumber numberWithBool:YES]]){
-        [query whereKey:@"tipo" equalTo:@"Elétrica"];
-    }
-    
-    [query orderByAscending:@"dataServico"];
-    [query whereKey:@"dataServico" greaterThan:strDate];
-    self.arrayServicos = [query findObjects];
-    */
+   
+   
+
     
   
     
@@ -83,6 +61,28 @@
             }
             //NSLog(@"%ld", servicesToFilter.count);
             [servicosDisponiveis whereKey:@"objectId" notContainedIn:servicesToFilter];
+    
+    
+    if ([user[@"alvenaria"] isEqual:[NSNumber numberWithBool:YES]]){
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Alvenaria"];
+    }
+    else if ([user[@"pintura"] isEqual:[NSNumber numberWithBool:YES]]){
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Pintura"];
+    }
+    else if ([user[@"limpeza"] isEqual:[NSNumber numberWithBool:YES]]){
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Limpeza"];
+    }
+    else if ([user[@"chaveiro"] isEqual:[NSNumber numberWithBool:YES]]){
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Chaveiro"];
+    }
+    else if ([user[@"hidraulica"] isEqual:[NSNumber numberWithBool:YES]]){
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Hidráulica"];
+    }
+    else if ([user[@"eletrica"] isEqual:[NSNumber numberWithBool:YES]]){
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Elétrica"];
+    }
+    
+    
             self.arrayServicos = [servicosDisponiveis findObjects];
             NSLog(@"%ld", self.arrayServicos.count);
 }
