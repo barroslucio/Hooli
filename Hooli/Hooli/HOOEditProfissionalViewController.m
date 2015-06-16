@@ -152,8 +152,15 @@
     user[@"telefone"] = [f numberFromString:self.tfTelefone.text];
     user[@"cidade"] = self.tfCidade.text;
     user[@"estado"] = self.tfEstado.text;
-    user[@"alvenaria"] = self.swAlvenariaEdit;
     
+    // salvar as alterações no Parse
+    user[@"hidraulica"] =  [NSNumber numberWithBool:self.swHidraulicaEdit.on];
+    user[@"pintura"] =  [NSNumber numberWithBool:self.swPinturaEdit.on];
+    user[@"limpeza"] =  [NSNumber numberWithBool:self.swLimpezaEdit.on];
+    user[@"eletrica"] =  [NSNumber numberWithBool:self.swEletricaEdit.on];
+    user[@"alvenaria"] =  [NSNumber numberWithBool:self.swAlvenariaEdit.on];
+    user[@"chaveiro"] =  [NSNumber numberWithBool:self.swChaveiroEdit.on];
+
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if (succeeded)
         {
@@ -172,6 +179,8 @@
             
         }
     }];
+    
+    
 }
 
 -(void)ocultaTeclado:(UITapGestureRecognizer *)sender

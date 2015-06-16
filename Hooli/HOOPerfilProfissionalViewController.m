@@ -57,75 +57,76 @@
 {
     PFUser *user = [PFUser currentUser];
     
-    // declarando variáveis booleanas conformo os atributos do Parse estão declarados
-    Boolean alvenaria = [user objectForKey:@"alvenaria"];
-    Boolean chaveiro = [user objectForKey:@"chaveiro"];
-    Boolean eletrica = [user objectForKey:@"eletrico"];
-    Boolean hidraulica = [user objectForKey:@"hidraulica"];
-    Boolean limpeza = [user objectForKey:@"limpeza"];
-    Boolean pintura = [user objectForKey:@"pintura"];
+    // função para desativar os botões
+    self.swAlvenaria.enabled = NO;
+    self.swChaveiro.enabled = NO;
+    self.swEletrica.enabled = NO;
+    self.swHidraulica.enabled = NO;
+    self.swLimpeza.enabled = NO;
+    self.swPintura.enabled = NO;
     
-    // comparações para ver qual o trabalho desempenhado pelo profissional
-    if (alvenaria)
+    // comparação para ver qual os trabalhos desempenhados pelo profissional
+    if ([user[@"alvenaria"] isEqual:[NSNumber numberWithBool:YES]])
     {
         self.swAlvenaria.on = YES;
-        self.swAlvenaria.enabled = NO; // comando para o botão fical inalterável
     }
-    else if (!alvenaria)
+    else
     {
         self.swAlvenaria.on = NO;
     }
     
-    if (chaveiro)
+    if ([user[@"chaveiro"] isEqual:[NSNumber numberWithBool:YES]])
     {
         self.swChaveiro.on = YES;
-        self.swChaveiro.enabled = NO;
-        
     }
-    else if (!chaveiro)
+    else
     {
         self.swChaveiro.on = NO;
     }
     
-    if (eletrica)
+    if ([user[@"eletrica"] isEqual:[NSNumber numberWithBool:YES]])
     {
         self.swEletrica.on = YES;
-        self.swEletrica.enabled = NO;
     }
-    else if (!eletrica)
+    else
     {
         self.swEletrica.on = NO;
     }
     
-    if (hidraulica)
+    if ([user[@"hidraulica"] isEqual:[NSNumber numberWithBool:YES]])
     {
         self.swHidraulica.on = YES;
-        self.swHidraulica.enabled = NO;
     }
-    else if (!hidraulica)
+    else
     {
         self.swHidraulica.on = NO;
     }
     
-    if (limpeza)
+    if ([user[@"limpeza"] isEqual:[NSNumber numberWithBool:YES]])
     {
         self.swLimpeza.on = YES;
-        self.swLimpeza.enabled = NO;
     }
-    else if (!limpeza)
+    else
     {
         self.swLimpeza.on = NO;
     }
     
-    if (pintura)
+    if ([user[@"pintura"] isEqual:[NSNumber numberWithBool:YES]])
     {
         self.swPintura.on = YES;
-        self.swPintura.enabled = NO;
     }
-    else if (!pintura)
+    else
     {
         self.swPintura.on = NO;
     }
+
+
+
+
+    
+    
+    
+    
 }
 
 @end
