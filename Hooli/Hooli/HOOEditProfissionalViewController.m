@@ -41,6 +41,68 @@
     
 }
 
+// método para pegar os trabalhos do profissional, direto do Parse
+- (void)requisicaoServicos
+{
+    PFUser *user = [PFUser currentUser];
+    
+    // comparação para ver qual os trabalhos desempenhados pelo profissional
+    if ([user[@"alvenaria"] isEqual:[NSNumber numberWithBool:YES]])
+    {
+        self.swAlvenariaEdit.on = YES;
+    }
+    else
+    {
+        self.swAlvenariaEdit.on = NO;
+    }
+    
+    if ([user[@"chaveiro"] isEqual:[NSNumber numberWithBool:YES]])
+    {
+        self.swChaveiroEdit.on = YES;
+    }
+    else
+    {
+        self.swChaveiroEdit.on = NO;
+    }
+    
+    if ([user[@"eletrica"] isEqual:[NSNumber numberWithBool:YES]])
+    {
+        self.swEletricaEdit.on = YES;
+    }
+    else
+    {
+        self.swEletricaEdit.on = NO;
+    }
+    
+    if ([user[@"hidraulica"] isEqual:[NSNumber numberWithBool:YES]])
+    {
+        self.swHidraulicaEdit.on = YES;
+    }
+    else
+    {
+        self.swHidraulicaEdit.on = NO;
+    }
+    
+    if ([user[@"limpeza"] isEqual:[NSNumber numberWithBool:YES]])
+    {
+        self.swLimpezaEdit.on = YES;
+    }
+    else
+    {
+        self.swLimpezaEdit.on = NO;
+    }
+    
+    if ([user[@"pintura"] isEqual:[NSNumber numberWithBool:YES]])
+    {
+        self.swPinturaEdit.on = YES;
+    }
+    else
+    {
+        self.swPinturaEdit.on = NO;
+    }
+}
+
+
 // procedimento para pegar as informações do cliente no parse
 - (void)buscaDadosProfissionalParse
 {
@@ -67,74 +129,6 @@
     
 }
 
-// método para pegar os trabalhos do profissional, direto do Parse
-- (void)requisicaoServicos
-{
-    PFUser *user = [PFUser currentUser];
-    
-    // declarando variáveis booleanas conformo os atributos do Parse estão declarados
-    Boolean alvenaria = [user objectForKey:@"alvenaria"];
-    Boolean chaveiro = [user objectForKey:@"chaveiro"];
-    Boolean eletrica = [user objectForKey:@"eletrico"];
-    Boolean hidraulica = [user objectForKey:@"hidraulica"];
-    Boolean limpeza = [user objectForKey:@"limpeza"];
-    Boolean pintura = [user objectForKey:@"pintura"];
-    
-    // comparações para ver qual o trabalho desempenhado pelo profissional
-    if (alvenaria)
-    {
-        self.swAlvenariaEdit.on = YES;
-    }
-    else if (!alvenaria)
-    {
-        self.swAlvenariaEdit.on = NO;
-    }
-    
-    if (chaveiro)
-    {
-        self.swChaveiroEdit.on = YES;
-    }
-    else if (!chaveiro)
-    {
-        self.swChaveiroEdit.on = NO;
-    }
-    
-    if (eletrica)
-    {
-        self.swEletricaEdit.on = YES;
-    }
-    else if (!eletrica)
-    {
-        self.swEletricaEdit.on = NO;
-    }
-    
-    if (hidraulica)
-    {
-        self.swHidraulicaEdit.on = YES;
-    }
-    else if (!hidraulica)
-    {
-        self.swHidraulicaEdit.on = NO;
-    }
-    
-    if (limpeza)
-    {
-        self.swLimpezaEdit.on = YES;
-    }
-    else if (!limpeza)
-    {
-        self.swLimpezaEdit.on = NO;
-    }
-    
-    if (pintura)
-    {
-        self.swPinturaEdit.on = YES;
-    }
-    else if (!pintura)
-    {
-        self.swPinturaEdit.on = NO;
-    }
-}
 
 // método para salvar as alterações do usuário
 - (IBAction)saveButton:(id)sender
