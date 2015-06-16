@@ -2020,10 +2020,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="xvx-Em-VUj"/>
-        <segue reference="bsg-IB-O7v"/>
         <segue reference="4WC-cH-dL7"/>
         <segue reference="UcQ-hE-lhH"/>
         <segue reference="Zeq-Uf-JGb"/>
+        <segue reference="pt2-De-aRe"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
