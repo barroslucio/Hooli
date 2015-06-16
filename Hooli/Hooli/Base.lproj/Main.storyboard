@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -2097,6 +2097,25 @@
             </objects>
             <point key="canvasLocation" x="2640.5" y="1859.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="xZ5-XZ-6nN">
+            <objects>
+                <viewController id="zEy-WP-a2n" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dhj-me-4qY"/>
+                        <viewControllerLayoutGuide type="bottom" id="nXf-oa-EXd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Ki-gy-Lfv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pk7-tr-vqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3176.5" y="1859.5"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PzG-do-LNs">
             <objects>
@@ -2120,10 +2139,11 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="xvx-Em-VUj"/>
+        <segue reference="kHi-hi-hA8"/>
         <segue reference="4WC-cH-dL7"/>
-        <segue reference="UcQ-hE-lhH"/>
-        <segue reference="Zeq-Uf-JGb"/>
         <segue reference="pt2-De-aRe"/>
+        <segue reference="Zeq-Uf-JGb"/>
+        <segue reference="UcQ-hE-lhH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
