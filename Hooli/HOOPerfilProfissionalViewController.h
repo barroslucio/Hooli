@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbCidade;
 @property (weak, nonatomic) IBOutlet UILabel *lbEstado;
 @property (weak, nonatomic) IBOutlet UILabel *lbEndereco;
+
 @property (weak, nonatomic) IBOutlet UISwitch *swAlvenaria;
 @property (weak, nonatomic) IBOutlet UISwitch *swChaveiro;
 @property (weak, nonatomic) IBOutlet UISwitch *swEletrica;

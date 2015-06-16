@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
     [self buscaDadosProfissionalParse];
+    [self requisicaoServicos];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,5 +52,70 @@
     [self.lbEstado setText:estado];
 }
 
+- (void)requisicaoServicos
+{
+    PFUser *user = [PFUser currentUser];
+    
+    Boolean alvenaria = [user objectForKey:@"alvenaria"];
+    Boolean chaveiro = [user objectForKey:@"chaveiro"];
+    Boolean eletrica = [user objectForKey:@"eletrico"];
+    Boolean hidraulica = [user objectForKey:@"hidraulica"];
+    Boolean limpeza = [user objectForKey:@"limpeza"];
+    Boolean pintura = [user objectForKey:@"pintura"];
+    
+    if (alvenaria)
+    {
+        self.swAlvenaria.on = YES;
+    }
+    else if (!alvenaria)
+    {
+        self.swAlvenaria.on = NO;
+    }
+    
+    if (chaveiro)
+    {
+        self.swChaveiro.on = YES;
+    }
+    else if (!chaveiro)
+    {
+        self.swChaveiro.on = NO;
+    }
+    
+    if (eletrica)
+    {
+        self.swEletrica.on = YES;
+    }
+    else if (!eletrica)
+    {
+        self.swEletrica.on = NO;
+    }
+    
+    if (hidraulica)
+    {
+        self.swHidraulica.on = YES;
+    }
+    else if (!hidraulica)
+    {
+        self.swHidraulica.on = NO;
+    }
+    
+    if (limpeza)
+    {
+        self.swLimpeza.on = YES;
+    }
+    else if (!limpeza)
+    {
+        self.swLimpeza.on = NO;
+    }
+    
+    if (pintura)
+    {
+        self.swPintura.on = YES;
+    }
+    else if (!pintura)
+    {
+        self.swPintura.on = NO;
+    }
+}
 
 @end
