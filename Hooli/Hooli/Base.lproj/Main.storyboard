@@ -1103,7 +1103,7 @@
         <!--Histórico de serviço-->
         <scene sceneID="g8P-xF-pxl">
             <objects>
-                <viewController title="Histórico de serviço" id="Jlx-KJ-5Sm" customClass="HOOHistoricoServicosProfissionalViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoricoServicosPro" title="Histórico de serviço" id="Jlx-KJ-5Sm" customClass="HOOHistoricoServicosProfissionalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oCo-N5-9wE"/>
                         <viewControllerLayoutGuide type="bottom" id="L30-JO-tOt"/>
@@ -1739,9 +1739,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXV-4L-inL">
+                                <rect key="frame" x="139" y="347" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWw-je-heN">
-                                <rect key="frame" x="164" y="421" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="133" y="436" width="108" height="30"/>
+                                <state key="normal" title="Fazer proposta!">
                                     <color key="titleColor" red="0.20000000000000001" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1749,11 +1754,6 @@
                                     <action selector="enviarProposta:" destination="tI3-SF-3sh" eventType="touchUpInside" id="TpF-S4-gwN"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXV-4L-inL">
-                                <rect key="frame" x="139" y="347" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2138,12 +2138,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xvx-Em-VUj"/>
-        <segue reference="kHi-hi-hA8"/>
         <segue reference="4WC-cH-dL7"/>
-        <segue reference="pt2-De-aRe"/>
+        <segue reference="kHi-hi-hA8"/>
+        <segue reference="u3H-tV-7QW"/>
         <segue reference="Zeq-Uf-JGb"/>
         <segue reference="UcQ-hE-lhH"/>
+        <segue reference="pt2-De-aRe"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
