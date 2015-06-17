@@ -11,7 +11,8 @@
 @interface HOOHistoricoServicosProfissionalViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) NSArray *arrayServicos;
+@property (nonatomic) NSArray *arrayServicosEscolhido;
+@property (nonatomic) NSArray *arrayServicosPendentes;
 
 @end
 
@@ -22,26 +23,34 @@
     [self initProperties];
 }
 - (void)initProperties{
-    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
-    [query whereKey:@"proEscolhido" equalTo:[PFUser currentUser]];
-    self.arrayServicos = [query findObjects];
+//    PFQuery *queryEscolhido = [PFQuery queryWithClassName:@"Servico"];
+//    [queryEscolhido whereKey:@"proEscolhido" equalTo:[PFUser currentUser]];
+//    self.arrayServicosEscolhido = [queryEscolhido findObjects];
+    
+    PFQuery *queryPendentes = [PFQuery queryWithClassName:@"Proposta"];
+    [queryPendentes whereKey:@"profissional" equalTo:[PFUser currentUser]];
+    self.arrayServicosPendentes = [queryPendentes findObjects];
+    
+    
 }
 //TABLE VIEW
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.textLabel.text = @"tipo";
-    cell.detailTextLabel.text = @"dataServico";
+   
+    
+    cell.detailTextLabel.text = [[self.arrayServicosPendentes[indexPath.row] objectForKey:@"valor"] stringValue];
+    
+    
+    cell.textLabel.text = [self.arrayServicosPendentes[indexPath.row] objectForKey:@"dataServico"];
 
-//    cell.textLabel.text = [self.arrayServicos[indexPath.row] objectForKey:@"tipo"];
-//    cell.detailTextLabel.text = [self.arrayServicos[indexPath.row] objectForKey:@"dataServico"];
+    
     return cell;
     
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return self.arrayServicos.count;
-    return 4;
+        return self.arrayServicosPendentes.count;
 }
 
 - (void)didReceiveMemoryWarning {
