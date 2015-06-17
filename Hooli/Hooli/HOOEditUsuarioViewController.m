@@ -113,7 +113,6 @@
                                                            delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
     }
-
 }
 
 -(void)ocultaTeclado:(UITapGestureRecognizer *)sender

@@ -20,6 +20,7 @@
     [self requisicaoServicos];
     [self buscaDadosProfissionalParse];
     
+    
     self.tfEndereco.delegate = self;
     self.tfEmail.delegate = self;
     self.tfSenha.delegate = self;
@@ -133,29 +134,31 @@
 // método para salvar as alterações do usuário
 - (IBAction)saveButton:(id)sender
 {
-    PFUser *user = [PFUser currentUser];
-    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    if (![self.tfCidade.text isEqualToString:@""] && ![self.tfDDD.text isEqualToString:@""] && ![self.tfEmail.text isEqualToString:@""] && ![self.tfEndereco.text isEqualToString:@""] && ![self.tfEstado.text isEqualToString:@""] && ![self.tfSenha.text isEqualToString:@""] && ![self.tfTelefone.text isEqualToString:@""])
+    {
+        PFUser *user = [PFUser currentUser];
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     
-    // variável para tratar os valores que são numéricos
-    f.numberStyle = NSNumberFormatterDecimalStyle;
+        // variável para tratar os valores que são numéricos
+        f.numberStyle = NSNumberFormatterDecimalStyle;
     
-    user[@"endereco"] = self.tfEndereco.text;
-    user[@"email"] = self.tfEmail.text;
-    user[@"senha"] = self.tfSenha.text;
-    user[@"ddd"] = [f numberFromString:self.tfDDD.text];
-    user[@"telefone"] = [f numberFromString:self.tfTelefone.text];
-    user[@"cidade"] = self.tfCidade.text;
-    user[@"estado"] = self.tfEstado.text;
+        user[@"endereco"] = self.tfEndereco.text;
+        user[@"email"] = self.tfEmail.text;
+        user[@"senha"] = self.tfSenha.text;
+        user[@"ddd"] = [f numberFromString:self.tfDDD.text];
+        user[@"telefone"] = [f numberFromString:self.tfTelefone.text];
+        user[@"cidade"] = self.tfCidade.text;
+        user[@"estado"] = self.tfEstado.text;
     
-    // salvar as alterações no Parse
-    user[@"hidraulica"] =  [NSNumber numberWithBool:self.swHidraulicaEdit.on];
-    user[@"pintura"] =  [NSNumber numberWithBool:self.swPinturaEdit.on];
-    user[@"limpeza"] =  [NSNumber numberWithBool:self.swLimpezaEdit.on];
-    user[@"eletrica"] =  [NSNumber numberWithBool:self.swEletricaEdit.on];
-    user[@"alvenaria"] =  [NSNumber numberWithBool:self.swAlvenariaEdit.on];
-    user[@"chaveiro"] =  [NSNumber numberWithBool:self.swChaveiroEdit.on];
+        // salvar as alterações no Parse
+        user[@"hidraulica"] =  [NSNumber numberWithBool:self.swHidraulicaEdit.on];
+        user[@"pintura"] =  [NSNumber numberWithBool:self.swPinturaEdit.on];
+        user[@"limpeza"] =  [NSNumber numberWithBool:self.swLimpezaEdit.on];
+        user[@"eletrica"] =  [NSNumber numberWithBool:self.swEletricaEdit.on];
+        user[@"alvenaria"] =  [NSNumber numberWithBool:self.swAlvenariaEdit.on];
+        user[@"chaveiro"] =  [NSNumber numberWithBool:self.swChaveiroEdit.on];
 
-    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if (succeeded)
         {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -174,10 +177,18 @@
         }
     }];
     
-    
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"
+                                                            message:@"Preencha todos os campos!"
+                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+
+    }
 }
 
--(void)ocultaTeclado:(UITapGestureRecognizer *)sender
+- (void)ocultaTeclado:(UITapGestureRecognizer *)sender
 {
     //Aquí hay que declarar todos los UITextField de nuestra escena
     [self.tfTelefone resignFirstResponder];
