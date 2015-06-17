@@ -12,8 +12,6 @@
 
 @interface HOOLoginViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITextField *emailField;
-@property (strong, nonatomic) IBOutlet UITextField *senhaField;
 @property (strong, nonatomic) IBOutlet UIView *subviewEmail;
 @property (strong, nonatomic) IBOutlet UIView *subviewSenha;
 

@@ -10,9 +10,8 @@
 #import "HOOAgendarServicoViewController.h"
 
 @interface HOOLoginViewController ()<UITextFieldDelegate>{
-    UIFloatLabelTextField *firstNameTextField;
+    UIFloatLabelTextField *emailTextField;
     UIFloatLabelTextField *senhaTextField;
-
 }
 
 @end
@@ -22,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameDidChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
     //Oculta teclado
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
     [tapGesture setNumberOfTouchesRequired:1];
@@ -29,23 +30,23 @@
     
     
     
-    firstNameTextField = [UIFloatLabelTextField new];
-    [firstNameTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    firstNameTextField.floatLabelActiveColor = [UIColor orangeColor];
-    firstNameTextField.placeholder = @"Email";
-    firstNameTextField.delegate = self;
-    [self.subviewEmail addSubview:firstNameTextField];
+    emailTextField = [UIFloatLabelTextField new];
+    [emailTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    emailTextField.floatLabelActiveColor = [UIColor orangeColor];
+    emailTextField.placeholder = @"Email";
+    emailTextField.delegate = self;
+    [self.subviewEmail addSubview:emailTextField];
     
    
-   [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[firstNameTextField]-10-|"
+   [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[emailTextField]-0-|"
                                                                       options:NSLayoutFormatAlignAllBaseline
                                                                       metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(firstNameTextField)]];
+                                                                        views:NSDictionaryOfVariableBindings(emailTextField)]];
     // Vertical
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[firstNameTextField(45)]-0-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[emailTextField(45)]-0-|"
                                                                       options:0
                                                                       metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(firstNameTextField)]];
+                                                                        views:NSDictionaryOfVariableBindings(emailTextField)]];
     
     senhaTextField = [UIFloatLabelTextField new];
     [senhaTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -54,7 +55,7 @@
     senhaTextField.delegate = self;
     [self.subviewSenha addSubview:senhaTextField];
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[senhaTextField]-10-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[senhaTextField]-0-|"
                                                                       options:NSLayoutFormatAlignAllBaseline
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(senhaTextField)]];
@@ -67,8 +68,8 @@
 
 - (void)ocultaTeclado:(UITapGestureRecognizer *)sender
 {
-    [firstNameTextField resignFirstResponder];
-    [self.senhaField resignFirstResponder];    
+    [emailTextField resignFirstResponder];
+    [senhaTextField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,8 +78,8 @@
 
 
 - (IBAction)login:(id)sender {
-    NSString *username = [firstNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *password = [self.senhaField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *username = [emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *password = [senhaTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if ([username length] == 0 || [password length] == 0) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
@@ -115,4 +116,26 @@
     }
 
 }
+
+- (void)keyboardFrameDidChange:(NSNotification *)notification
+{
+    CGRect keyboardEndFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGRect keyboardBeginFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    UIViewAnimationCurve animationCurve = [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    NSTimeInterval animationDuration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] integerValue];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    CGRect newFrame = self.view.frame;
+    CGRect keyboardFrameEnd = [self.view convertRect:keyboardEndFrame toView:nil];
+    CGRect keyboardFrameBegin = [self.view convertRect:keyboardBeginFrame toView:nil];
+    
+    newFrame.origin.y -= (keyboardFrameBegin.origin.y - keyboardFrameEnd.origin.y);
+    self.view.frame = newFrame;
+    
+    [UIView commitAnimations];
+}
+
 @end
