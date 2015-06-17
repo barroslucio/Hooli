@@ -142,28 +142,48 @@
 }
 
 - (IBAction)agendaServico:(id)sender {
-    PFObject *servico = [PFObject objectWithClassName:@"Servico"];
-    [servico setObject:[PFUser currentUser] forKey:@"User"];
-    servico[@"endereco"] = self.enderecoField.text;
-    servico[@"descricao"] = self.descricaoField.text;
-    servico[@"dataServico"] = strInvertedDate;
-    servico[@"tipo"] = tipoServico;
-
     
-    [servico saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Agendamento bem sucedido"
-                                                                message:@"Obrigado!"
-                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
-            [self segueViewController];
-            [self combina];
-        } else {
-            // There was a problem, check error.description
-        }
-    }];
+    //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
+    if (![self.descricaoField.text isEqualToString:@""] && ![self.textFieldDate.text isEqualToString:@""] && ![self.textFieldTime.text isEqualToString:@""] && ![self.enderecoField.text isEqualToString:@""])
+    {
+        PFUser *user = [PFUser currentUser];
+        
+        PFObject *servico = [PFObject objectWithClassName:@"Servico"];
+        [servico setObject:[PFUser currentUser] forKey:@"User"];
+        servico[@"endereco"] = [user objectForKey:@"endereco"];
+        servico[@"descricao"] = self.descricaoField.text;
+        servico[@"dataServico"] = strInvertedDate;
+        servico[@"tipo"] = tipoServico;
+        
+        
+        [servico saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Agendamento bem sucedido"
+                                                                    message:@"Obrigado!"
+                                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+                [self combina];
+                [self segueViewController];
+            } else {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"
+                                                                    message:@"Tente novamente"
+                                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];        }
+        }];
+        
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"
+                                                            message:@"Preencha todos os campos!"
+                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
+    
+    
     
 }
+
 
 - (void)segueViewController{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
