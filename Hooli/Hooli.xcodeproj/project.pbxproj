@@ -44,6 +44,7 @@
 		79BBC36E1B2F199400445A87 /* HOOEditProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC36D1B2F199400445A87 /* HOOEditProfissionalViewController.m */; };
 		79BBC3711B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC3701B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m */; };
 		79BBC3751B30724700445A87 /* HOOListaPropostasCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC3741B30724700445A87 /* HOOListaPropostasCell.m */; };
+		79BBC3781B31CE6B00445A87 /* HOODetalhesProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC3771B31CE6B00445A87 /* HOODetalhesProfissionalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		79BBC3701B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HOOPerfilProfissionalViewController.m; path = ../HOOPerfilProfissionalViewController.m; sourceTree = "<group>"; };
 		79BBC3731B30724700445A87 /* HOOListaPropostasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOListaPropostasCell.h; sourceTree = "<group>"; };
 		79BBC3741B30724700445A87 /* HOOListaPropostasCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOListaPropostasCell.m; sourceTree = "<group>"; };
+		79BBC3761B31CE6B00445A87 /* HOODetalhesProfissionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOODetalhesProfissionalViewController.h; sourceTree = "<group>"; };
+		79BBC3771B31CE6B00445A87 /* HOODetalhesProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOODetalhesProfissionalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +226,8 @@
 				77A88AD51B25E38C002BD992 /* HOOLoginViewController.h */,
 				77A88AD61B25E38C002BD992 /* HOOLoginViewController.m */,
 				77A88AD81B25E38C002BD992 /* Main.storyboard */,
+				79BBC3761B31CE6B00445A87 /* HOODetalhesProfissionalViewController.h */,
+				79BBC3771B31CE6B00445A87 /* HOODetalhesProfissionalViewController.m */,
 				243CC9071B2CD98500ACF9F3 /* Módulo usuário/cliente */,
 				243CC9081B2CD99800ACF9F3 /* Módulo profissional */,
 				77A88ADB1B25E38C002BD992 /* Images.xcassets */,
@@ -400,6 +405,7 @@
 				79A197811B29BD90009A3152 /* HOOPerfilUsuarioViewController.m in Sources */,
 				77A88AD11B25E38C002BD992 /* main.m in Sources */,
 				243CC9171B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m in Sources */,
+				79BBC3781B31CE6B00445A87 /* HOODetalhesProfissionalViewController.m in Sources */,
 				246A56841B29BBF2007044A7 /* HOOHistoricoClienteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
