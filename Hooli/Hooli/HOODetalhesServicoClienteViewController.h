@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "HOOListaPropostasCell.h"
+
 @interface HOODetalhesServicoClienteViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *labelTipo;
 @property (weak, nonatomic) IBOutlet UILabel *labelDateAndHour;
 @property (weak, nonatomic) IBOutlet UILabel *labelDescription;
 @property (weak, nonatomic) IBOutlet UITextView *textViewDescricao;
+
+
 
 @property (nonatomic) NSString *idServico;
 

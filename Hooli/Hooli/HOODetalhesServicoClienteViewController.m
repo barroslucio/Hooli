@@ -49,21 +49,24 @@
     NSLog(@"%ld", self.arrayListaPro.count);
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
         return [self.arrayListaPro count];
-//    return 5;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellPro"];
-    cell.textLabel.text = [[self.arrayListaPro[indexPath.row] objectForKey:@"valor"] stringValue];
-//    cell.textLabel.text = @"--";
+// função para listar o nome e o preço dos profissionais
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HOOListaPropostasCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellPro"];
+    cell.lbPreco.text = [[self.arrayListaPro[indexPath.row] objectForKey:@"valor"] stringValue];
+    cell.lbNome.text = [self.arrayListaPro[indexPath.row] objectForKey:@"nomeCompleto"];
     return cell;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 

@@ -70,20 +70,22 @@
 // método para salvar as alterações do usuário
 - (IBAction)saveChangesButton:(id)sender
 {
-    PFUser *user = [PFUser currentUser];
-    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    if (![self.tfRespCidade.text isEqualToString:@""] && ![self.tfRespDDD.text isEqualToString:@""] && ![self.tfRespEmail.text isEqualToString:@""] && ![self.tfRespEndereco.text isEqualToString:@""] && ![self.tfRespEstado.text isEqualToString:@""] && ![self.tfRespSenha.text isEqualToString:@""] && ![self.tfRespTelefone.text isEqualToString:@""])
+    {
+        PFUser *user = [PFUser currentUser];
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     
-    f.numberStyle = NSNumberFormatterDecimalStyle;
+        f.numberStyle = NSNumberFormatterDecimalStyle;
     
-    user[@"endereco"] = self.tfRespEndereco.text;
-    user[@"email"] = self.tfRespEmail.text;
-    user[@"senha"] = self.tfRespSenha.text;
-    user[@"ddd"] = [f numberFromString:self.tfRespDDD.text];
-    user[@"telefone"] = [f numberFromString:self.tfRespTelefone.text];
-    user[@"cidade"] = self.tfRespCidade.text;
-    user[@"estado"] = self.tfRespEstado.text;
+        user[@"endereco"] = self.tfRespEndereco.text;
+        user[@"email"] = self.tfRespEmail.text;
+        user[@"senha"] = self.tfRespSenha.text;
+        user[@"ddd"] = [f numberFromString:self.tfRespDDD.text];
+        user[@"telefone"] = [f numberFromString:self.tfRespTelefone.text];
+        user[@"cidade"] = self.tfRespCidade.text;
+        user[@"estado"] = self.tfRespEstado.text;
     
-    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         if (succeeded)
         {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -100,7 +102,17 @@
             [alertView show];
 
         }
-    }];
+        
+        }];
+        
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"
+                                                            message:@"Preencha todos os campos!"
+                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
 }
 
 -(void)ocultaTeclado:(UITapGestureRecognizer *)sender
