@@ -39,7 +39,7 @@
     PFQuery *queryEscolhido = [PFQuery queryWithClassName:@"Servico"];
     [queryEscolhido whereKey:@"proEscolhido" equalTo:[PFUser currentUser]];
     
-    self.arrayServicosEscolhido = [queryEscolhido findObjects];
+    self.arrayServicosEscolhido = [[NSArray alloc] initWithArray:[queryEscolhido findObjects]];
     
     //Requisição dos serviços em aguardo de aceitação
     PFQuery *queryPendentes = [PFQuery queryWithClassName:@"Proposta"];
@@ -53,7 +53,7 @@
         }
     }
     
-    self.arrayServicosPendentes = pendentesMutableArray;
+    self.arrayServicosPendentes = [[NSArray alloc] initWithArray:pendentesMutableArray];
 
 }
 
