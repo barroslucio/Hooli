@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface HOODetalhesProfissionalViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *lbNome;
+@property (weak, nonatomic) IBOutlet UILabel *lbEndereco;
+@property (weak, nonatomic) IBOutlet UILabel *lbCidade;
+@property (weak, nonatomic) IBOutlet UILabel *lbEstado;
 
 @end

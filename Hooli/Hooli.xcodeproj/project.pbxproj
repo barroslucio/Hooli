@@ -173,6 +173,8 @@
 				246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */,
 				243CC90C1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.h */,
 				243CC90D1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m */,
+				79BBC3761B31CE6B00445A87 /* HOODetalhesProfissionalViewController.h */,
+				79BBC3771B31CE6B00445A87 /* HOODetalhesProfissionalViewController.m */,
 			);
 			name = "Módulo usuário/cliente";
 			sourceTree = "<group>";
@@ -226,8 +228,6 @@
 				77A88AD51B25E38C002BD992 /* HOOLoginViewController.h */,
 				77A88AD61B25E38C002BD992 /* HOOLoginViewController.m */,
 				77A88AD81B25E38C002BD992 /* Main.storyboard */,
-				79BBC3761B31CE6B00445A87 /* HOODetalhesProfissionalViewController.h */,
-				79BBC3771B31CE6B00445A87 /* HOODetalhesProfissionalViewController.m */,
 				243CC9071B2CD98500ACF9F3 /* Módulo usuário/cliente */,
 				243CC9081B2CD99800ACF9F3 /* Módulo profissional */,
 				77A88ADB1B25E38C002BD992 /* Images.xcassets */,

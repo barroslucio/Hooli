@@ -2140,10 +2140,10 @@
             </objects>
             <point key="canvasLocation" x="2640.5" y="1859.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Detalhes Profissional View Controller-->
         <scene sceneID="xZ5-XZ-6nN">
             <objects>
-                <viewController id="zEy-WP-a2n" sceneMemberID="viewController">
+                <viewController id="zEy-WP-a2n" customClass="HOODetalhesProfissionalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dhj-me-4qY"/>
                         <viewControllerLayoutGuide type="bottom" id="nXf-oa-EXd"/>
@@ -2204,10 +2204,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="lbCidade" destination="dj1-XU-hUd" id="uyi-aT-ePM"/>
+                        <outlet property="lbEndereco" destination="Lgc-D8-Eru" id="Cse-9J-BMf"/>
+                        <outlet property="lbEstado" destination="n6Y-sz-tmu" id="Trk-lS-mdY"/>
+                        <outlet property="lbNome" destination="Jon-8D-jIP" id="sbn-n3-R65"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pk7-tr-vqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3176.5" y="1859.5"/>
+            <point key="canvasLocation" x="3258.5" y="1836.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PzG-do-LNs">
