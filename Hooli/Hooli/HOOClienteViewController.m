@@ -8,6 +8,11 @@
 
 #import "HOOClienteViewController.h"
 #import "HOOAgendarServicoViewController.h"
+#import "HOOCadastroProffisionalViewController.h"
+#import "PresentingAnimationController.h"
+#import "DismissingAnimationController.h"
+#import <pop/POP.h>
+
 @interface HOOClienteViewController () <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>{
     UIFloatLabelTextField *estadoTextField;
     UIFloatLabelTextField *cidadeTextField;
@@ -22,6 +27,7 @@
 @end
 
 @implementation HOOClienteViewController
+
 
 - (void)viewDidLoad
 {
@@ -222,6 +228,19 @@
     
 }
 
+- (IBAction)telaProfissional:(id)sender {
+
+    
+    HOOCadastroProffisionalViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cadastroPro"];
+    
+    
+    modalVC.transitioningDelegate = self;
+    
+    modalVC.modalPresentationStyle = UIModalPresentationCustom;
+    
+    [self presentViewController:modalVC animated:YES completion:nil];
+    
+}
 
 // procedimento para o teclado ser ocultado
 - (void)ocultaTeclado:(UITapGestureRecognizer *)sender
@@ -235,6 +254,18 @@
     [dddTextField resignFirstResponder];
 
 }
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    return [[PresentingAnimationController alloc] init];
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    return [[DismissingAnimationController alloc] init];
+}
+
+
 
 - (void)cadastraClienteParse{
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];

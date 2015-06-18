@@ -248,7 +248,7 @@
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(emailTextField)]];
     
-
+    
 }
 
 //OCULTAR TECLADO

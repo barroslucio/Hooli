@@ -8,6 +8,8 @@
 
 #import "HOOLoginViewController.h"
 #import "HOOAgendarServicoViewController.h"
+#import "HOOEscolhaCadastroViewController.h"
+
 
 @interface HOOLoginViewController ()<UITextFieldDelegate>{
     UIFloatLabelTextField *emailTextField;
@@ -17,9 +19,19 @@
 @end
 
 @implementation HOOLoginViewController
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    return [[PresentingAnimationPopUpController alloc] init];
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    return [[DismissingAnimationController alloc] init];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameDidChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
@@ -78,24 +90,47 @@
 
 
 - (IBAction)login:(id)sender {
+    
+    
     NSString *username = [emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password = [senhaTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if ([username length] == 0 || [password length] == 0) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
-                                                            message:@"Make sure you enter a username and password!"
-                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
+        
+        POPSpringAnimation *shake = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+        
+        shake.springBounciness = 20;
+        shake.velocity = @(3000);
+       
+        [self.subviewSenha.layer pop_addAnimation:shake forKey:@"shakePassword"];
+        
+        POPSpringAnimation *shake2 = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+        
+        shake2.springBounciness = 20;
+        shake2.velocity = @(3000);
+        
+        [self.subviewEmail.layer pop_addAnimation:shake2 forKey:@"shakePassword"];
+        
+        
     }
     else {
         
         [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
             if (error) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                                    message:[error.userInfo objectForKey:@"error"]
-                                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alertView show];
-            }
+                POPSpringAnimation *shake = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+                
+                shake.springBounciness = 20;
+                shake.velocity = @(3000);
+                
+                [self.subviewSenha.layer pop_addAnimation:shake forKey:@"shakePassword"];
+                
+                POPSpringAnimation *shake2 = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+                
+                shake2.springBounciness = 20;
+                shake2.velocity = @(3000);
+                
+                [self.subviewEmail.layer pop_addAnimation:shake2 forKey:@"shakePassword"];
+                           }
             else {
                 NSNumber* number = [[PFUser currentUser] objectForKey:@"tipo"];
                 int tipo = [number intValue];
@@ -136,6 +171,17 @@
     self.view.frame = newFrame;
     
     [UIView commitAnimations];
+}
+- (IBAction)cadastroButton:(id)sender {
+    
+    HOOEscolhaCadastroViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"escolhaCadastro"];
+    
+    
+    modalVC.transitioningDelegate = self;
+    
+    modalVC.modalPresentationStyle = UIModalPresentationCustom;
+    
+    [self presentViewController:modalVC animated:YES completion:nil];
 }
 
 @end

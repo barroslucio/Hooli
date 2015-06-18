@@ -52,7 +52,7 @@
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                 <state key="normal" title="Primeira vez no Hooli? Cadastre-se!"/>
                                 <connections>
-                                    <segue destination="3mm-qj-OBp" kind="show" id="3Z7-aj-rVu"/>
+                                    <action selector="cadastroButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bDL-J5-Pcf"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFy-fe-lJh">
@@ -96,6 +96,81 @@
             </objects>
             <point key="canvasLocation" x="283.5" y="204.5"/>
         </scene>
+        <!--Escolha Cadastro View Controller-->
+        <scene sceneID="5Ag-Hh-ava">
+            <objects>
+                <viewController storyboardIdentifier="escolhaCadastro" id="XWn-XR-zEa" customClass="HOOEscolhaCadastroViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ggq-l9-Cnt"/>
+                        <viewControllerLayoutGuide type="bottom" id="OGN-JS-n9x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dr3-h8-HtP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWJ-vQ-QAE">
+                                <rect key="frame" x="157" y="628" width="61" height="30"/>
+                                <state key="normal" title="Cancelar">
+                                    <color key="titleColor" red="1" green="0.05976938917595398" blue="0.19888576764652133" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelar:" destination="XWn-XR-zEa" eventType="touchUpInside" id="PC9-X1-e0S"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgU-gD-tPV">
+                                <rect key="frame" x="0.0" y="314" width="375" height="313"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biH-RI-M3H">
+                                        <rect key="frame" x="147" y="141" width="80" height="30"/>
+                                        <state key="normal" title="Profissional">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.097932987705858898" green="0.51990103893174389" blue="0.61107165404040398" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="biH-RI-M3H" secondAttribute="centerX" id="G63-EE-pHg"/>
+                                    <constraint firstAttribute="centerY" secondItem="biH-RI-M3H" secondAttribute="centerY" id="v9n-Cn-Zv6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qq-Vz-M6g">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="313"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QS8-TI-Ude">
+                                        <rect key="frame" x="161" y="141.5" width="53" height="30"/>
+                                        <state key="normal" title="Usuário">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.26719157155475137" green="0.61107165404040398" blue="0.26854023302575969" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="QS8-TI-Ude" secondAttribute="centerY" id="MgQ-An-GrZ"/>
+                                    <constraint firstAttribute="centerX" secondItem="QS8-TI-Ude" secondAttribute="centerX" id="wIj-wK-bKg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.88235874368686873" green="0.88235874368686873" blue="0.88235874368686873" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="OGN-JS-n9x" firstAttribute="top" secondItem="eWJ-vQ-QAE" secondAttribute="bottom" constant="8.5" id="3ie-LZ-FDY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bgU-gD-tPV" secondAttribute="trailing" constant="-16" id="Kiv-U9-KqZ"/>
+                            <constraint firstItem="1qq-Vz-M6g" firstAttribute="leading" secondItem="Dr3-h8-HtP" secondAttribute="leadingMargin" constant="-16" id="NNg-lJ-LsC"/>
+                            <constraint firstItem="eWJ-vQ-QAE" firstAttribute="top" secondItem="bgU-gD-tPV" secondAttribute="bottom" constant="1" id="PpB-lk-DIx"/>
+                            <constraint firstItem="bgU-gD-tPV" firstAttribute="top" secondItem="1qq-Vz-M6g" secondAttribute="bottom" constant="1" id="bCX-Vm-Qcj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1qq-Vz-M6g" secondAttribute="trailing" constant="-16" id="gtL-TI-p5A"/>
+                            <constraint firstItem="1qq-Vz-M6g" firstAttribute="top" secondItem="Dr3-h8-HtP" secondAttribute="topMargin" id="jtq-AJ-Us1"/>
+                            <constraint firstAttribute="centerX" secondItem="eWJ-vQ-QAE" secondAttribute="centerX" id="k0B-TL-h8X"/>
+                            <constraint firstItem="1qq-Vz-M6g" firstAttribute="height" secondItem="bgU-gD-tPV" secondAttribute="height" id="n6M-e7-Uyf"/>
+                            <constraint firstItem="bgU-gD-tPV" firstAttribute="leading" secondItem="Dr3-h8-HtP" secondAttribute="leadingMargin" constant="-16" id="nkv-aD-4Mv"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lRC-8K-qrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="848.5" y="204.5"/>
+        </scene>
         <!--Cliente View Controller-->
         <scene sceneID="irC-qM-dVy">
             <objects>
@@ -119,7 +194,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="d0U-4X-arC" kind="show" id="NAR-9A-UoD"/>
+                                    <action selector="telaProfissional:" destination="3mm-qj-OBp" eventType="touchUpInside" id="hxg-Ww-wCD"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsR-5C-27B">
@@ -130,11 +205,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Cliente" id="m42-Zt-s1i">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="tve-Qz-qYz">
-                                            <connections>
-                                                <segue destination="vXZ-lx-hvc" kind="show" id="xvx-Em-VUj"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="tve-Qz-qYz"/>
                                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="bvC-Cx-O1o">
                                             <connections>
                                                 <action selector="saveButton:" destination="3mm-qj-OBp" id="z2B-dq-HBP"/>
@@ -265,7 +336,7 @@
         <!--Cadastro Proffisional View Controller-->
         <scene sceneID="IHP-dy-CKp">
             <objects>
-                <viewController id="d0U-4X-arC" customClass="HOOCadastroProffisionalViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cadastroPro" id="d0U-4X-arC" customClass="HOOCadastroProffisionalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8zz-fb-klJ"/>
                         <viewControllerLayoutGuide type="bottom" id="WOB-Rm-aTK"/>
@@ -282,11 +353,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Profissional" id="Zuy-XZ-sAZ">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="oc3-l8-iv3">
-                                            <connections>
-                                                <segue destination="vXZ-lx-hvc" kind="show" id="u3H-tV-7QW"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="oc3-l8-iv3"/>
                                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="DHz-i2-oYK">
                                             <connections>
                                                 <action selector="actionSave:" destination="d0U-4X-arC" id="3c1-fR-P6e"/>
@@ -616,6 +683,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="subviewAlvenaria" destination="wAu-gr-ASK" id="Ntk-YC-TC9"/>
                         <outlet property="subviewCPF" destination="zKi-wK-vWt" id="zwp-7F-OPz"/>
                         <outlet property="subviewCidade" destination="mP5-oZ-pqL" id="Nee-ql-rnL"/>
                         <outlet property="subviewDDD" destination="jF6-Dd-H1H" id="h6g-tc-Wa2"/>
@@ -636,7 +704,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DmO-qZ-xsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813.5" y="-1219.5"/>
+            <point key="canvasLocation" x="871.5" y="-875.5"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="cou-R9-fUZ">
@@ -2162,12 +2230,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="UcQ-hE-lhH"/>
+        <segue reference="4WC-cH-dL7"/>
+        <segue reference="Zeq-Uf-JGb"/>
         <segue reference="kHi-hi-hA8"/>
         <segue reference="pt2-De-aRe"/>
-        <segue reference="UcQ-hE-lhH"/>
-        <segue reference="Zeq-Uf-JGb"/>
-        <segue reference="4WC-cH-dL7"/>
-        <segue reference="xvx-Em-VUj"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
