@@ -29,7 +29,6 @@
 
 - (void)mostraDadosProfissional
 {
-    
     // query para a proposta
     PFQuery *query = [PFQuery queryWithClassName:@"Proposta"];
     [query whereKey:@"objectId" equalTo:self.idProposta];
@@ -42,10 +41,8 @@
     PFQuery *query2 = [PFQuery queryWithClassName:@"_User"];
     [query2 whereKey:@"objectId" equalTo:[profissional objectId]];
     
-    // dicionário para coletar as informações do profissional
-    NSArray *array = [query2 findObjects];
-    NSDictionary *usuario = array[0];
-    
+    // object para o usuário
+    PFObject *usuario =[query2 getFirstObject];
     self.lbNome.text = usuario[@"username"];
     self.lbEndereco.text = usuario[@"endereco"];
     self.lbEstado.text = usuario[@"estado"];
@@ -61,11 +58,12 @@
     
 }
 
--(void)alerta{
+-(void)alerta
+{
     
-    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"O serviço vai ser feito no seu endereço cadastrado ou em outro lugar?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
-                            @"No mesmo endereço",
-                            @"Em outro lugar",
+    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Deseja contratar?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
+                            @"Sim",
+                            @"Não",
                             nil];
     popup.tag = 1;
     [popup showInView:[UIApplication sharedApplication].keyWindow];
@@ -77,10 +75,10 @@
         case 1: {
             switch (buttonIndex) {
                 case 0:
-                    [self performSegueWithIdentifier:@"mesmoEndereco" sender:self];
+//                    [self performSegueWithIdentifier:@"Sim" sender:self];
                     break;
                 case 1:
-                    [self performSegueWithIdentifier:@"outroEndereco" sender:self];
+//                    [self performSegueWithIdentifier:@"Não" sender:self];
                     break;
                 default:
                     break;
