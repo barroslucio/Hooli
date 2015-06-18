@@ -46,10 +46,10 @@
     [queryPendentes whereKey:@"profissional" equalTo:[PFUser currentUser]];
     NSArray *pendentesArray = [queryPendentes findObjects];
     NSMutableArray *pendentesMutableArray = [@[] mutableCopy];
-    for (NSDictionary *objetc in pendentesArray) {
-        PFObject *proposta = (PFObject *)objetc[@"serviço"];
+    for (NSDictionary *object in pendentesArray) {
+        PFObject *proposta = (PFObject *)object[@"serviço"];
         if ([self servicosEscolhidos:pendentesArray senvicoPendente:proposta]) {
-            [pendentesMutableArray addObject:objetc];
+            [pendentesMutableArray addObject:object];
         }
     }
     

@@ -2202,17 +2202,32 @@
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="nAb-4k-b4Y">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="ZoW-Yp-jSD" kind="show" id="Nhj-6D-RzB"/>
+                                                <segue destination="ZoW-Yp-jSD" kind="show" id="Ilb-Gp-sNu"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="OK" id="WNC-1S-5q3">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="confirmar:" destination="zEy-WP-a2n" id="9Y1-Eu-6fT"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jon-8D-jIP">
                                 <rect key="frame" x="138" y="127" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Valor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHz-Q4-BI8">
+                                <rect key="frame" x="36" y="290" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCa-NX-WFa">
+                                <rect key="frame" x="138" y="290" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2226,11 +2241,12 @@
                         <outlet property="lbEndereco" destination="Lgc-D8-Eru" id="Cse-9J-BMf"/>
                         <outlet property="lbEstado" destination="n6Y-sz-tmu" id="Trk-lS-mdY"/>
                         <outlet property="lbNome" destination="Jon-8D-jIP" id="sbn-n3-R65"/>
+                        <outlet property="lbValor" destination="dCa-NX-WFa" id="8Ua-iQ-rje"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pk7-tr-vqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3258.5" y="1836.5"/>
+            <point key="canvasLocation" x="3137.5" y="1829.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PzG-do-LNs">
@@ -2254,13 +2270,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kHi-hi-hA8"/>
+        <segue reference="Zeq-Uf-JGb"/>
+        <segue reference="Ilb-Gp-sNu"/>
+        <segue reference="pt2-De-aRe"/>
         <segue reference="4WC-cH-dL7"/>
         <segue reference="xvx-Em-VUj"/>
-        <segue reference="pt2-De-aRe"/>
-        <segue reference="Nhj-6D-RzB"/>
-        <segue reference="Zeq-Uf-JGb"/>
         <segue reference="UcQ-hE-lhH"/>
+        <segue reference="kHi-hi-hA8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
