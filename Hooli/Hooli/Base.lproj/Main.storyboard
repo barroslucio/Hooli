@@ -2085,7 +2085,7 @@
                                         <connections>
                                             <outlet property="lbNome" destination="NKW-Di-VML" id="ABJ-Pv-e8h"/>
                                             <outlet property="lbPreco" destination="Gf1-Yf-V45" id="CsJ-xn-qaR"/>
-                                            <segue destination="zEy-WP-a2n" kind="show" id="Dez-XS-UNz"/>
+                                            <segue destination="zEy-WP-a2n" kind="show" identifier="detalhes" id="Dez-XS-UNz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2106,7 +2106,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="kXN-h4-YML">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="caR-G4-CbS" kind="show" id="pt2-De-aRe"/>
+                                                <segue destination="N2A-yM-mT7" kind="show" id="78r-qT-X6n"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -2134,6 +2134,7 @@
                         <outlet property="labelDateAndHour" destination="BhE-qk-21w" id="l0X-78-tkY"/>
                         <outlet property="labelDescription" destination="WsR-x1-jou" id="qb3-mu-93c"/>
                         <outlet property="labelTipo" destination="dti-Ba-LWS" id="2AX-vr-BBi"/>
+                        <outlet property="tableView" destination="DNk-fD-36H" id="W12-SB-cNh"/>
                         <outlet property="textViewDescricao" destination="iaP-xm-nV6" id="tIV-mq-N4u"/>
                     </connections>
                 </viewController>
@@ -2178,19 +2179,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgc-D8-Eru">
-                                <rect key="frame" x="138" y="166" width="42" height="21"/>
+                                <rect key="frame" x="138" y="166" width="187" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dj1-XU-hUd">
-                                <rect key="frame" x="138" y="209" width="42" height="21"/>
+                                <rect key="frame" x="138" y="209" width="187" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6Y-sz-tmu">
-                                <rect key="frame" x="138" y="249" width="42" height="21"/>
+                                <rect key="frame" x="138" y="249" width="187" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2201,9 +2202,6 @@
                                     <navigationItem title="Detalhes do Profissional" id="Pwb-yj-zSN">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="nAb-4k-b4Y">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="ZoW-Yp-jSD" kind="show" id="Ilb-Gp-sNu"/>
-                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="OK" id="WNC-1S-5q3">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2215,19 +2213,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jon-8D-jIP">
-                                <rect key="frame" x="138" y="127" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Valor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHz-Q4-BI8">
-                                <rect key="frame" x="36" y="290" width="39" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCa-NX-WFa">
-                                <rect key="frame" x="138" y="290" width="42" height="21"/>
+                                <rect key="frame" x="138" y="127" width="187" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2241,7 +2227,6 @@
                         <outlet property="lbEndereco" destination="Lgc-D8-Eru" id="Cse-9J-BMf"/>
                         <outlet property="lbEstado" destination="n6Y-sz-tmu" id="Trk-lS-mdY"/>
                         <outlet property="lbNome" destination="Jon-8D-jIP" id="sbn-n3-R65"/>
-                        <outlet property="lbValor" destination="dCa-NX-WFa" id="8Ua-iQ-rje"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pk7-tr-vqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2270,13 +2255,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zeq-Uf-JGb"/>
-        <segue reference="Ilb-Gp-sNu"/>
-        <segue reference="pt2-De-aRe"/>
         <segue reference="4WC-cH-dL7"/>
         <segue reference="xvx-Em-VUj"/>
-        <segue reference="UcQ-hE-lhH"/>
+        <segue reference="78r-qT-X6n"/>
         <segue reference="kHi-hi-hA8"/>
+        <segue reference="Zeq-Uf-JGb"/>
+        <segue reference="UcQ-hE-lhH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

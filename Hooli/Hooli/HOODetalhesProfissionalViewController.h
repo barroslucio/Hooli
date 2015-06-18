@@ -16,9 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbEndereco;
 @property (weak, nonatomic) IBOutlet UILabel *lbCidade;
 @property (weak, nonatomic) IBOutlet UILabel *lbEstado;
-@property (weak, nonatomic) IBOutlet UILabel *lbValor;
 
-@property(nonatomic) NSString *idProfissional;
+@property(nonatomic) NSString *idProposta;
+
 - (IBAction)confirmar:(id)sender;
 
 @end

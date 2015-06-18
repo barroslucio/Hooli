@@ -7,9 +7,12 @@
 //
 
 #import "HOODetalhesServicoClienteViewController.h"
+#import "HOODetalhesProfissionalViewController.h"
 
 @interface HOODetalhesServicoClienteViewController ()<UITableViewDataSource, UITableViewDelegate>
+
 @property (nonatomic) NSArray *arrayListaPro;
+
 @end
 
 @implementation HOODetalhesServicoClienteViewController
@@ -68,6 +71,26 @@
     [super didReceiveMemoryWarning];
     
 }
+
+// método para chamar os detalhes do profissional na próxima tela
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    HOODetalhesProfissionalViewController *destinationViewController = [segue destinationViewController];
+    
+    
+    if ([segue.identifier isEqual:@"detalhes"])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSString *idProposta = [self.arrayListaPro[indexPath.row] objectId];
+        destinationViewController.idProposta = idProposta;
+    }
+    else
+    {
+        destinationViewController.idProposta = nil;
+        
+    }
+}
+
 
 
 
