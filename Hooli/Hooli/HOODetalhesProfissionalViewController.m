@@ -59,21 +59,6 @@
 {
     [self alerta];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
-    [query whereKey:@"objectId" equalTo:self.idServico];
-    PFObject *objectServico =[query getFirstObject];
-    
-    //PFObject *servicoPro = (PFObject *) objectServico[@"proEscolhido"];
-    
-    objectServico[@"proEscolhido"] = profissional;
-    
-    
-    
-    
-
-    
-    
-
 }
 
 -(void)alerta
@@ -92,7 +77,7 @@
         case 1: {
             switch (buttonIndex) {
                 case 0:
-                   [self performSegueWithIdentifier:@"Sim" sender:self];
+                    [self contratar];
                     break;
                 default:
                     break;
@@ -102,6 +87,35 @@
         default:
             break;
     }
+    
+}
+
+- (void)contratar
+{
+    // query para o serviço
+    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
+    [query whereKey:@"objectId" equalTo:self.idServico];
+    PFObject *servico =[query getFirstObject];
+    
+    // setando o serviço para o profissional no parse
+    [servico setObject:profissional forKey:@"proEscolhido"];
+    
+    [servico saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Profissional contratado!"
+                                                                message:@"Obrigado!"
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"
+                                                                message:@"Tente novamente"
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            
+            }
+    }];
+
+    
     
 }
 
