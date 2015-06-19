@@ -66,7 +66,7 @@
     self.swLimpeza.enabled = NO;
     self.swPintura.enabled = NO;
     
-    // comparação para ver qual os trabalhos desempenhados pelo profissional
+    // comparação para ver quais os trabalhos desempenhados pelo profissional
     if ([user[@"alvenaria"] isEqual:[NSNumber numberWithBool:YES]])
     {
         self.swAlvenaria.on = YES;
