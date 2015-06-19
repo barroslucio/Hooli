@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -189,20 +189,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyP-vo-3an">
-                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
-                                <color key="backgroundColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="5ry-jd-hbu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
-                                <state key="normal" title="Você é um prossifional? Cadastre-se aqui.">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="telaProfissional:" destination="3mm-qj-OBp" eventType="touchUpInside" id="hxg-Ww-wCD"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exT-pf-jbL" userLabel="subviewEstado">
                                 <rect key="frame" x="0.0" y="222" width="375" height="45"/>
                                 <color key="backgroundColor" red="0.67450980392156867" green="0.89803921568627454" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -283,13 +269,11 @@
                             <constraint firstItem="ZsR-5C-27B" firstAttribute="top" secondItem="ulJ-JX-aJt" secondAttribute="bottom" id="4JA-Ua-xvg"/>
                             <constraint firstItem="zvd-Zj-Z5q" firstAttribute="top" secondItem="pD4-yu-cWc" secondAttribute="bottom" constant="1" id="53C-G3-XiD"/>
                             <constraint firstItem="iAd-9V-Ul1" firstAttribute="bottom" secondItem="zvd-Zj-Z5q" secondAttribute="bottom" id="75B-d3-zCB"/>
-                            <constraint firstItem="6ub-DJ-g9x" firstAttribute="top" secondItem="iyP-vo-3an" secondAttribute="bottom" id="77P-Xd-PAN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pD4-yu-cWc" secondAttribute="trailing" constant="-16" id="7F5-hZ-KmC"/>
                             <constraint firstItem="zG8-2I-9qb" firstAttribute="leading" secondItem="BT3-ti-as8" secondAttribute="leadingMargin" constant="-16" id="C3t-wd-Phf"/>
                             <constraint firstItem="zvd-Zj-Z5q" firstAttribute="leading" secondItem="iAd-9V-Ul1" secondAttribute="trailing" constant="1" id="EZb-Gm-8Dt"/>
                             <constraint firstItem="zvd-Zj-Z5q" firstAttribute="top" secondItem="pD4-yu-cWc" secondAttribute="bottom" constant="1" id="ISg-sj-v0A"/>
                             <constraint firstItem="ZsR-5C-27B" firstAttribute="leading" secondItem="BT3-ti-as8" secondAttribute="leadingMargin" constant="-16" id="JyC-80-mZX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iyP-vo-3an" secondAttribute="trailing" constant="-16" id="KI3-eN-ZTK"/>
                             <constraint firstItem="iAd-9V-Ul1" firstAttribute="top" secondItem="pD4-yu-cWc" secondAttribute="bottom" constant="1" id="Klm-pA-B5r"/>
                             <constraint firstItem="pD4-yu-cWc" firstAttribute="top" secondItem="zG8-2I-9qb" secondAttribute="bottom" constant="1" id="Ksw-l2-Q8a"/>
                             <constraint firstItem="yiE-18-EGl" firstAttribute="top" secondItem="exT-pf-jbL" secondAttribute="bottom" constant="1" id="KyC-5f-jnX"/>
@@ -311,7 +295,6 @@
                             <constraint firstItem="zvd-Zj-Z5q" firstAttribute="top" secondItem="pD4-yu-cWc" secondAttribute="bottom" constant="1" id="ua6-z9-IWf"/>
                             <constraint firstItem="iAd-9V-Ul1" firstAttribute="leading" secondItem="BT3-ti-as8" secondAttribute="leadingMargin" constant="-16" id="xbR-p1-zPJ"/>
                             <constraint firstItem="exT-pf-jbL" firstAttribute="top" secondItem="zvd-Zj-Z5q" secondAttribute="bottom" constant="1" id="yK7-a9-Pph"/>
-                            <constraint firstItem="iyP-vo-3an" firstAttribute="leading" secondItem="BT3-ti-as8" secondAttribute="leadingMargin" constant="-16" id="ynG-uM-Whp"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -451,7 +434,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wAu-gr-ASK" userLabel="subviewAlvenaria">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAu-gr-ASK" userLabel="subviewAlvenaria">
                                                 <rect key="frame" x="0.0" y="468" width="375" height="45"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGJ-3F-FRA">
@@ -474,7 +457,7 @@
                                                     <constraint firstItem="FGJ-3F-FRA" firstAttribute="bottom" secondItem="dt3-rL-fhs" secondAttribute="bottom" constant="4.5" id="oVt-Qn-E5d"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s76-oj-phO" userLabel="subviewChaveiro">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s76-oj-phO" userLabel="subviewChaveiro">
                                                 <rect key="frame" x="0.0" y="514" width="375" height="45"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYY-7X-oV1">
@@ -497,7 +480,7 @@
                                                     <constraint firstItem="9iB-XL-hAd" firstAttribute="leading" secondItem="s76-oj-phO" secondAttribute="leading" constant="19" id="wme-9m-aUG"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-tA-HSp" userLabel="subviewElétrica">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-tA-HSp" userLabel="subviewElétrica">
                                                 <rect key="frame" x="0.0" y="560" width="375" height="45"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8XT-wq-imu">
@@ -520,7 +503,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="8XT-wq-imu" secondAttribute="trailing" constant="18" id="gCO-d5-dWY"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6G-JY-t0y" userLabel="subviewHidráulica">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6G-JY-t0y" userLabel="subviewHidráulica">
                                                 <rect key="frame" x="0.0" y="606" width="375" height="45"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LbR-FE-ZB3">
@@ -543,7 +526,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="NmL-XB-Z0E"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIN-q0-zLD" userLabel="subviewLimpeza">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIN-q0-zLD" userLabel="subviewLimpeza">
                                                 <rect key="frame" x="0.0" y="652" width="375" height="45"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXI-uF-FkU">
@@ -566,7 +549,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="vhg-NV-X1G"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mt7-0s-tZa" userLabel="subviewPintura">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mt7-0s-tZa" userLabel="subviewPintura">
                                                 <rect key="frame" x="0.0" y="698" width="375" height="45"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E3i-Xd-E6r">

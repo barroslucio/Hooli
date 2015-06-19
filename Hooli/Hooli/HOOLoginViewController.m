@@ -130,7 +130,7 @@
                 shake2.velocity = @(3000);
                 
                 [self.subviewEmail.layer pop_addAnimation:shake2 forKey:@"shakePassword"];
-                           }
+            }
             else {
                 NSNumber* number = [[PFUser currentUser] objectForKey:@"tipo"];
                 int tipo = [number intValue];
