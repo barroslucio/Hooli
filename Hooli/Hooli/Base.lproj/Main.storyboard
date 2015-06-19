@@ -992,6 +992,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Agendar" id="jCh-p6-1Yd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="bhD-7x-8tV" kind="show" identifier="outroEndereco" id="5Mx-jP-aDd"/>
+                        <segue destination="boi-27-8xf" kind="show" identifier="mesmoEndereco" id="mXS-51-ypX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AC-dL-S6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
