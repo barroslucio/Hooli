@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbEstado;
 
 @property(nonatomic) NSString *idProposta;
+@property(nonatomic) NSString *idServico;
 
 - (IBAction)confirmar:(id)sender;
 

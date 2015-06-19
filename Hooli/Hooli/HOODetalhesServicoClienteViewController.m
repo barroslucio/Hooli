@@ -82,11 +82,13 @@
     {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSString *idProposta = [self.arrayListaPro[indexPath.row] objectId];
-        destinationViewController.idProposta = idProposta;
+        destinationViewController.idProposta = idProposta; // mandando a proposta
+        destinationViewController.idServico = self.idServico; // mandando o serviço 
     }
     else
     {
         destinationViewController.idProposta = nil;
+        destinationViewController.idServico = nil;
         
     }
 }

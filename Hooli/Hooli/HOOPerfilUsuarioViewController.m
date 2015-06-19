@@ -20,9 +20,7 @@
     UIFloatLabelTextField *enderecoTextField;
     UIFloatLabelTextField *dddTextField;
     UIFloatLabelTextField *telefoneTextField;
-    UIFloatLabelTextField *senhaTextField;
     UIFloatLabelTextField *emailTextField;
-    
 }
 
 
@@ -46,6 +44,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameDidChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
@@ -87,27 +87,7 @@
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(emailTextField)]];
     
-    
-    senhaTextField = [UIFloatLabelTextField new];
-    [senhaTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    senhaTextField.floatLabelActiveColor = [UIColor orangeColor];
-    senhaTextField.placeholder = @"Senha";
-    //senhaTextField.borderStyle = UITextBorderStyleLine;
-    senhaTextField.delegate = self;
-    [self.subviewSenha addSubview:senhaTextField];
-    
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[senhaTextField]-0-|"
-                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(senhaTextField)]];
-    // Vertical
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[senhaTextField(45)]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(senhaTextField)]];
-    
-    
+        
     cidadeTextField = [UIFloatLabelTextField new];
     [cidadeTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
     cidadeTextField.floatLabelActiveColor = [UIColor orangeColor];
@@ -186,7 +166,14 @@
     
     
     
+    PFUser *user = [PFUser currentUser];
     
+    enderecoTextField.text = user[@"endereco"];
+    emailTextField.text = user[@"email"];
+    estadoTextField.text = user[@"estado"];
+    cidadeTextField.text = user[@"cidade"];
+    dddTextField.text = [user[@"ddd"] stringValue];
+    telefoneTextField.text = [user[@"telefone"] stringValue];
     
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
@@ -247,7 +234,6 @@
 - (void)ocultaTeclado:(UITapGestureRecognizer *)sender
 {
     [emailTextField resignFirstResponder];
-    [senhaTextField resignFirstResponder];
     [telefoneTextField resignFirstResponder];
     [cidadeTextField resignFirstResponder];
     [estadoTextField resignFirstResponder];
@@ -276,7 +262,6 @@
     
     PFUser *user = [PFUser user];
     user.username = emailTextField.text;
-    user.password = senhaTextField.text;
     
     
     user[@"endereco"] = enderecoTextField.text;
@@ -312,7 +297,7 @@
     NSString *statusCadastro;
     
     //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
-    if (![dddTextField.text isEqualToString:@""] && ![emailTextField.text isEqualToString:@""] && ![senhaTextField.text isEqualToString:@""]  && ![cidadeTextField.text isEqualToString:@""] && ![estadoTextField.text isEqualToString:@""] && ![telefoneTextField.text isEqualToString:@""] && ![enderecoTextField.text isEqualToString:@""])
+    if (![dddTextField.text isEqualToString:@""] && ![emailTextField.text isEqualToString:@""]  && ![cidadeTextField.text isEqualToString:@""] && ![estadoTextField.text isEqualToString:@""] && ![telefoneTextField.text isEqualToString:@""] && ![enderecoTextField.text isEqualToString:@""])
     {
         //Método para salvar no Parse.com
         [self cadastraClienteParse];

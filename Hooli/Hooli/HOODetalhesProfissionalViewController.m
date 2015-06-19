@@ -9,6 +9,9 @@
 #import "HOODetalhesProfissionalViewController.h"
 
 @interface HOODetalhesProfissionalViewController () <UIActionSheetDelegate>
+{
+    PFObject *profissional;
+}
 
 @end
 
@@ -35,7 +38,7 @@
     PFObject *objectProposta =[query getFirstObject];
 
     // acessa o id do profissional que mandou a proposta
-    PFObject *profissional = (PFObject *) objectProposta[@"profissional"];
+    profissional = (PFObject *) objectProposta[@"profissional"];
     
     // query para as informações do profissional
     PFQuery *query2 = [PFQuery queryWithClassName:@"_User"];
@@ -63,7 +66,6 @@
     
     UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Deseja contratar?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
                             @"Sim",
-                            @"Não",
                             nil];
     popup.tag = 1;
     [popup showInView:[UIApplication sharedApplication].keyWindow];
@@ -75,10 +77,7 @@
         case 1: {
             switch (buttonIndex) {
                 case 0:
-//                    [self performSegueWithIdentifier:@"Sim" sender:self];
-                    break;
-                case 1:
-//                    [self performSegueWithIdentifier:@"Não" sender:self];
+                    [self contratar];
                     break;
                 default:
                     break;
@@ -88,6 +87,35 @@
         default:
             break;
     }
+    
+}
+
+- (void)contratar
+{
+    // query para o serviço
+    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
+    [query whereKey:@"objectId" equalTo:self.idServico];
+    PFObject *servico =[query getFirstObject];
+    
+    // setando o serviço para o profissional no parse
+    [servico setObject:profissional forKey:@"proEscolhido"];
+    
+    [servico saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Profissional contratado!"
+                                                                message:@"Obrigado!"
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"
+                                                                message:@"Tente novamente"
+                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            
+            }
+    }];
+
+    
     
 }
 

@@ -19,7 +19,6 @@
 @property (strong, nonatomic) IBOutlet UIView *subviewEndereco;
 @property (strong, nonatomic) IBOutlet UIView *subviewDDD;
 @property (strong, nonatomic) IBOutlet UIView *subviewTelefone;
-@property (strong, nonatomic) IBOutlet UIView *subviewSenha;
 @property (strong, nonatomic) IBOutlet UIView *subviewEmail;
 
 //ARRAY DE ESTADOS
