@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "UIFloatLabelTextField.h"
+#import "PresentingAnimationPopUpController.h"
+#import "DismissingAnimationController.h"
+@import pop;
 
-@interface HOOLoginViewController : UIViewController
+@interface HOOLoginViewController : UIViewController <UIViewControllerTransitioningDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextField *emailField;
-@property (strong, nonatomic) IBOutlet UITextField *senhaField;
+@property (strong, nonatomic) IBOutlet UIView *subviewEmail;
+@property (strong, nonatomic) IBOutlet UIView *subviewSenha;
 
 - (IBAction)login:(id)sender;
 

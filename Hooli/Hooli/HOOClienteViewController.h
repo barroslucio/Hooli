@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "UIFloatLabelTextField.h"
+@import pop;
 
-@interface HOOClienteViewController : UIViewController
+@interface HOOClienteViewController : UIViewController <UIViewControllerTransitioningDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *senhaField;
@@ -18,6 +20,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *estadoField;
 @property (weak, nonatomic) IBOutlet UITextField *enderecoField;
 @property (strong, nonatomic) IBOutlet UITextField *dddField;
+@property (strong, nonatomic) IBOutlet UIView *subviewEstado;
+@property (strong, nonatomic) IBOutlet UIView *subviewCidade;
+@property (strong, nonatomic) IBOutlet UIView *subviewEndereco;
+@property (strong, nonatomic) IBOutlet UIView *subviewDDD;
+@property (strong, nonatomic) IBOutlet UIView *subviewTelefone;
+@property (strong, nonatomic) IBOutlet UIView *subviewSenha;
+@property (strong, nonatomic) IBOutlet UIView *subviewEmail;
 
 //ARRAY DE ESTADOS
 @property (nonatomic) NSArray* arrayUF;

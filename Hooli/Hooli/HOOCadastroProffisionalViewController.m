@@ -6,32 +6,27 @@
 //  Copyright (c) 2015 Hooli. All rights reserved.
 //
 
-//NSArray *statesCodes = @[@"AC", @"AL", @"AM", @"AP", @"BA", @"CE", @"ES", @"GO", @"MA", @"MG", @"MS", @"MT", @"PA", @"PB", @"PE", @"PI", @"PR", @"RJ", @"RN", @"RO", @"RR", @"RS", @"SC", @"SE", @"SP", @"TO"];
-//NSArray *statesNames = @[@"Acre", @"Alagoas", @"Amazonas", @"Amapá", @"Bahia", @"Ceará", @"Espírito Santo", @"Goiás", @"Maranhão", @"Minas Gerais", @"Mato Grosso do Sul", @"Mato Grosso", @"Pará", @"Paraíba", @"Pernambuco", @"Piauí", @"Paraná", @"Rio de Janeiro", @"Rio Grande do Norte", @"Rondônia", @"Roraima", @"Rio Grande do Sul", @"Santa Catarina", @"Sergipe", @"São Paulo", @"Tocantins"];
-
 
 #import "HOOCadastroProffisionalViewController.h"
 #import "HOOServicosDisponiveisViewController.h"
-@interface HOOCadastroProffisionalViewController ()<UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
-//SCROL VIEW AND VIEW
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIView *viewScroll;
+@interface HOOCadastroProffisionalViewController ()<UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
+{
+    UIFloatLabelTextField *estadoTextField;
+    UIFloatLabelTextField *cidadeTextField;
+    UIFloatLabelTextField *enderecoTextField;
+    UIFloatLabelTextField *dddTextField;
+    UIFloatLabelTextField *telefoneTextField;
+    UIFloatLabelTextField *senhaTextField;
+    UIFloatLabelTextField *emailTextField;
+    UIFloatLabelTextField *nomeTextField;
+    UIFloatLabelTextField *cpfTextField;
+    UIFloatLabelTextField *rgTextField;
+}
 
 //BUTTON SAVE
 - (IBAction)actionSave:(id)sender;
 
-//TEXTFIELD
-@property (weak, nonatomic) IBOutlet UITextField *textFieldNome;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldEmail;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldSenha;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldEndereco;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldCidade;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldUF;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldTelefone;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldRG;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldCPF;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldDDD;
 
 //PIKER VIEW
 @property (retain, nonatomic)  UIPickerView *pickerView;
@@ -57,32 +52,218 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self initProperties];
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
     [tapGesture setNumberOfTouchesRequired:1];
     [[self view] addGestureRecognizer:tapGesture];
     
-    self.textFieldNome.layer.borderColor=[[UIColor colorWithRed:0.137 green:0.804 blue:0.922 alpha:1]CGColor];
-    self.textFieldNome.layer.borderWidth=1.0;
+    estadoTextField = [UIFloatLabelTextField new];
+    [estadoTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    estadoTextField.floatLabelActiveColor = [UIColor orangeColor];
+    estadoTextField.placeholder = @"Estado";
+    estadoTextField.delegate = self;
+    [self.subviewEstado addSubview:estadoTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[estadoTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(estadoTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[estadoTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(estadoTextField)]];
+    
+    
+    nomeTextField = [UIFloatLabelTextField new];
+    [nomeTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    nomeTextField.floatLabelActiveColor = [UIColor orangeColor];
+    nomeTextField.placeholder = @"Nome Completo";
+    
+    nomeTextField.delegate = self;
+    [self.subviewNome addSubview:nomeTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[nomeTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(nomeTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[nomeTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(nomeTextField)]];
+    
 
-
+    
+    rgTextField = [UIFloatLabelTextField new];
+    [rgTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    rgTextField.floatLabelActiveColor = [UIColor orangeColor];
+    rgTextField.placeholder = @"RG";
+    rgTextField.delegate = self;
+    [self.subviewRG addSubview:rgTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[rgTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(rgTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[rgTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(rgTextField)]];
+    
+    cpfTextField = [UIFloatLabelTextField new];
+    [cpfTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    cpfTextField.floatLabelActiveColor = [UIColor orangeColor];
+    cpfTextField.placeholder = @"CPF";
+    cpfTextField.delegate = self;
+    [self.subviewCPF addSubview:cpfTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[cpfTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(cpfTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[cpfTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(cpfTextField)]];
+    
+    senhaTextField = [UIFloatLabelTextField new];
+    [senhaTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    senhaTextField.floatLabelActiveColor = [UIColor orangeColor];
+    senhaTextField.placeholder = @"Senha";
+    //senhaTextField.borderStyle = UITextBorderStyleLine;
+    senhaTextField.delegate = self;
+    [self.subviewSenha addSubview:senhaTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[senhaTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(senhaTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[senhaTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(senhaTextField)]];
+    
+    
+    cidadeTextField = [UIFloatLabelTextField new];
+    [cidadeTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    cidadeTextField.floatLabelActiveColor = [UIColor orangeColor];
+    cidadeTextField.placeholder = @"Cidade";
+    //cidadeTextField.borderStyle = UITextBorderStyleNone;
+    cidadeTextField.delegate = self;
+    [self.subviewCidade addSubview:cidadeTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[cidadeTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(cidadeTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[cidadeTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(cidadeTextField)]];
+    
+    dddTextField = [UIFloatLabelTextField new];
+    [dddTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    dddTextField.floatLabelActiveColor = [UIColor orangeColor];
+    dddTextField.placeholder = @"DDD";
+    //dddTextField.borderStyle = UITextBorderStyleNone;
+    dddTextField.delegate = self;
+    [self.subviewDDD addSubview:dddTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[dddTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(dddTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[dddTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(dddTextField)]];
+    
+    enderecoTextField = [UIFloatLabelTextField new];
+    [enderecoTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    enderecoTextField.floatLabelActiveColor = [UIColor orangeColor];
+    enderecoTextField.placeholder = @"Endereço";
+    // enderecoTextField.borderStyle = UITextBorderStyleNone;
+    enderecoTextField.delegate = self;
+    [self.subviewEndereco  addSubview:enderecoTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[enderecoTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(enderecoTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[enderecoTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(enderecoTextField)]];
+    
+    telefoneTextField = [UIFloatLabelTextField new];
+    [telefoneTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    telefoneTextField.floatLabelActiveColor = [UIColor orangeColor];
+    telefoneTextField.placeholder = @"Telefone";
+    telefoneTextField.delegate = self;
+    [self.subviewTelefone addSubview:telefoneTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[telefoneTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(telefoneTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[telefoneTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(telefoneTextField)]];
+    
+    emailTextField = [UIFloatLabelTextField new];
+    [emailTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    emailTextField.floatLabelActiveColor = [UIColor orangeColor];
+    emailTextField.placeholder = @"Email";
+    emailTextField.delegate = self;
+    [self.subviewEmail addSubview:emailTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[emailTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(emailTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[emailTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(emailTextField)]];
+    
+    
 }
 
 //OCULTAR TECLADO
 -(void)ocultaTeclado:(UITapGestureRecognizer *)sender{
     //Aquí hay que declarar todos los UITextField de nuestra escena
-    [self.textFieldNome resignFirstResponder];
-    [self.textFieldEmail resignFirstResponder];
-    [self.textFieldSenha resignFirstResponder];
-    [self.textFieldEndereco resignFirstResponder];
-    [self.textFieldCidade resignFirstResponder];
-    [self.textFieldUF resignFirstResponder];
-    [self.textFieldTelefone resignFirstResponder];
-    [self.textFieldRG resignFirstResponder];
-    [self.textFieldCPF resignFirstResponder];
-    [self.textFieldDDD resignFirstResponder];
-
+    [emailTextField resignFirstResponder];
+    [senhaTextField resignFirstResponder];
+    [telefoneTextField resignFirstResponder];
+    [cidadeTextField resignFirstResponder];
+    [estadoTextField resignFirstResponder];
+    [enderecoTextField resignFirstResponder];
+    [dddTextField resignFirstResponder];
+    [nomeTextField resignFirstResponder];
+    [cpfTextField resignFirstResponder];
+    [rgTextField resignFirstResponder];
 
 }
 
@@ -96,17 +277,13 @@
     self.switchLimpeza.on = NO;
     self.switchPintura.on = NO;
     
-    
-    //[self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.viewScroll.frame.size.height)];
-    //[self.scrollView setScrollEnabled:TRUE];
-    //[self.scrollView setShowsVerticalScrollIndicator:YES];
-    //[self.scrollView setShowsHorizontalScrollIndicator:NO];
+
 
     self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(100, 100, 300, 300)];
     self.pickerView.dataSource = self;
     self.pickerView.delegate = self;
     self.pickerView.showsSelectionIndicator = YES;
-    self.textFieldUF.inputView = self.pickerView;
+    estadoTextField.inputView = self.pickerView;
     
     self.arrayUF = @[@"Acre", @"Alagoas", @"Amazonas", @"Amapá", @"Bahia", @"Ceará", @"Distrito Federal", @"Espírito Santo", @"Goiás", @"Maranhão", @"Minas Gerais", @"Mato Grosso do Sul", @"Mato Grosso", @"Pará", @"Paraíba", @"Pernambuco", @"Piauí", @"Paraná", @"Rio de Janeiro", @"Rio Grande do Norte", @"Rondônia", @"Roraima", @"Rio Grande do Sul", @"Santa Catarina", @"Sergipe", @"São Paulo", @"Tocantins"];
 
@@ -124,7 +301,7 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row
             forComponent:(NSInteger)component
 {
-    self.textFieldUF.text = @"Acre" ;
+    estadoTextField.text = @"Acre" ;
     return [self.arrayUF objectAtIndex:row];
     
 }
@@ -134,7 +311,7 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-        self.textFieldUF.text=[self.arrayUF objectAtIndex:row];
+        estadoTextField.text=[self.arrayUF objectAtIndex:row];
 }
 
 
@@ -149,27 +326,27 @@
 
 - (void)cadastraProfissionalParse{
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
-    NSNumber *telefone = [formatter numberFromString:self.textFieldTelefone.text];
-    NSNumber *ddd = [formatter numberFromString:self.textFieldDDD.text];
-    NSNumber *cpf = [formatter numberFromString:self.textFieldCPF.text];
-    NSNumber *rg = [formatter numberFromString:self.textFieldRG.text];
+    NSNumber *telefone = [formatter numberFromString:telefoneTextField.text];
+    NSNumber *ddd = [formatter numberFromString:dddTextField.text];
+    NSNumber *cpf = [formatter numberFromString:cpfTextField.text];
+    NSNumber *rg = [formatter numberFromString:rgTextField.text];
 
     NSNumber *tipo = [NSNumber numberWithInt:1];;
     
     
     PFUser *user = [PFUser user];
-    user.username =self.textFieldEmail.text;
-    user.password = self.textFieldSenha.text;
+    user.username =emailTextField.text;
+    user.password = senhaTextField.text;
     
-    user[@"endereco"] = self.textFieldEndereco.text;
-    user[@"email"]=self.textFieldEmail.text;
-    user[@"estado"] = self.textFieldUF.text;
-    user[@"cidade"] = self.textFieldCidade.text;
+    user[@"endereco"] = enderecoTextField.text;
+    user[@"email"]= emailTextField.text;
+    user[@"estado"] = estadoTextField.text;
+    user[@"cidade"] = cidadeTextField.text;
     user[@"ddd"] = ddd;
     user[@"telefone"] = telefone;
     user[@"cpf"] = cpf;
     user[@"rg"] = rg;
-    user[@"nome"] = self.textFieldNome.text;
+    user[@"nome"] = nomeTextField.text;
     user[@"tipo"] =  tipo;
     user[@"hidraulica"] =  [NSNumber numberWithBool:self.switchHidraulica.on];
     user[@"pintura"] =  [NSNumber numberWithBool:self.switchPintura.on];
@@ -205,7 +382,7 @@
     NSString *statusCadastro;
     
     //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
-    if (![self.textFieldNome.text isEqualToString:@""] && ![self.textFieldEmail.text isEqualToString:@""] && ![self.textFieldSenha.text isEqualToString:@""] && ![self.textFieldEndereco.text isEqualToString:@""] && ![self.textFieldCidade.text isEqualToString:@""] && ![self.textFieldUF.text isEqualToString:@""] && ![self.textFieldTelefone.text isEqualToString:@""] && ![self.textFieldRG.text isEqualToString:@""] && ![self.textFieldCPF.text isEqualToString:@""] && ![self.textFieldDDD.text isEqualToString:@""]) {
+    if (![nomeTextField.text isEqualToString:@""] && ![emailTextField.text isEqualToString:@""] && ![senhaTextField.text isEqualToString:@""] && ![enderecoTextField.text isEqualToString:@""] && ![cidadeTextField.text isEqualToString:@""] && ![estadoTextField.text isEqualToString:@""] && ![telefoneTextField.text isEqualToString:@""] && ![rgTextField.text isEqualToString:@""] && ![cpfTextField.text isEqualToString:@""] && ![dddTextField.text isEqualToString:@""]) {
         
         //VERIFICA SE ALGUMA PROFISSÃO FOI MARCADA
         if (self.switchAlvenaria.on == YES || self.switchChaveiro.on == YES || self.switchEletrica.on == YES || self.switchHidraulica.on == YES || self.switchLimpeza.on == YES || self.switchPintura.on == YES){
