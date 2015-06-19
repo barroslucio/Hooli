@@ -1,25 +1,33 @@
 //
-//  HOOPerfilUsuarioViewController.h
+//  HOOClienteViewController.h
 //  Hooli
 //
-//  Created by Rodrigo DAngelo Silva Machado on 6/11/15.
+//  Created by Rodrigo DAngelo Silva Machado on 6/9/15.
 //  Copyright (c) 2015 Hooli. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "UIFloatLabelTextField.h"
+@import pop;
 
-@interface HOOPerfilUsuarioViewController : UIViewController
-
-@property (weak, nonatomic) IBOutlet UILabel *respEmailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *respSenhaLabel;
-@property (weak, nonatomic) IBOutlet UILabel *respDDDLabel;
-@property (weak, nonatomic) IBOutlet UILabel *respTelefoneLabel;
-@property (weak, nonatomic) IBOutlet UILabel *respCidadeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *respEstadoLabel;
-@property (weak, nonatomic) IBOutlet UILabel *respEnderecoLabel;
+@interface HOOPerfilUsuarioViewController : UIViewController <UIViewControllerTransitioningDelegate>
 
 
+@property (strong, nonatomic) IBOutlet UIView *subviewEstado;
+@property (strong, nonatomic) IBOutlet UIView *subviewCidade;
+@property (strong, nonatomic) IBOutlet UIView *subviewEndereco;
+@property (strong, nonatomic) IBOutlet UIView *subviewDDD;
+@property (strong, nonatomic) IBOutlet UIView *subviewTelefone;
+@property (strong, nonatomic) IBOutlet UIView *subviewSenha;
+@property (strong, nonatomic) IBOutlet UIView *subviewEmail;
 
+//ARRAY DE ESTADOS
+@property (nonatomic) NSArray* arrayUF;
+
+//PIKER VIEW
+@property (retain, nonatomic)  UIPickerView *pickerView;
+
+- (IBAction)saveButton:(id)sender;
 
 @end
