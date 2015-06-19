@@ -240,19 +240,6 @@
     
 }
 
-- (IBAction)telaProfissional:(id)sender {
-
-    
-    HOOCadastroProffisionalViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cadastroPro"];
-    
-    
-    modalVC.transitioningDelegate = self;
-    
-    modalVC.modalPresentationStyle = UIModalPresentationCustom;
-    
-    [self presentViewController:modalVC animated:YES completion:nil];
-    
-}
 
 // procedimento para o teclado ser ocultado
 - (void)ocultaTeclado:(UITapGestureRecognizer *)sender

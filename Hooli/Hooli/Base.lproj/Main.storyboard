@@ -253,7 +253,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Cliente" id="m42-Zt-s1i">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="tve-Qz-qYz"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="tve-Qz-qYz">
+                                            <connections>
+                                                <action selector="voltarButton:" destination="3mm-qj-OBp" id="tlj-yY-74v"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="bvC-Cx-O1o">
                                             <connections>
                                                 <action selector="saveButton:" destination="3mm-qj-OBp" id="z2B-dq-HBP"/>
