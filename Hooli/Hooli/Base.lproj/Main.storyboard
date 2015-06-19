@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -862,7 +862,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ZoW-Yp-jSD" kind="show" id="bNp-Sa-mCy"/>
+                                            <segue destination="ZoW-Yp-jSD" kind="show" identifier="detalheHistoricoServico" id="bNp-Sa-mCy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1594,7 +1594,7 @@
                                         <connections>
                                             <outlet property="lbNome" destination="NKW-Di-VML" id="ABJ-Pv-e8h"/>
                                             <outlet property="lbPreco" destination="Gf1-Yf-V45" id="CsJ-xn-qaR"/>
-                                            <segue destination="zEy-WP-a2n" kind="show" id="EvL-ch-7b3"/>
+                                            <segue destination="zEy-WP-a2n" kind="show" identifier="detalhes" id="EvL-ch-7b3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
