@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "UIFloatLabelTextField.h"
+@import pop;
 
-@interface HOOClienteViewController : UIViewController
+@interface HOOClienteViewController : UIViewController <UIViewControllerTransitioningDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *senhaField;

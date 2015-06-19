@@ -19,6 +19,7 @@
     [super viewDidLoad];
     [self buscaDadosProfissionalParse];
     [self requisicaoServicos];
+    
 }
 
 - (void)didReceiveMemoryWarning

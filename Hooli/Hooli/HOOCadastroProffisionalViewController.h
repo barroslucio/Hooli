@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "UIFloatLabelTextField.h"
-
+@import pop;
 @interface HOOCadastroProffisionalViewController : UIViewController
 
     @property (strong, nonatomic) IBOutlet UIView *subviewEstado;
@@ -22,6 +22,7 @@
     @property (strong, nonatomic) IBOutlet UIView *subviewRG;
     @property (strong, nonatomic) IBOutlet UIView *subviewCPF;
     @property (strong, nonatomic) IBOutlet UIView *subviewNome;
+    @property (strong, nonatomic) IBOutlet UIView *subviewAlvenaria;
 
 
 

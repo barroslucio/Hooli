@@ -39,6 +39,12 @@
 		77AE668A1B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AE66891B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m */; };
 		77AE668D1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AE668C1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.m */; };
 		77C005DD1B29BB3300E2F27D /* HOOAgendarServicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C005DC1B29BB3300E2F27D /* HOOAgendarServicoViewController.m */; };
+		77EE11891B3352B600262F0E /* PresentingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EE11851B3352B600262F0E /* PresentingAnimationController.m */; };
+		77EE118A1B3352B600262F0E /* DismissingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EE11871B3352B600262F0E /* DismissingAnimationController.m */; };
+		77EE11E31B33613E00262F0E /* PresentingAnimationPopUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EE11E21B33613E00262F0E /* PresentingAnimationPopUpController.m */; };
+		77EE11E61B3362E200262F0E /* HOOEscolhaCadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EE11E51B3362E200262F0E /* HOOEscolhaCadastroViewController.m */; };
+		77EE11F91B33837800262F0E /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77EE11F41B33835000262F0E /* pop.framework */; };
+		77EE11FA1B33837800262F0E /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 77EE11F41B33835000262F0E /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		79A1977E1B2724CA009A3152 /* HOOClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */; };
 		79A197811B29BD90009A3152 /* HOOPerfilUsuarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A197801B29BD90009A3152 /* HOOPerfilUsuarioViewController.m */; };
 		79A197841B2B0428009A3152 /* HOOEditUsuarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A197831B2B0428009A3152 /* HOOEditUsuarioViewController.m */; };
@@ -56,7 +62,63 @@
 			remoteGlobalIDString = 77A88ACA1B25E38C002BD992;
 			remoteInfo = Hooli;
 		};
+		77EE11EF1B33835000262F0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77EE11E71B33835000262F0E /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC191218162FB53A00E0CC76;
+			remoteInfo = pop;
+		};
+		77EE11F11B33835000262F0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77EE11E71B33835000262F0E /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC68857F18C7B60000C6194C;
+			remoteInfo = "pop-osx";
+		};
+		77EE11F31B33835000262F0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77EE11E71B33835000262F0E /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0B6BE74819FFD3B900762101;
+			remoteInfo = "pop-embedded";
+		};
+		77EE11F51B33835000262F0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77EE11E71B33835000262F0E /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECF01ED318C92B7F009E0AD1;
+			remoteInfo = "pop-tests";
+		};
+		77EE11F71B33835000262F0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77EE11E71B33835000262F0E /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC7E319918C93D6500B38170;
+			remoteInfo = "pop-tests-osx";
+		};
+		77EE11FB1B33837800262F0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77EE11E71B33835000262F0E /* pop.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B6BE74719FFD3B900762101;
+			remoteInfo = "pop-embedded";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		770B2F1F1B330E7600428FAD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				77EE11FA1B33837800262F0E /* pop.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		243CC90C1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOODetalhesServicoClienteViewController.h; sourceTree = "<group>"; };
@@ -109,6 +171,15 @@
 		77AE668C1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOAgendaOutroEnderecoViewController.m; sourceTree = "<group>"; };
 		77C005DB1B29BB3300E2F27D /* HOOAgendarServicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOAgendarServicoViewController.h; sourceTree = "<group>"; };
 		77C005DC1B29BB3300E2F27D /* HOOAgendarServicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOAgendarServicoViewController.m; sourceTree = "<group>"; };
+		77EE11851B3352B600262F0E /* PresentingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentingAnimationController.m; sourceTree = "<group>"; };
+		77EE11861B3352B600262F0E /* PresentingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimationController.h; sourceTree = "<group>"; };
+		77EE11871B3352B600262F0E /* DismissingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimationController.m; sourceTree = "<group>"; };
+		77EE11881B3352B600262F0E /* DismissingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissingAnimationController.h; sourceTree = "<group>"; };
+		77EE11E11B33613E00262F0E /* PresentingAnimationPopUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PresentingAnimationPopUpController.h; path = ../PresentingAnimationPopUpController.h; sourceTree = "<group>"; };
+		77EE11E21B33613E00262F0E /* PresentingAnimationPopUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PresentingAnimationPopUpController.m; path = ../PresentingAnimationPopUpController.m; sourceTree = "<group>"; };
+		77EE11E41B3362E200262F0E /* HOOEscolhaCadastroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOEscolhaCadastroViewController.h; sourceTree = "<group>"; };
+		77EE11E51B3362E200262F0E /* HOOEscolhaCadastroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOEscolhaCadastroViewController.m; sourceTree = "<group>"; };
+		77EE11E71B33835000262F0E /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = "../../../../Downloads/pop-master-2/pop.xcodeproj"; sourceTree = "<group>"; };
 		79A1977C1B2724CA009A3152 /* HOOClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOClienteViewController.h; sourceTree = "<group>"; };
 		79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOClienteViewController.m; sourceTree = "<group>"; };
 		79A1977F1B29BD90009A3152 /* HOOPerfilUsuarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOPerfilUsuarioViewController.h; sourceTree = "<group>"; };
@@ -130,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77EE11F91B33837800262F0E /* pop.framework in Frameworks */,
 				77A88B0D1B25E7C9002BD992 /* libsqlite3.dylib in Frameworks */,
 				77A88B0B1B25E7BF002BD992 /* libz.dylib in Frameworks */,
 				77A88B011B25E7B6002BD992 /* AudioToolbox.framework in Frameworks */,
@@ -208,6 +280,7 @@
 		77A88AC21B25E38C002BD992 = {
 			isa = PBXGroup;
 			children = (
+				77EE11E71B33835000262F0E /* pop.xcodeproj */,
 				77A88ACD1B25E38C002BD992 /* Hooli */,
 				77A88AE71B25E38C002BD992 /* HooliTests */,
 				77A88ACC1B25E38C002BD992 /* Products */,
@@ -230,6 +303,8 @@
 				77A88AD31B25E38C002BD992 /* AppDelegate.m */,
 				77A88AD51B25E38C002BD992 /* HOOLoginViewController.h */,
 				77A88AD61B25E38C002BD992 /* HOOLoginViewController.m */,
+				77EE11E41B3362E200262F0E /* HOOEscolhaCadastroViewController.h */,
+				77EE11E51B3362E200262F0E /* HOOEscolhaCadastroViewController.m */,
 				77A88AD81B25E38C002BD992 /* Main.storyboard */,
 				243CC9071B2CD98500ACF9F3 /* Módulo usuário/cliente */,
 				243CC9081B2CD99800ACF9F3 /* Módulo profissional */,
@@ -243,6 +318,12 @@
 		77A88ACE1B25E38C002BD992 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				77EE11E11B33613E00262F0E /* PresentingAnimationPopUpController.h */,
+				77EE11E21B33613E00262F0E /* PresentingAnimationPopUpController.m */,
+				77EE11861B3352B600262F0E /* PresentingAnimationController.h */,
+				77EE11851B3352B600262F0E /* PresentingAnimationController.m */,
+				77EE11871B3352B600262F0E /* DismissingAnimationController.m */,
+				77EE11881B3352B600262F0E /* DismissingAnimationController.h */,
 				7729866F1B30B568005DBBB5 /* UIFloatLabelTextField.h */,
 				772986701B30B568005DBBB5 /* UIFloatLabelTextField.m */,
 				77A88B0C1B25E7C9002BD992 /* libsqlite3.dylib */,
@@ -281,6 +362,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		77EE11E81B33835000262F0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77EE11F01B33835000262F0E /* libpop.a */,
+				77EE11F21B33835000262F0E /* pop.framework */,
+				77EE11F41B33835000262F0E /* pop.framework */,
+				77EE11F61B33835000262F0E /* pop-tests.xctest */,
+				77EE11F81B33835000262F0E /* pop-tests-osx.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		79BBC3721B3071FF00445A87 /* CustonCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,10 +393,12 @@
 				77A88AC71B25E38C002BD992 /* Sources */,
 				77A88AC81B25E38C002BD992 /* Frameworks */,
 				77A88AC91B25E38C002BD992 /* Resources */,
+				770B2F1F1B330E7600428FAD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				77EE11FC1B33837800262F0E /* PBXTargetDependency */,
 			);
 			name = Hooli;
 			productName = Hooli;
@@ -358,6 +453,12 @@
 			mainGroup = 77A88AC21B25E38C002BD992;
 			productRefGroup = 77A88ACC1B25E38C002BD992 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 77EE11E81B33835000262F0E /* Products */;
+					ProjectRef = 77EE11E71B33835000262F0E /* pop.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				77A88ACA1B25E38C002BD992 /* Hooli */,
@@ -365,6 +466,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		77EE11F01B33835000262F0E /* libpop.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libpop.a;
+			remoteRef = 77EE11EF1B33835000262F0E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		77EE11F21B33835000262F0E /* pop.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = pop.framework;
+			remoteRef = 77EE11F11B33835000262F0E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		77EE11F41B33835000262F0E /* pop.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = pop.framework;
+			remoteRef = 77EE11F31B33835000262F0E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		77EE11F61B33835000262F0E /* pop-tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests.xctest";
+			remoteRef = 77EE11F51B33835000262F0E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		77EE11F81B33835000262F0E /* pop-tests-osx.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests-osx.xctest";
+			remoteRef = 77EE11F71B33835000262F0E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		77A88AC91B25E38C002BD992 /* Resources */ = {
@@ -407,7 +546,11 @@
 				772FDAAE1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m in Sources */,
 				77A88AD41B25E38C002BD992 /* AppDelegate.m in Sources */,
 				243CC9141B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.m in Sources */,
+				77EE11E31B33613E00262F0E /* PresentingAnimationPopUpController.m in Sources */,
+				77EE118A1B3352B600262F0E /* DismissingAnimationController.m in Sources */,
+				77EE11E61B3362E200262F0E /* HOOEscolhaCadastroViewController.m in Sources */,
 				77AE668A1B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m in Sources */,
+				77EE11891B3352B600262F0E /* PresentingAnimationController.m in Sources */,
 				79A197811B29BD90009A3152 /* HOOPerfilUsuarioViewController.m in Sources */,
 				77A88AD11B25E38C002BD992 /* main.m in Sources */,
 				243CC9171B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m in Sources */,
@@ -431,6 +574,11 @@
 			isa = PBXTargetDependency;
 			target = 77A88ACA1B25E38C002BD992 /* Hooli */;
 			targetProxy = 77A88AE51B25E38C002BD992 /* PBXContainerItemProxy */;
+		};
+		77EE11FC1B33837800262F0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "pop-embedded";
+			targetProxy = 77EE11FB1B33837800262F0E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

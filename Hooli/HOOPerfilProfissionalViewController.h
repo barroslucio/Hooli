@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-
 @interface HOOPerfilProfissionalViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *lbEmail;
