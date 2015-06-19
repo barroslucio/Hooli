@@ -9,6 +9,9 @@
 #import "HOODetalhesProfissionalViewController.h"
 
 @interface HOODetalhesProfissionalViewController () <UIActionSheetDelegate>
+{
+    PFObject *profissional;
+}
 
 @end
 
@@ -35,7 +38,7 @@
     PFObject *objectProposta =[query getFirstObject];
 
     // acessa o id do profissional que mandou a proposta
-    PFObject *profissional = (PFObject *) objectProposta[@"profissional"];
+    profissional = (PFObject *) objectProposta[@"profissional"];
     
     // query para as informações do profissional
     PFQuery *query2 = [PFQuery queryWithClassName:@"_User"];
@@ -56,6 +59,21 @@
 {
     [self alerta];
     
+    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
+    [query whereKey:@"objectId" equalTo:self.idServico];
+    PFObject *objectServico =[query getFirstObject];
+    
+    //PFObject *servicoPro = (PFObject *) objectServico[@"proEscolhido"];
+    
+    objectServico[@"proEscolhido"] = profissional;
+    
+    
+    
+    
+
+    
+    
+
 }
 
 -(void)alerta
@@ -63,7 +81,6 @@
     
     UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Deseja contratar?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
                             @"Sim",
-                            @"Não",
                             nil];
     popup.tag = 1;
     [popup showInView:[UIApplication sharedApplication].keyWindow];
@@ -75,10 +92,7 @@
         case 1: {
             switch (buttonIndex) {
                 case 0:
-//                    [self performSegueWithIdentifier:@"Sim" sender:self];
-                    break;
-                case 1:
-//                    [self performSegueWithIdentifier:@"Não" sender:self];
+                   [self performSegueWithIdentifier:@"Sim" sender:self];
                     break;
                 default:
                     break;
