@@ -9,9 +9,9 @@
 #import "HOOClienteViewController.h"
 #import "HOOAgendarServicoViewController.h"
 #import "HOOCadastroProffisionalViewController.h"
+#import "HOOLoginViewController.h"
 #import "PresentingAnimationController.h"
 #import "DismissingAnimationController.h"
-#import <pop/POP.h>
 
 @interface HOOClienteViewController () <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>{
     UIFloatLabelTextField *estadoTextField;
@@ -27,6 +27,18 @@
 @end
 
 @implementation HOOClienteViewController
+
+- (IBAction)voltarButton:(id)sender {
+    HOOLoginViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
+    
+    
+    modalVC.transitioningDelegate = self;
+    
+    modalVC.modalPresentationStyle = UIModalPresentationCustom;
+    
+    [self presentViewController:modalVC animated:YES completion:nil];
+    
+}
 
 
 - (void)viewDidLoad

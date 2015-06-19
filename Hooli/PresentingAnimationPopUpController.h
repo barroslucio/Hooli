@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "POP.h"
-
+@import pop;
 @interface PresentingAnimationPopUpController : NSObject <UIViewControllerAnimatedTransitioning>
 
 @end

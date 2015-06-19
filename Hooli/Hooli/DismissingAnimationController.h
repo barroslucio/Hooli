@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <pop/POP.h>
+@import pop;
+
 @interface DismissingAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
 @end

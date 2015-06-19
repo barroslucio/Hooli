@@ -126,6 +126,9 @@
                                         <state key="normal" title="Profissional">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="profissionalButton:" destination="XWn-XR-zEa" eventType="touchUpInside" id="HIi-UE-jdE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.097932987705858898" green="0.51990103893174389" blue="0.61107165404040398" alpha="1" colorSpace="calibratedRGB"/>
@@ -142,6 +145,9 @@
                                         <state key="normal" title="Usuário">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="usuarioButton:" destination="XWn-XR-zEa" eventType="touchUpInside" id="80K-lM-qBK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.26719157155475137" green="0.61107165404040398" blue="0.26854023302575969" alpha="1" colorSpace="calibratedRGB"/>
@@ -174,7 +180,7 @@
         <!--Cliente View Controller-->
         <scene sceneID="irC-qM-dVy">
             <objects>
-                <viewController id="3mm-qj-OBp" customClass="HOOClienteViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cadastroUsuario" id="3mm-qj-OBp" customClass="HOOClienteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ulJ-JX-aJt"/>
                         <viewControllerLayoutGuide type="bottom" id="6ub-DJ-g9x"/>
@@ -197,23 +203,6 @@
                                     <action selector="telaProfissional:" destination="3mm-qj-OBp" eventType="touchUpInside" id="hxg-Ww-wCD"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsR-5C-27B">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.13725490196078433" green="0.80392156862745101" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Cliente" id="m42-Zt-s1i">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="tve-Qz-qYz"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="bvC-Cx-O1o">
-                                            <connections>
-                                                <action selector="saveButton:" destination="3mm-qj-OBp" id="z2B-dq-HBP"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exT-pf-jbL" userLabel="subviewEstado">
                                 <rect key="frame" x="0.0" y="222" width="375" height="45"/>
                                 <color key="backgroundColor" red="0.67450980392156867" green="0.89803921568627454" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -270,6 +259,38 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsR-5C-27B">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.13725490196078433" green="0.80392156862745101" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Cliente" id="m42-Zt-s1i">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" style="plain" id="Oi6-7R-16b">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oRt-kO-dje">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Voltar">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="voltarButton:" destination="3mm-qj-OBp" eventType="touchUpInside" id="PXJ-yS-6nZ"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Salvar" style="plain" id="JT5-XU-NXJ">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="s58-5T-b8P">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Salvar">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

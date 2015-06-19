@@ -11,7 +11,7 @@
 #import "UIFloatLabelTextField.h"
 #import "PresentingAnimationPopUpController.h"
 #import "DismissingAnimationController.h"
-#import <pop/POP.h>
+@import pop;
 
 @interface HOOLoginViewController : UIViewController <UIViewControllerTransitioningDelegate>
 

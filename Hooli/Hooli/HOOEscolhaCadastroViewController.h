@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PresentingAnimationController.h"
+#import "DismissingAnimationController.h"
 
-@interface HOOEscolhaCadastroViewController : UIViewController
+@interface HOOEscolhaCadastroViewController : UIViewController <UIViewControllerTransitioningDelegate>
 
 @end

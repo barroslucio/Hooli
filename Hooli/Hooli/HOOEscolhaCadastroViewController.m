@@ -7,6 +7,8 @@
 //
 
 #import "HOOEscolhaCadastroViewController.h"
+#import "HOOClienteViewController.h"
+#import "HOOCadastroProffisionalViewController.h"
 
 @interface HOOEscolhaCadastroViewController ()
 
@@ -27,6 +29,40 @@
 - (IBAction)cancelar:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 
+}
+- (IBAction)usuarioButton:(id)sender {
+    HOOClienteViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cadastroUsuario"];
+    
+    
+    modalVC.transitioningDelegate = self;
+    
+    modalVC.modalPresentationStyle = UIModalPresentationCustom;
+    
+    [self presentViewController:modalVC animated:YES completion:nil];
+
+    
+}
+- (IBAction)profissionalButton:(id)sender {
+    
+    HOOCadastroProffisionalViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cadastroPro"];
+    
+    
+    modalVC.transitioningDelegate = self;
+    
+    modalVC.modalPresentationStyle = UIModalPresentationCustom;
+    
+    [self presentViewController:modalVC animated:YES completion:nil];
+    
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    return [[PresentingAnimationController alloc] init];
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    return [[DismissingAnimationController alloc] init];
 }
 
 /*
