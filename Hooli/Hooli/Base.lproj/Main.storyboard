@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -253,11 +253,6 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Cliente" id="m42-Zt-s1i">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="tve-Qz-qYz">
-                                            <connections>
-                                                <action selector="voltarButton:" destination="3mm-qj-OBp" id="tlj-yY-74v"/>
-                                            </connections>
-                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="bvC-Cx-O1o">
                                             <connections>
                                                 <action selector="saveButton:" destination="3mm-qj-OBp" id="z2B-dq-HBP"/>
@@ -266,6 +261,11 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucl-MD-lSI">
+                                <rect key="frame" x="150" y="617" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1002,7 +1002,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AC-dL-S6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2093.5" y="653.5"/>
+            <point key="canvasLocation" x="2087.5" y="832.5"/>
         </scene>
         <!--Histórico de serviço-->
         <scene sceneID="g8P-xF-pxl">
@@ -1154,7 +1154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0S-87-gU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105.5" y="-79.5"/>
+            <point key="canvasLocation" x="2109.5" y="43.5"/>
         </scene>
         <!--Serviços Disponíveis-->
         <scene sceneID="zMu-3D-Zqa">
@@ -2095,8 +2095,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="gaC-Mq-dOf"/>
                                         <exclude reference="Gfb-S8-OFT"/>
+                                        <exclude reference="gaC-Mq-dOf"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -2143,7 +2143,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Bkc-h6-8RX"/>
+        <segue reference="P2G-XM-n11"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

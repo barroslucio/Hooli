@@ -13,13 +13,7 @@
 
 @interface HOOClienteViewController : UIViewController <UIViewControllerTransitioningDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *emailField;
-@property (weak, nonatomic) IBOutlet UITextField *senhaField;
-@property (weak, nonatomic) IBOutlet UITextField *telefoneField;
-@property (weak, nonatomic) IBOutlet UITextField *cidadeField;
-@property (weak, nonatomic) IBOutlet UITextField *estadoField;
-@property (weak, nonatomic) IBOutlet UITextField *enderecoField;
-@property (strong, nonatomic) IBOutlet UITextField *dddField;
+
 @property (strong, nonatomic) IBOutlet UIView *subviewEstado;
 @property (strong, nonatomic) IBOutlet UIView *subviewCidade;
 @property (strong, nonatomic) IBOutlet UIView *subviewEndereco;

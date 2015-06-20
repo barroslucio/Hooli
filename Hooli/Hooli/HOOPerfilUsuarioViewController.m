@@ -28,17 +28,7 @@
 
 @implementation HOOPerfilUsuarioViewController
 
-- (IBAction)voltarButton:(id)sender {
-    HOOLoginViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
-    
-    
-    modalVC.transitioningDelegate = self;
-    
-    modalVC.modalPresentationStyle = UIModalPresentationCustom;
-    
-    [self presentViewController:modalVC animated:YES completion:nil];
-    
-}
+
 
 
 - (void)viewDidLoad
@@ -261,7 +251,6 @@
     NSNumber *tipo = [NSNumber numberWithInt:0];;
     
     PFUser *user = [PFUser user];
-    user.username = emailTextField.text;
     
     
     user[@"endereco"] = enderecoTextField.text;
@@ -272,7 +261,7 @@
     user[@"telefone"] = telefone;
     user[@"tipo"] = tipo;
     
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error)
         {   // Hooray! Let them use the app now.
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Cadastro bem sucedido"

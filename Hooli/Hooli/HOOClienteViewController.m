@@ -44,9 +44,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameDidChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
-    
+
     estadoTextField = [UIFloatLabelTextField new];
     [estadoTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
     estadoTextField.floatLabelActiveColor = [UIColor orangeColor];
@@ -240,7 +238,6 @@
     
 }
 
-
 // procedimento para o teclado ser ocultado
 - (void)ocultaTeclado:(UITapGestureRecognizer *)sender
 {
@@ -263,8 +260,6 @@
 {
     return [[DismissingAnimationController alloc] init];
 }
-
-
 
 - (void)cadastraClienteParse{
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
@@ -325,40 +320,12 @@
     
 }
 
-
-
 - (void)segueViewController{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     HOOAgendarServicoViewController *viewController = (HOOAgendarServicoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"User"];
     [self presentViewController:viewController animated:YES completion:nil];
     
 }
-
-- (void)keyboardFrameDidChange:(NSNotification *)notification
-{
-    
-    
-        CGRect keyboardEndFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-        CGRect keyboardBeginFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-        UIViewAnimationCurve animationCurve = [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
-        NSTimeInterval animationDuration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] integerValue];
-        
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDuration:animationDuration];
-        [UIView setAnimationCurve:animationCurve];
-        
-        CGRect newFrame = self.view.frame;
-        CGRect keyboardFrameEnd = [self.view convertRect:keyboardEndFrame toView:nil];
-        CGRect keyboardFrameBegin = [self.view convertRect:keyboardBeginFrame toView:nil];
-        
-        newFrame.origin.y -= (keyboardFrameBegin.origin.y - keyboardFrameEnd.origin.y);
-        self.view.frame = newFrame;
-        
-        [UIView commitAnimations];
-
-
-}
-
 
 
 @end

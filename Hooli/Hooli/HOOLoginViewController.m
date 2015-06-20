@@ -7,7 +7,6 @@
 //
 
 #import "HOOLoginViewController.h"
-#import "HOOAgendarServicoViewController.h"
 #import "HOOEscolhaCadastroViewController.h"
 
 
@@ -87,8 +86,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-
+- (void) erroNoLogin{
+    POPSpringAnimation *shake = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+    
+    shake.springBounciness = 20;
+    shake.velocity = @(3000);
+    
+    [self.subviewSenha.layer pop_addAnimation:shake forKey:@"shakePassword"];
+    
+    [self.subviewEmail.layer pop_addAnimation:shake forKey:@"shakeEmail"];
+}
 - (IBAction)login:(id)sender {
     
     
@@ -96,53 +103,26 @@
     NSString *password = [senhaTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if ([username length] == 0 || [password length] == 0) {
-        
-        POPSpringAnimation *shake = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
-        
-        shake.springBounciness = 20;
-        shake.velocity = @(3000);
-       
-        [self.subviewSenha.layer pop_addAnimation:shake forKey:@"shakePassword"];
-        
-        POPSpringAnimation *shake2 = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
-        
-        shake2.springBounciness = 20;
-        shake2.velocity = @(3000);
-        
-        [self.subviewEmail.layer pop_addAnimation:shake2 forKey:@"shakePassword"];
-        
-        
+        [self erroNoLogin];
     }
     else {
         
         [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
             if (error) {
-                POPSpringAnimation *shake = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
-                
-                shake.springBounciness = 20;
-                shake.velocity = @(3000);
-                
-                [self.subviewSenha.layer pop_addAnimation:shake forKey:@"shakePassword"];
-                
-                POPSpringAnimation *shake2 = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
-                
-                shake2.springBounciness = 20;
-                shake2.velocity = @(3000);
-                
-                [self.subviewEmail.layer pop_addAnimation:shake2 forKey:@"shakePassword"];
+                [self erroNoLogin];
             }
             else {
                 NSNumber* number = [[PFUser currentUser] objectForKey:@"tipo"];
                 int tipo = [number intValue];
                 if (tipo == 0){
                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                    HOOAgendarServicoViewController *viewController = (HOOAgendarServicoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"User"];
+                    UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"User"];
                     [self presentViewController:viewController animated:YES completion:nil];
                 
                 }
                 else if (tipo == 1){
                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                    HOOAgendarServicoViewController *viewController = (HOOAgendarServicoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Pro"];
+                    UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Pro"];
                     [self presentViewController:viewController animated:YES completion:nil];
                     
                 }
@@ -172,6 +152,7 @@
     
     [UIView commitAnimations];
 }
+
 - (IBAction)cadastroButton:(id)sender {
     
     HOOEscolhaCadastroViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"escolhaCadastro"];
