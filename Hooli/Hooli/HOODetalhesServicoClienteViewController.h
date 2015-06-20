@@ -20,6 +20,7 @@
 
 
 @property (nonatomic) NSString *idServico;
+- (IBAction)voltar:(id)sender;
 
 
 @end
