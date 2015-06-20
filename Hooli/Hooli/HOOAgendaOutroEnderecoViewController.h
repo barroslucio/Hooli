@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFieldDate;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldTime;
 
+- (IBAction)voltar:(id)sender;
 
 - (IBAction)agendaServico:(id)sender;
 

@@ -141,6 +141,11 @@
     NSLog(@" \ndate : %@ \ntime : %@\n \ninverted date : %@\n",strDate,strTime, strInvertedDate);
 }
 
+- (IBAction)voltar:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)agendaServico:(id)sender {
     
     //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
