@@ -1896,6 +1896,9 @@
                                     <navigationItem title="Detalhes do Profissional" id="Pwb-yj-zSN">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="nAb-4k-b4Y">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="cancelar:" destination="zEy-WP-a2n" id="f89-Nw-ihS"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="OK" id="WNC-1S-5q3">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>

@@ -61,6 +61,11 @@
     
 }
 
+- (IBAction)cancelar:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void)alerta
 {
     
