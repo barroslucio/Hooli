@@ -11,13 +11,4 @@
 
 @interface HOOAgendarServicoViewController : UIViewController
 
-- (IBAction)logout:(id)sender;
-- (IBAction)hidraulica:(id)sender;
-- (IBAction)limpeza:(id)sender;
-- (IBAction)pintura:(id)sender;
-- (IBAction)chaveiro:(id)sender;
-- (IBAction)eletrica:(id)sender;
-- (IBAction)alvenaria:(id)sender;
-
-
 @end

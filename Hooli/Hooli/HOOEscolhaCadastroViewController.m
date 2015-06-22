@@ -7,7 +7,7 @@
 //
 
 #import "HOOEscolhaCadastroViewController.h"
-#import "HOOClienteViewController.h"
+#import "HOOCadastroClienteViewController.h"
 #import "HOOCadastroProffisionalViewController.h"
 
 @interface HOOEscolhaCadastroViewController ()
@@ -25,13 +25,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//método que é chamado quando o usuário clica no botão de cancelar.
 - (IBAction)cancelar:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-
 }
-- (IBAction)usuarioButton:(id)sender {
-    HOOClienteViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cadastroUsuario"];
+
+//método chamado caso o usuário queira se cadastrar como cliente.
+- (IBAction)cliente:(id)sender {
     
+    HOOCadastroClienteViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cadastroUsuario"];
     
     modalVC.transitioningDelegate = self;
     
@@ -39,12 +42,13 @@
     
     [self presentViewController:modalVC animated:YES completion:nil];
 
-    
 }
-- (IBAction)profissionalButton:(id)sender {
+
+
+//método chamado caso o usuário queira se cadastrar como profissional.
+- (IBAction)profissional:(id)sender {
     
     HOOCadastroProffisionalViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cadastroPro"];
-    
     
     modalVC.transitioningDelegate = self;
     
@@ -64,14 +68,5 @@
     return [[DismissingAnimationController alloc] init];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "HOODetalhesServicoClienteViewController.h"
+#import "HOOHistoricoClienteTVCell.h"
+
 @interface HOOHistoricoClienteViewController : UIViewController
 
 @end

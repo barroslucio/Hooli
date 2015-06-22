@@ -84,7 +84,6 @@
     
     
             self.arrayServicos = [servicosDisponiveis findObjects];
-            NSLog(@"%ld", self.arrayServicos.count);
 }
 
 //TABLE VIEW

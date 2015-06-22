@@ -12,6 +12,7 @@
 		243CC9171B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CC9161B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m */; };
 		246A56751B263CB3007044A7 /* HOOCadastroProffisionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */; };
 		246A56841B29BBF2007044A7 /* HOOHistoricoClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */; };
+		771D73FA1B36FDD500074894 /* HOOHistoricoClienteTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 771D73F91B36FDD500074894 /* HOOHistoricoClienteTVCell.m */; };
 		772986711B30B568005DBBB5 /* UIFloatLabelTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 772986701B30B568005DBBB5 /* UIFloatLabelTextField.m */; };
 		772FDAAE1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772FDAAD1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m */; };
 		772FDAB11B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 772FDAB01B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m */; };
@@ -43,10 +44,11 @@
 		77EE118A1B3352B600262F0E /* DismissingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EE11871B3352B600262F0E /* DismissingAnimationController.m */; };
 		77EE11E31B33613E00262F0E /* PresentingAnimationPopUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EE11E21B33613E00262F0E /* PresentingAnimationPopUpController.m */; };
 		77EE11E61B3362E200262F0E /* HOOEscolhaCadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EE11E51B3362E200262F0E /* HOOEscolhaCadastroViewController.m */; };
-		797FBE591B34581D006A4AA3 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 797FBE541B345814006A4AA3 /* pop.framework */; };
-		797FBE5A1B34581D006A4AA3 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 797FBE541B345814006A4AA3 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		79A1977E1B2724CA009A3152 /* HOOClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */; };
-		79A197811B29BD90009A3152 /* HOOPerfilUsuarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A197801B29BD90009A3152 /* HOOPerfilUsuarioViewController.m */; };
+		77EF529B1B34FCD60041F579 /* HOOAgendarServicoTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EF529A1B34FCD60041F579 /* HOOAgendarServicoTVCell.m */; };
+		77EF52AE1B3514C20041F579 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77EF52A91B3514B60041F579 /* pop.framework */; };
+		77EF52AF1B3514C20041F579 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 77EF52A91B3514B60041F579 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		79A1977E1B2724CA009A3152 /* HOOCadastroClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A1977D1B2724CA009A3152 /* HOOCadastroClienteViewController.m */; };
+		79A197811B29BD90009A3152 /* HOOPerfilClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A197801B29BD90009A3152 /* HOOPerfilClienteViewController.m */; };
 		79BBC3711B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC3701B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m */; };
 		79BBC3751B30724700445A87 /* HOOListaPropostasCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC3741B30724700445A87 /* HOOListaPropostasCell.m */; };
 		79BBC3781B31CE6B00445A87 /* HOODetalhesProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BBC3771B31CE6B00445A87 /* HOODetalhesProfissionalViewController.m */; };
@@ -60,44 +62,44 @@
 			remoteGlobalIDString = 77A88ACA1B25E38C002BD992;
 			remoteInfo = Hooli;
 		};
-		797FBE4F1B345814006A4AA3 /* PBXContainerItemProxy */ = {
+		77EF52A41B3514B60041F579 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 797FBE471B345814006A4AA3 /* pop.xcodeproj */;
+			containerPortal = 77EF529C1B3514B60041F579 /* pop.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EC191218162FB53A00E0CC76;
 			remoteInfo = pop;
 		};
-		797FBE511B345814006A4AA3 /* PBXContainerItemProxy */ = {
+		77EF52A61B3514B60041F579 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 797FBE471B345814006A4AA3 /* pop.xcodeproj */;
+			containerPortal = 77EF529C1B3514B60041F579 /* pop.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EC68857F18C7B60000C6194C;
 			remoteInfo = "pop-osx";
 		};
-		797FBE531B345814006A4AA3 /* PBXContainerItemProxy */ = {
+		77EF52A81B3514B60041F579 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 797FBE471B345814006A4AA3 /* pop.xcodeproj */;
+			containerPortal = 77EF529C1B3514B60041F579 /* pop.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0B6BE74819FFD3B900762101;
 			remoteInfo = "pop-embedded";
 		};
-		797FBE551B345814006A4AA3 /* PBXContainerItemProxy */ = {
+		77EF52AA1B3514B60041F579 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 797FBE471B345814006A4AA3 /* pop.xcodeproj */;
+			containerPortal = 77EF529C1B3514B60041F579 /* pop.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = ECF01ED318C92B7F009E0AD1;
 			remoteInfo = "pop-tests";
 		};
-		797FBE571B345814006A4AA3 /* PBXContainerItemProxy */ = {
+		77EF52AC1B3514B60041F579 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 797FBE471B345814006A4AA3 /* pop.xcodeproj */;
+			containerPortal = 77EF529C1B3514B60041F579 /* pop.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EC7E319918C93D6500B38170;
 			remoteInfo = "pop-tests-osx";
 		};
-		797FBE5B1B34581D006A4AA3 /* PBXContainerItemProxy */ = {
+		77EF52B01B3514C20041F579 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 797FBE471B345814006A4AA3 /* pop.xcodeproj */;
+			containerPortal = 77EF529C1B3514B60041F579 /* pop.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 0B6BE74719FFD3B900762101;
 			remoteInfo = "pop-embedded";
@@ -111,7 +113,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				797FBE5A1B34581D006A4AA3 /* pop.framework in Embed Frameworks */,
+				77EF52AF1B3514C20041F579 /* pop.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +131,8 @@
 		246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOCadastroProffisionalViewController.m; sourceTree = "<group>"; };
 		246A56821B29BBF2007044A7 /* HOOHistoricoClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HOOHistoricoClienteViewController.h; path = ../HOOHistoricoClienteViewController.h; sourceTree = "<group>"; };
 		246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HOOHistoricoClienteViewController.m; path = ../HOOHistoricoClienteViewController.m; sourceTree = "<group>"; };
+		771D73F81B36FDD500074894 /* HOOHistoricoClienteTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOHistoricoClienteTVCell.h; sourceTree = "<group>"; };
+		771D73F91B36FDD500074894 /* HOOHistoricoClienteTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOHistoricoClienteTVCell.m; sourceTree = "<group>"; };
 		7729866F1B30B568005DBBB5 /* UIFloatLabelTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIFloatLabelTextField.h; path = ../UIFloatLabelTextField.h; sourceTree = "<group>"; };
 		772986701B30B568005DBBB5 /* UIFloatLabelTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIFloatLabelTextField.m; path = ../UIFloatLabelTextField.m; sourceTree = "<group>"; };
 		772FDAAC1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOServicosDisponiveisViewController.h; sourceTree = "<group>"; };
@@ -177,11 +181,13 @@
 		77EE11E21B33613E00262F0E /* PresentingAnimationPopUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PresentingAnimationPopUpController.m; path = ../PresentingAnimationPopUpController.m; sourceTree = "<group>"; };
 		77EE11E41B3362E200262F0E /* HOOEscolhaCadastroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOEscolhaCadastroViewController.h; sourceTree = "<group>"; };
 		77EE11E51B3362E200262F0E /* HOOEscolhaCadastroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOEscolhaCadastroViewController.m; sourceTree = "<group>"; };
-		797FBE471B345814006A4AA3 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = "../../../../Downloads/pop-master/pop.xcodeproj"; sourceTree = "<group>"; };
-		79A1977C1B2724CA009A3152 /* HOOClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOClienteViewController.h; sourceTree = "<group>"; };
-		79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOClienteViewController.m; sourceTree = "<group>"; };
-		79A1977F1B29BD90009A3152 /* HOOPerfilUsuarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOPerfilUsuarioViewController.h; sourceTree = "<group>"; };
-		79A197801B29BD90009A3152 /* HOOPerfilUsuarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOPerfilUsuarioViewController.m; sourceTree = "<group>"; };
+		77EF52991B34FCD60041F579 /* HOOAgendarServicoTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOAgendarServicoTVCell.h; sourceTree = "<group>"; };
+		77EF529A1B34FCD60041F579 /* HOOAgendarServicoTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOAgendarServicoTVCell.m; sourceTree = "<group>"; };
+		77EF529C1B3514B60041F579 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = "../../../../Downloads/pop-master-2/pop.xcodeproj"; sourceTree = "<group>"; };
+		79A1977C1B2724CA009A3152 /* HOOCadastroClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOCadastroClienteViewController.h; sourceTree = "<group>"; };
+		79A1977D1B2724CA009A3152 /* HOOCadastroClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOCadastroClienteViewController.m; sourceTree = "<group>"; };
+		79A1977F1B29BD90009A3152 /* HOOPerfilClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOPerfilClienteViewController.h; sourceTree = "<group>"; };
+		79A197801B29BD90009A3152 /* HOOPerfilClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOPerfilClienteViewController.m; sourceTree = "<group>"; };
 		79BBC36F1B2FABFC00445A87 /* HOOPerfilProfissionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HOOPerfilProfissionalViewController.h; path = ../HOOPerfilProfissionalViewController.h; sourceTree = "<group>"; };
 		79BBC3701B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HOOPerfilProfissionalViewController.m; path = ../HOOPerfilProfissionalViewController.m; sourceTree = "<group>"; };
 		79BBC3731B30724700445A87 /* HOOListaPropostasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOListaPropostasCell.h; sourceTree = "<group>"; };
@@ -195,7 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				797FBE591B34581D006A4AA3 /* pop.framework in Frameworks */,
+				77EF52AE1B3514C20041F579 /* pop.framework in Frameworks */,
 				77A88B0D1B25E7C9002BD992 /* libsqlite3.dylib in Frameworks */,
 				77A88B0B1B25E7BF002BD992 /* libz.dylib in Frameworks */,
 				77A88B011B25E7B6002BD992 /* AudioToolbox.framework in Frameworks */,
@@ -226,18 +232,22 @@
 			isa = PBXGroup;
 			children = (
 				79BBC3721B3071FF00445A87 /* CustonCell */,
-				79A1977C1B2724CA009A3152 /* HOOClienteViewController.h */,
-				79A1977D1B2724CA009A3152 /* HOOClienteViewController.m */,
-				79A1977F1B29BD90009A3152 /* HOOPerfilUsuarioViewController.h */,
-				79A197801B29BD90009A3152 /* HOOPerfilUsuarioViewController.m */,
+				79A1977C1B2724CA009A3152 /* HOOCadastroClienteViewController.h */,
+				79A1977D1B2724CA009A3152 /* HOOCadastroClienteViewController.m */,
+				79A1977F1B29BD90009A3152 /* HOOPerfilClienteViewController.h */,
+				79A197801B29BD90009A3152 /* HOOPerfilClienteViewController.m */,
 				77C005DB1B29BB3300E2F27D /* HOOAgendarServicoViewController.h */,
 				77C005DC1B29BB3300E2F27D /* HOOAgendarServicoViewController.m */,
+				77EF52991B34FCD60041F579 /* HOOAgendarServicoTVCell.h */,
+				77EF529A1B34FCD60041F579 /* HOOAgendarServicoTVCell.m */,
 				77AE66881B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.h */,
 				77AE66891B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m */,
 				77AE668B1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.h */,
 				77AE668C1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.m */,
 				246A56821B29BBF2007044A7 /* HOOHistoricoClienteViewController.h */,
 				246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */,
+				771D73F81B36FDD500074894 /* HOOHistoricoClienteTVCell.h */,
+				771D73F91B36FDD500074894 /* HOOHistoricoClienteTVCell.m */,
 				243CC90C1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.h */,
 				243CC90D1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m */,
 				79BBC3761B31CE6B00445A87 /* HOODetalhesProfissionalViewController.h */,
@@ -270,7 +280,7 @@
 		77A88AC21B25E38C002BD992 = {
 			isa = PBXGroup;
 			children = (
-				797FBE471B345814006A4AA3 /* pop.xcodeproj */,
+				77EF529C1B3514B60041F579 /* pop.xcodeproj */,
 				77A88ACD1B25E38C002BD992 /* Hooli */,
 				77A88AE71B25E38C002BD992 /* HooliTests */,
 				77A88ACC1B25E38C002BD992 /* Products */,
@@ -352,14 +362,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		797FBE481B345814006A4AA3 /* Products */ = {
+		77EF529D1B3514B60041F579 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				797FBE501B345814006A4AA3 /* libpop.a */,
-				797FBE521B345814006A4AA3 /* pop.framework */,
-				797FBE541B345814006A4AA3 /* pop.framework */,
-				797FBE561B345814006A4AA3 /* pop-tests.xctest */,
-				797FBE581B345814006A4AA3 /* pop-tests-osx.xctest */,
+				77EF52A51B3514B60041F579 /* libpop.a */,
+				77EF52A71B3514B60041F579 /* pop.framework */,
+				77EF52A91B3514B60041F579 /* pop.framework */,
+				77EF52AB1B3514B60041F579 /* pop-tests.xctest */,
+				77EF52AD1B3514B60041F579 /* pop-tests-osx.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -388,7 +398,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				797FBE5C1B34581D006A4AA3 /* PBXTargetDependency */,
+				77EF52B11B3514C20041F579 /* PBXTargetDependency */,
 			);
 			name = Hooli;
 			productName = Hooli;
@@ -445,8 +455,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 797FBE481B345814006A4AA3 /* Products */;
-					ProjectRef = 797FBE471B345814006A4AA3 /* pop.xcodeproj */;
+					ProductGroup = 77EF529D1B3514B60041F579 /* Products */;
+					ProjectRef = 77EF529C1B3514B60041F579 /* pop.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -458,39 +468,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		797FBE501B345814006A4AA3 /* libpop.a */ = {
+		77EF52A51B3514B60041F579 /* libpop.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libpop.a;
-			remoteRef = 797FBE4F1B345814006A4AA3 /* PBXContainerItemProxy */;
+			remoteRef = 77EF52A41B3514B60041F579 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		797FBE521B345814006A4AA3 /* pop.framework */ = {
+		77EF52A71B3514B60041F579 /* pop.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = pop.framework;
-			remoteRef = 797FBE511B345814006A4AA3 /* PBXContainerItemProxy */;
+			remoteRef = 77EF52A61B3514B60041F579 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		797FBE541B345814006A4AA3 /* pop.framework */ = {
+		77EF52A91B3514B60041F579 /* pop.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = pop.framework;
-			remoteRef = 797FBE531B345814006A4AA3 /* PBXContainerItemProxy */;
+			remoteRef = 77EF52A81B3514B60041F579 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		797FBE561B345814006A4AA3 /* pop-tests.xctest */ = {
+		77EF52AB1B3514B60041F579 /* pop-tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "pop-tests.xctest";
-			remoteRef = 797FBE551B345814006A4AA3 /* PBXContainerItemProxy */;
+			remoteRef = 77EF52AA1B3514B60041F579 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		797FBE581B345814006A4AA3 /* pop-tests-osx.xctest */ = {
+		77EF52AD1B3514B60041F579 /* pop-tests-osx.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "pop-tests-osx.xctest";
-			remoteRef = 797FBE571B345814006A4AA3 /* PBXContainerItemProxy */;
+			remoteRef = 77EF52AC1B3514B60041F579 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -529,7 +539,8 @@
 				772986711B30B568005DBBB5 /* UIFloatLabelTextField.m in Sources */,
 				77A88AD71B25E38C002BD992 /* HOOLoginViewController.m in Sources */,
 				772FDAB41B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.m in Sources */,
-				79A1977E1B2724CA009A3152 /* HOOClienteViewController.m in Sources */,
+				79A1977E1B2724CA009A3152 /* HOOCadastroClienteViewController.m in Sources */,
+				771D73FA1B36FDD500074894 /* HOOHistoricoClienteTVCell.m in Sources */,
 				243CC90E1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m in Sources */,
 				772FDAAE1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m in Sources */,
 				77A88AD41B25E38C002BD992 /* AppDelegate.m in Sources */,
@@ -537,9 +548,10 @@
 				77EE11E31B33613E00262F0E /* PresentingAnimationPopUpController.m in Sources */,
 				77EE118A1B3352B600262F0E /* DismissingAnimationController.m in Sources */,
 				77EE11E61B3362E200262F0E /* HOOEscolhaCadastroViewController.m in Sources */,
+				77EF529B1B34FCD60041F579 /* HOOAgendarServicoTVCell.m in Sources */,
 				77AE668A1B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m in Sources */,
 				77EE11891B3352B600262F0E /* PresentingAnimationController.m in Sources */,
-				79A197811B29BD90009A3152 /* HOOPerfilUsuarioViewController.m in Sources */,
+				79A197811B29BD90009A3152 /* HOOPerfilClienteViewController.m in Sources */,
 				77A88AD11B25E38C002BD992 /* main.m in Sources */,
 				243CC9171B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m in Sources */,
 				79BBC3781B31CE6B00445A87 /* HOODetalhesProfissionalViewController.m in Sources */,
@@ -563,10 +575,10 @@
 			target = 77A88ACA1B25E38C002BD992 /* Hooli */;
 			targetProxy = 77A88AE51B25E38C002BD992 /* PBXContainerItemProxy */;
 		};
-		797FBE5C1B34581D006A4AA3 /* PBXTargetDependency */ = {
+		77EF52B11B3514C20041F579 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "pop-embedded";
-			targetProxy = 797FBE5B1B34581D006A4AA3 /* PBXContainerItemProxy */;
+			targetProxy = 77EF52B01B3514C20041F579 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

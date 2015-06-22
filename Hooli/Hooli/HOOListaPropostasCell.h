@@ -11,8 +11,9 @@
 
 @interface HOOListaPropostasCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *lbNome;
-@property (weak, nonatomic) IBOutlet UILabel *lbPreco;
+@property (strong, nonatomic) IBOutlet UILabel *lbNome;
+@property (strong, nonatomic) IBOutlet UILabel *lbValor;
+
 
 
 @end

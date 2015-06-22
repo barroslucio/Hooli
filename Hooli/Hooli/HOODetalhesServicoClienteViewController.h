@@ -17,8 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *textViewDescricao;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-
-
 @property (nonatomic) NSString *idServico;
 
 

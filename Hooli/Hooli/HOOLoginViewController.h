@@ -11,6 +11,8 @@
 #import "UIFloatLabelTextField.h"
 #import "PresentingAnimationPopUpController.h"
 #import "DismissingAnimationController.h"
+#import "HOOEscolhaCadastroViewController.h"
+
 @import pop;
 
 @interface HOOLoginViewController : UIViewController <UIViewControllerTransitioningDelegate>
@@ -19,6 +21,7 @@
 @property (strong, nonatomic) IBOutlet UIView *subviewSenha;
 
 - (IBAction)login:(id)sender;
+- (IBAction)cadastro:(id)sender;
 
 @end
 

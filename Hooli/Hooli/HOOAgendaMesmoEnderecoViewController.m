@@ -12,9 +12,9 @@
 {
     NSString *strDate;
     NSString *strInvertedDate;
-    NSString *strTime;
     NSString *strComb;
     NSString *tipoServico;
+    UIFloatLabelTextField *dataTextField;
 }
 
 @end
@@ -51,11 +51,26 @@
         
     }
     
-    NSLog(@"%d",self.tipoDeServico);
     
-    self.textFieldDate.delegate = self;
-    self.textFieldTime.delegate = self;
     self.descricaoField.delegate = self;
+    
+    dataTextField = [UIFloatLabelTextField new];
+    [dataTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    dataTextField.floatLabelActiveColor = [UIColor orangeColor];
+    dataTextField.placeholder = @"Data do serviço";
+    dataTextField.delegate = self;
+    [self.subviewData addSubview:dataTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[dataTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(dataTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[dataTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(dataTextField)]];
     
     
     //OCULTA TECLADO
@@ -81,15 +96,11 @@
     self.pickerDate.date = [NSDate date];
     self.pickerDate.locale = locale;
     self.pickerDate.minuteInterval = 1;
-    self.textFieldDate.inputView = self.pickerDate;
+    dataTextField.inputView = self.pickerDate;
     [self.pickerDate addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
     
     
-    self.pickerTime = [[UIDatePicker alloc] init];
-    self.pickerTime.locale = locale;
-    self.pickerTime.datePickerMode = UIDatePickerModeTime;
-    self.textFieldTime.inputView = self.pickerTime;
-    [self.pickerTime addTarget:self action:@selector(timePickerChanged:) forControlEvents:UIControlEventValueChanged];
+
     
 }
 
@@ -97,33 +108,19 @@
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSDateFormatter *invertedDateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
     [invertedDateFormatter setDateFormat:@"yyyy-MM-dd"];
     
     strDate = [dateFormatter stringFromDate:datePicker.date];
     strInvertedDate = [invertedDateFormatter stringFromDate:datePicker.date];
-    self.textFieldDate.text = [NSString stringWithFormat:@"Data do serviço: %@",strDate];
+    dataTextField.text = [NSString stringWithFormat:@"%@",strDate];
     
-    NSLog(@"---date");
     
 }
 
--(void) timePickerChanged: (UIDatePicker *)datePicker{
-    
-    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-    [timeFormatter setDateFormat:@"HH:mm"];
-    strTime = [timeFormatter stringFromDate:datePicker.date];
-    
-    self.textFieldTime.text = [NSString stringWithFormat:@"Hora do serviço: %@",strTime];
-    
-    NSLog(@"---time %@", self.textFieldTime.text);
-    
-    
-}
 
 -(void)ocultaTeclado:(UITapGestureRecognizer *)sender{
-    [self.textFieldDate resignFirstResponder];
-    [self.textFieldTime resignFirstResponder];
+    [dataTextField resignFirstResponder];
     [self.descricaoField resignFirstResponder];
     
     
@@ -132,44 +129,14 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)combina{
-    
-    NSLog(@" \ndate : %@ \ntime : %@\n \ninverted date : %@\n",strDate,strTime, strInvertedDate);
-}
 
-- (void)textViewDidBeginEditing:(UITextView *)textView{
-    [self animate:YES];
-}
 
--(void)textViewDidEndEditing:(UITextView *)textView{
-    [self animate:NO];
-}
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [self animate:YES];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    [self animate:NO];
-}
-
-- (void) animate: (BOOL)up {
-    const int movementDistance = 80; // tweak as needed
-    const float movementDuration = 0.3f; // tweak as needed
-    
-    int movement = (up ? -movementDistance : movementDistance);
-    
-    [UIView beginAnimations: @"anim" context: nil];
-    [UIView setAnimationBeginsFromCurrentState: YES];
-    [UIView setAnimationDuration: movementDuration];
-    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
-    [UIView commitAnimations];
-}
 
 - (IBAction)agendaServico:(id)sender {
     
     //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
-    if (![self.descricaoField.text isEqualToString:@""] && ![self.textFieldDate.text isEqualToString:@""] && ![self.textFieldTime.text isEqualToString:@""])
+    if (![self.descricaoField.text isEqualToString:@""]  && ![dataTextField.text isEqualToString:@""])
     {
         PFUser *user = [PFUser currentUser];
     
@@ -187,7 +154,6 @@
                                                                 message:@"Obrigado!"
                                                                delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
-            [self combina];
             [self segueViewController];
         } else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"

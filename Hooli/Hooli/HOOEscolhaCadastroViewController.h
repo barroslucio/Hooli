@@ -11,5 +11,7 @@
 #import "DismissingAnimationController.h"
 
 @interface HOOEscolhaCadastroViewController : UIViewController <UIViewControllerTransitioningDelegate>
+- (IBAction)cliente:(id)sender;
+- (IBAction)profissional:(id)sender;
 
 @end

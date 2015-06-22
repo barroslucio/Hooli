@@ -28,7 +28,7 @@
     PFObject *object =[query getFirstObject];
 
     self.labelTipo.text = object[@"tipo"];
-    self.labelDateAndHour.text = [NSString stringWithFormat: @"Date: %@", object[@"dataServico"]];
+    self.labelDateAndHour.text = [NSString stringWithFormat: @"Data: %@", object[@"dataServico"]];
     self.textViewDescricao.text = object[@"descricao"];
     
     self.arrayListaPro = [[NSArray alloc] initWithArray:object[@"proCandidatos"]];
@@ -49,7 +49,6 @@
     }
     
     self.arrayListaPro = servicesToFilter;
-    NSLog(@"%ld", self.arrayListaPro.count);
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -61,7 +60,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HOOListaPropostasCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellPro"];
-    cell.lbPreco.text = [[self.arrayListaPro[indexPath.row] objectForKey:@"valor"] stringValue];
+    cell.lbValor.text = [NSString stringWithFormat:@"R$ %@",[[self.arrayListaPro[indexPath.row] objectForKey:@"valor"] stringValue]];
     cell.lbNome.text = [self.arrayListaPro[indexPath.row] objectForKey:@"nomeCompleto"];
     return cell;
 }
@@ -92,8 +91,6 @@
         
     }
 }
-
-
 
 
 @end

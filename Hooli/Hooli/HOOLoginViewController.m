@@ -7,7 +7,6 @@
 //
 
 #import "HOOLoginViewController.h"
-#import "HOOEscolhaCadastroViewController.h"
 
 
 @interface HOOLoginViewController ()<UITextFieldDelegate>{
@@ -18,11 +17,14 @@
 @end
 
 @implementation HOOLoginViewController
+
+//método que lida com a animação de surgimento da tela de escolha do tipo de cadastro.
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
     return [[PresentingAnimationPopUpController alloc] init];
 }
 
+//método que lida com a animação de desaparecimento da tela de escolha do tipo de cadastro.
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
     return [[DismissingAnimationController alloc] init];
@@ -31,16 +33,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardFrameDidChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
-    
-    //Oculta teclado
+    //adiciona um "tap gesture" que tem função de fazer o teclado desaparecer quando o usuário clicar na tela.
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
     [tapGesture setNumberOfTouchesRequired:1];
     [[self view] addGestureRecognizer:tapGesture];
     
     
-    
+    //cria o textfiel de email e declara seus propriedades.
     emailTextField = [UIFloatLabelTextField new];
     [emailTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
     emailTextField.floatLabelActiveColor = [UIColor orangeColor];
@@ -53,12 +52,13 @@
                                                                       options:NSLayoutFormatAlignAllBaseline
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(emailTextField)]];
-    // Vertical
+
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[emailTextField(45)]-0-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(emailTextField)]];
     
+    //cria o textfiel de senha e declara seus propriedades.
     senhaTextField = [UIFloatLabelTextField new];
     [senhaTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
     senhaTextField.floatLabelActiveColor = [UIColor orangeColor];
@@ -70,7 +70,7 @@
                                                                       options:NSLayoutFormatAlignAllBaseline
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(senhaTextField)]];
-    // Vertical
+
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[senhaTextField(45)]-0-|"
                                                                       options:0
                                                                       metrics:nil
@@ -86,40 +86,52 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-- (void) erroNoLogin{
+
+//método que faz os textfields vibrarem caso ocorra algum erro no login.
+- (void) loginError{
     POPSpringAnimation *shake = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
     
     shake.springBounciness = 20;
     shake.velocity = @(3000);
     
-    [self.subviewSenha.layer pop_addAnimation:shake forKey:@"shakePassword"];
+    [self.subviewSenha.layer pop_addAnimation:shake forKey:@"shakeTextFields"];
     
-    [self.subviewEmail.layer pop_addAnimation:shake forKey:@"shakeEmail"];
+    [self.subviewEmail.layer pop_addAnimation:shake forKey:@"shakeTextFields"];
 }
+
+//método que é chamado quando o usuário clica no botão de login.
 - (IBAction)login:(id)sender {
-    
     
     NSString *username = [emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password = [senhaTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
+    //verifica se os textfields estão preenchidos.
     if ([username length] == 0 || [password length] == 0) {
-        [self erroNoLogin];
+        [self loginError];
     }
+    
+    //se os textfields estão preenchidos então tenta fazer login.
     else {
-        
         [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
+            //se aconteceu algum error, então chama o  método "loginError".
             if (error) {
-                [self erroNoLogin];
+                [self loginError];
             }
+            //se o login foi feito com sucesso.
             else {
+                
                 NSNumber* number = [[PFUser currentUser] objectForKey:@"tipo"];
                 int tipo = [number intValue];
+                
+                //se o usuário é cliente então encaminha ele pro módulo cliente.
                 if (tipo == 0){
                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                     UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"User"];
                     [self presentViewController:viewController animated:YES completion:nil];
                 
                 }
+                
+                //se o usuário é profissional então encaminha ele pr módulo profissional.
                 else if (tipo == 1){
                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                     UIViewController *viewController = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Pro"];
@@ -132,31 +144,10 @@
 
 }
 
-- (void)keyboardFrameDidChange:(NSNotification *)notification
-{
-    CGRect keyboardEndFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGRect keyboardBeginFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-    UIViewAnimationCurve animationCurve = [[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
-    NSTimeInterval animationDuration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] integerValue];
-    
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    [UIView setAnimationCurve:animationCurve];
-    
-    CGRect newFrame = self.view.frame;
-    CGRect keyboardFrameEnd = [self.view convertRect:keyboardEndFrame toView:nil];
-    CGRect keyboardFrameBegin = [self.view convertRect:keyboardBeginFrame toView:nil];
-    
-    newFrame.origin.y -= (keyboardFrameBegin.origin.y - keyboardFrameEnd.origin.y);
-    self.view.frame = newFrame;
-    
-    [UIView commitAnimations];
-}
-
-- (IBAction)cadastroButton:(id)sender {
+//método que é chamada quando o usuário clica no botão de cadastro.
+- (IBAction)cadastro:(id)sender {
     
     HOOEscolhaCadastroViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"escolhaCadastro"];
-    
     
     modalVC.transitioningDelegate = self;
     
@@ -164,5 +155,6 @@
     
     [self presentViewController:modalVC animated:YES completion:nil];
 }
+
 
 @end

@@ -31,10 +31,34 @@
 //TABLE VIEW
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    
-    cell.textLabel.text = [self.arrayServicos[indexPath.row] objectForKey:@"tipo"];
-    cell.detailTextLabel.text = [self.arrayServicos[indexPath.row] objectForKey:@"dataServico"];
+    HOOHistoricoClienteTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if ([[self.arrayServicos[indexPath.row] objectForKey:@"tipo"]  isEqual: @"Limpeza"])
+    {
+        cell.imagemTipoServico.image = [UIImage imageNamed:@"limpezaIcon"];
+    }
+    else if ([[self.arrayServicos[indexPath.row] objectForKey:@"tipo"]  isEqual: @"Alvenaria"])
+    {
+        cell.imagemTipoServico.image = [UIImage imageNamed:@"alvenariaIcon"];
+    }
+    else if ([[self.arrayServicos[indexPath.row] objectForKey:@"tipo"]  isEqual: @"Hidráulica"])
+    {
+        cell.imagemTipoServico.image = [UIImage imageNamed:@"hidraulicaIcon"];
+    }
+    else if ([[self.arrayServicos[indexPath.row] objectForKey:@"tipo"]  isEqual: @"Pintura"])
+    {
+        cell.imagemTipoServico.image = [UIImage imageNamed:@"pinturaIcon"];
+    }
+    else if ([[self.arrayServicos[indexPath.row] objectForKey:@"tipo"]  isEqual: @"Chaveiro"])
+    {
+        cell.imagemTipoServico.image = [UIImage imageNamed:@"chaveiroIcon"];
+    }
+    else if ([[self.arrayServicos[indexPath.row] objectForKey:@"tipo"]  isEqual: @"Elétrica"])
+    {
+        cell.imagemTipoServico.image = [UIImage imageNamed:@"eletricaIcon"];
+    }
+
+    cell.labelTipoServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"tipo"];
+    cell.labelDataServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"dataServico"];
     return cell;
     
 }
